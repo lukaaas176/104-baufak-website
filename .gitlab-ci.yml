@@ -2,6 +2,7 @@ variables:
   DART_SASS_VERSION: 1.80.6
   HUGO_VERSION: 0.137.1
   NODE_VERSION: 20.x
+  TAILWIND_CLI_VERSION: v4.0.0-beta.8
   GIT_DEPTH: 0
   GIT_STRATEGY: clone
   GIT_SUBMODULE_STRATEGY: recursive
@@ -29,7 +30,10 @@ pages:
     - curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION} | bash -
     - apt-get install -y nodejs
     # Install Node.js dependencies
-    - "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+    # - "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+    # Install TailwindCSS CLI
+    - mkdir -p node_modules/.bin
+    - curl -LJO https://github.com/tailwindlabs/tailwindcss/releases/download/${TAILWIND_CLI_VERSION}/tailwindcss-linux-x64 -o node_modules/.bin/tailwindcss
     # Build
     - hugo --gc --minify
     # Compress

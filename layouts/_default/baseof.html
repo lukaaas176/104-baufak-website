@@ -7,8 +7,8 @@
     {{ end }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{ with resources.Get "main.css" }}
-        {{ $opts := dict "minify" true }}
-        {{ with . | css.TailwindCSS $opts }}
+        {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
+        {{ with . | css.TailwindCSS  }}
             {{ if hugo.IsDevelopment }}
                 <link rel="stylesheet" href="{{ .RelPermalink }}">
             {{ else }}
