@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <main aria-role="main">
+  <main class="flex flex-col space-y-10" aria-role="main">
     <div class="grid gap-20 grid-cols-2 place-items-center">
         {{ with resources.GetMatch "lander.*" }}
             <img class="rounded-md shadow-md" src="{{ .RelPermalink }}" alt="">
@@ -23,26 +23,35 @@
               {{ end }}
           {{ end }}
           {{ with site.GetPage "/posts" }}
-            <div class="flex justify-end m-5">
-              <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-white font-bold shadow-md hover:bg-primary/90 h-9 px-4 py-2" href="{{ .RelPermalink }}">Alle Neuigkeiten</a>
+            <div class="flex justify-end mt-5 mx-10">
+              <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-white shadow-md hover:bg-primary/90 h-9 px-4 py-2" href="{{ .RelPermalink }}">Alle Neuigkeiten</a>
             </div>
           {{ end }}
       </div>
     </div>
 
-        mit Unterstützung von:
-        {{ range where site.RegularPages "Type" "sponsoren" }}
-            <a href="{{ .RelPermalink }}">
-              {{ with resources.Get .Params.image }}
-                <img src="{{ .RelPermalink }}"  width="200px" alt="">
-              {{ end }}
-            </a>
-        {{ end }}
-        {{ with site.GetPage "/sponsoren" }}
-          <a href="{{ .RelPermalink }}">Alle Sponsoren</a>
-        {{ end }}
-
+    <div class="flex space-x-5">
+      <div class="grow flex flex-col">
+        <h2 class="text-3xl font-bold" href="{{ .RelPermalink }}">Die Sponsoren</h2>
+        <div class="gridplace-items-center space-x-5 space-y-5 mt-10">
+          {{ range where site.RegularPages "Type" "sponsoren" }}
+              <a class="block h-52" href="{{ .RelPermalink }}">
+                {{ with resources.Get .Params.image }}
+                  <img class="max-w-full max-h-full" src="{{ .RelPermalink }}" alt="">
+                {{ end }}
+              </a>
+          {{ end }}
+        </div>
+        <div class="h-full place-self-end mt-5 mx-20">
+          {{ with site.GetPage "/sponsoren" }}
+              <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-white font-bold shadow-md hover:bg-primary/90 h-9 px-4 py-2" href="{{ .RelPermalink }}">Alle Sponsoren</a>
+          {{ end }}
+        </div>
+      </div>
+      <div class="justify-end drop-shadow-md">
         {{ partial "instagram.html" (.Site.Param "instagram-post") }}
+      </div>
+      </div>
   </main>
 {{ end }}
 

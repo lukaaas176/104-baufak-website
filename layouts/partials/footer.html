@@ -1,42 +1,19 @@
 {{- $page := . }}
+{{- $menuEntries := index site.Menus "footer" }}
 
-{{- with index site.Menus "footer" }}
-  <nav>
-    <ul>
-      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-    </ul>
+<footer class="text-sm flex justify-between items-center w-full h-20 px-30">
+  <span>
+    © 104. Bauingenieur-Fachschaften-Konferenz München {{ time.Format "2006" time.Now }}
+  </span>
+  <nav class="justify-end h-full flex items-center">
+    {{- range $menuEntries }}
+      <a href="{{ .URL }}" class="content-center h-full px-5 items-center">
+      {{- if or ($page.IsMenuCurrent .Menu .) ($page.HasMenuCurrent .Menu .)}}
+        <span class="transition-colors hover:drop-shadow font-bold">{{ .Name }}</span>
+      {{- else }}
+        <span class="transition-colors hover:drop-shadow">{{ .Name }}</span>
+      {{- end }}
+      </a>
+    {{- end }}
   </nav>
-{{- end }}
-
-{{- define "partials/inline/menu/walk.html" }}
-  {{- $page := .page }}
-  {{- range .menuEntries }}
-    {{- $attrs := dict "href" .URL }}
-    {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
-    {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
-    {{- end }}
-    {{- $name := .Name }}
-    {{- with .Identifier }}
-      {{- with T . }}
-        {{- $name = . }}
-      {{- end }}
-    {{- end }}
-    <li>
-      <a
-        {{- range $k, $v := $attrs }}
-          {{- with $v }}
-            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
-          {{- end }}
-        {{- end -}}
-      >{{ $name }}</a>
-      {{- with .Children }}
-        <ul>
-          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-        </ul>
-      {{- end }}
-    </li>
-  {{- end }}
-{{- end }}
-
+</footer>
