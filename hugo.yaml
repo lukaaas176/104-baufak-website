@@ -1,0 +1,43 @@
+baseURL: https://example.org/
+languageCode: de-DE
+defaultContentLanguage: de
+title: 104. BauFaK München
+params:
+  date: 28.05. - 01.06.2025
+  instagram-post: DAshYt6ILAF
+menus:
+  header:
+  - name: Home
+    pageRef: /
+    weight: 10
+  - name: Über uns
+    pageRef: /ueber-uns
+    weight: 20
+  - name: Unsere Unterstützer
+    pageRef: /sponsoren
+    weight: 30
+  - name: Organisation
+    pageRef: /organisation
+    weight: 40
+  - name: Anmeldung
+    pageRef: /anmeldung
+    weight: 50
+  - name: Reader
+    pageRef: /reader
+    weight: 60
+  footer:
+  - name: Kontakt
+    pageRef: /kontakt
+    weight: 10
+  - name: Impressum
+    pageRef: /impressum
+    weight: 20
+  - name: Datenschutz
+    pageRef: /datenschutz
+    weight: 30
+
+build:
+  cachebusters:
+  - source: layouts/.*
+    target: css
+

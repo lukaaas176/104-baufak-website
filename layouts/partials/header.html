@@ -1,0 +1,22 @@
+{{- $page := . }}
+{{- $menuEntries := index site.Menus "header" }}
+
+<header class="flex justify-between items-center w-full h-20 px-30">
+  <a href="/" class="h-full flex items-center space-x-5">
+    {{ with resources.GetMatch "logo.*" }}
+      <img class="h-full py-2" src="{{ .RelPermalink }}" alt="">
+    {{ end }}
+    <span class="text-xl font-bold">{{ site.Title }}</span>
+  </a>
+  <nav class="justify-end h-full flex items-center">
+    {{- range $menuEntries }}
+      <a href="{{ .URL }}" class="content-center h-full px-5 items-center">
+      {{- if or ($page.IsMenuCurrent .Menu .) ($page.HasMenuCurrent .Menu .)}}
+        <span class="transition-colors hover:drop-shadow font-bold">{{ .Name }}</span>
+      {{- else }}
+        <span class="transition-colors hover:drop-shadow">{{ .Name }}</span>
+      {{- end }}
+      </a>
+    {{- end }}
+  </nav>
+</header>

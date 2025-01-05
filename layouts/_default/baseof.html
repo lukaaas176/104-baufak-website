@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ block "title" . }}
+      {{ .Site.Title }}
+    {{ end }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ with resources.Get "main.css" }}
+        {{ $opts := dict "minify" true }}
+        {{ with . | css.TailwindCSS $opts }}
+            {{ if hugo.IsDevelopment }}
+                <link rel="stylesheet" href="{{ .RelPermalink }}">
+            {{ else }}
+                {{ with . | fingerprint }}
+                    <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+  </head>
+  <body class="bg-neutral">
+    {{- block "header" . -}}
+    {{ partial "header.html" . }}
+    {{- end -}}
+    <main class="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
+    {{ block "main" . }}
+    {{ end }}
+    </main>
+    {{- block "footer" . -}}
+    {{ partial "footer.html" . }}
+    {{- end -}}
+  </body>
+</html>
+

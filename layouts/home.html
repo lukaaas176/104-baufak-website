@@ -1,0 +1,48 @@
+{{ define "main" }}
+  <main aria-role="main">
+    <div class="grid gap-20 grid-cols-2 place-items-center">
+        {{ with resources.GetMatch "lander.*" }}
+            <img class="rounded-md shadow-md" src="{{ .RelPermalink }}" alt="">
+        {{ end }}
+        <div>
+          {{ with resources.GetMatch "logo.*" }}
+              <img class="float-right w-44" src="{{ .RelPermalink }}" alt="">
+          {{ end }}
+          <span class="text-sm">{{ .Site.Param "date" }}</span>
+          <h1 class="text-5xl font-bold">{{ .Site.Title }}</h1>
+
+          {{ range $i, $post := (where site.RegularPages "Type" "posts").Limit 2 }}
+              {{ if $i }}
+              <div class="shrink-0 bg-black h-[1px] w-8/12 mx-auto"></div>
+              {{ end }}
+
+              {{ with $post }}
+              <a class="block m-5" href="{{ .RelPermalink }}">
+                <span class="font-lg font-bold">{{ .LinkTitle }}</span><span class="text-sm"> {{ time.Format ":date_short" .PublishDate }}
+              {{ .Summary }}</span></a>
+              {{ end }}
+          {{ end }}
+          {{ with site.GetPage "/posts" }}
+            <div class="flex justify-end m-5">
+              <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-white font-bold shadow-md hover:bg-primary/90 h-9 px-4 py-2" href="{{ .RelPermalink }}">Alle Neuigkeiten</a>
+            </div>
+          {{ end }}
+      </div>
+    </div>
+
+        mit Unterstützung von:
+        {{ range where site.RegularPages "Type" "sponsoren" }}
+            <a href="{{ .RelPermalink }}">
+              {{ with resources.Get .Params.image }}
+                <img src="{{ .RelPermalink }}"  width="200px" alt="">
+              {{ end }}
+            </a>
+        {{ end }}
+        {{ with site.GetPage "/sponsoren" }}
+          <a href="{{ .RelPermalink }}">Alle Sponsoren</a>
+        {{ end }}
+
+        {{ partial "instagram.html" (.Site.Param "instagram-post") }}
+  </main>
+{{ end }}
+
