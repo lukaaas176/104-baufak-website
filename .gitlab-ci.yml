@@ -34,6 +34,7 @@ pages:
     # Install TailwindCSS CLI
     - mkdir -p node_modules/.bin
     - curl -o node_modules/.bin/tailwindcss -LJ https://github.com/tailwindlabs/tailwindcss/releases/download/${TAILWIND_CLI_VERSION}/tailwindcss-linux-x64
+    - chmod u+x node_modules/.bin/tailwindcss
     # Build
     - hugo --gc --minify
     # Compress
