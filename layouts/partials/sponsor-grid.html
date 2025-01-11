@@ -1,0 +1,16 @@
+<div class="grid grid-cols-4 place-items-center gap-10">
+    {{- $sponsors := where site.RegularPages "Type" "unsere-unterstuetzer" -}}
+    {{- range where $sponsors "Params.on-homepage" "eq" true -}}
+        {{- $sponsor := . -}}
+        <a class="block h-52 w-52" href="{{ $sponsor.Params.homepage }}">
+        {{- with resources.Get .Params.image -}}
+            <img class="max-w-full max-h-full rounded-md shadow-md transition-transform hover:scale-105" height="{{ .Height }}" width="{{ .Width }}" src="{{ .RelPermalink }}" alt="{{ $sponsor.Title }}" title="{{ $sponsor.Title }}">
+        {{- end -}}
+        </a>
+    {{- end -}}
+</div>
+<div class="flex w-full p-10 justify-end">
+    {{- with site.GetPage "/unsere-unterstuetzer" -}}
+        {{- partial "buttons/default.html" (dict "link" .RelPermalink "label" "Alle Sponsoren") -}}
+    {{- end -}}
+</div>

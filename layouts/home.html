@@ -1,66 +1,54 @@
-{{ define "cover" }}
-  <div class="max-w-8xl mx-auto px-4 sm:px-6 md:px-8 grid gap-20 grid-cols-2 place-items-center py-10">
-    {{ with resources.GetMatch "lander.*" }}
-        <img class="rounded-md shadow-md" src="{{ .RelPermalink }}" alt="">
-    {{ end }}
-    <div>
-      {{ with resources.GetMatch "logo.*" }}
-          <img class="float-right w-44" src="{{ .RelPermalink }}" alt="">
-      {{ end }}
-      <span class="text-sm">{{ .Site.Param "date" }}</span>
-      <h1 class="text-5xl font-bold">{{ .Site.Title }}</h1>
+{{- define "banner" -}}
+<div class="grid gap-20 grid-cols-2 place-items-center max-w-8xl mx-auto px-4 py-10">
+  {{- with resources.GetMatch "lander.*" -}}
+    <img class="max-w-full max-h-full rounded-md shadow-md" height="{{ .Height }}" width="{{ .Width }}" src="{{ .RelPermalink }}">
+  {{- end -}}
+  <div>
+    {{- with resources.GetMatch "logo.*" -}}
+      <img class="float-right w-44 h-44" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}">
+    {{- end -}}
+    <div class="text-sm">{{ .Site.Param "date" }}</div>
+    <div class="text-5xl font-bold">{{ .Site.Title }}</div>
 
-      {{ range $i, $post := (where site.RegularPages "Type" "posts").Limit 2 }}
-          {{ if $i }}
-          <div class="shrink-0 bg-neutral h-[1px] w-8/12 mx-auto"></div>
-          {{ end }}
-
-          {{ with $post }}
-          <a class="block m-5" href="{{ .RelPermalink }}">
-            <span class="font-lg font-bold">{{ .LinkTitle }}</span><span class="text-sm"> {{ time.Format ":date_short" .PublishDate }}
-          {{ .Summary }}</span></a>
-          {{ end }}
-      {{ end }}
-      {{ with site.GetPage "/posts" }}
-        <div class="flex justify-end mt-5 mx-10">
-          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-neutral text-white shadow-md hover:bg-neutral/10 h-9 px-4 py-2" href="{{ .RelPermalink }}">Alle Neuigkeiten</a>
-        </div>
-      {{ end }}
+    {{- range $i, $post := (where site.RegularPages "Type" "posts").Limit 2 -}}
+      {{- if $i -}}
+        <div class="shrink-0 bg-neutral h-[1px] w-10/12 mx-auto"></div>
+      {{- end -}}
+      {{- with $post -}}
+        <a class="block my-5" href="{{ .RelPermalink }}">
+          <span class="text-lg font-bold">{{ .LinkTitle }}</span><span class="text-sm"> {{ time.Format ":date_short" .PublishDate }}
+            {{- .Summary -}}
+          </span>
+        </a>
+      {{- end -}}
+    {{- end -}}
+    {{- with site.GetPage "/posts" -}}
+      <div class="flex justify-end">
+        {{- partial "buttons/outline.html" (dict "link" . "label" "Alle Neuigkeiten") -}}
+      </div>
+    {{- end -}}
   </div>
-  </div>
-{{ end }}
+</div>
+{{- end -}}
 
 {{ define "main" }}
   <main class="flex flex-col space-y-10 py-5" aria-role="main">
     <div class="flex flex-col self-center items-center">
-      <h3 class="text-xl font-bold">Mitreden!</h3>
-      <h2 class="text-3xl font-bold">Marktplatz zur 104. BauFaK</h2>
-      <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-white font-bold shadow-md hover:bg-primary/90 h-9 px-4 py-2 mt-4" href="https://www.baufak.de/baufak/marktplatz">Zum Marktplatz</a>
+      <span class="text-2xl font-semibold">Mitreden!</span>
+      <h1 class="mb-5">Marktplatz zur 104. BauFaK</h2>
+      {{- partial "buttons/default.html" (dict "link" "https://www.baufak.de/baufak/marktplatz" "label" "Zum Marktplatz") -}}
     </div>
 
 
-    <div class="flex space-x-5">
+    <div class="flex gap-10">
       <div class="grow flex flex-col">
-        <h2 class="text-3xl font-bold" href="{{ .RelPermalink }}">Die Sponsoren</h2>
-        <div class="gridplace-items-center space-x-5 space-y-5 mt-10">
-          {{ range where site.RegularPages "Type" "sponsoren" }}
-              <a class="block h-52" href="{{ .RelPermalink }}">
-                {{ with resources.Get .Params.image }}
-                  <img class="max-w-full max-h-full" src="{{ .RelPermalink }}" alt="">
-                {{ end }}
-              </a>
-          {{ end }}
-        </div>
-        <div class="h-full place-self-end mt-5 mx-20">
-          {{ with site.GetPage "/sponsoren" }}
-              <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-white font-bold shadow-md hover:bg-primary/90 h-9 px-4 py-2" href="{{ .RelPermalink }}">Alle Sponsoren</a>
-          {{ end }}
-        </div>
+        <h1 class="pb-10" href="{{ .RelPermalink }}">Die Sponsoren</h1>
+        {{- partial "sponsor-grid.html" . -}}
       </div>
-      <div class="justify-end drop-shadow-md">
-        {{ partial "instagram.html" (.Site.Param "instagram-post") }}
+      <div class="drop-shadow-md">
+        {{- partial "instagram.html" (.Site.Param "instagram-post") -}}
       </div>
       </div>
   </main>
-{{ end }}
+{{- end -}}
 
