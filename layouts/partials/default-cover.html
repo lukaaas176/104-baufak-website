@@ -1,0 +1,6 @@
+<div class="max-w-8xl mx-auto py-10 flex flex-col text-center">
+  <h1 class="text-5xl font-bold">{{ .Title }}</h1>
+  {{- with .Description}}
+    <h2 class="text-xl">{{ . }}</h2>
+  {{- end }}
+</div>

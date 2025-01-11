@@ -25,6 +25,11 @@ menus:
   - name: Reader
     pageRef: /reader
     weight: 60
+  - name: Kontakt
+    pageRef: /kontakt
+    weight: 70
+    params:
+      classes: "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-neutral text-white shadow-md hover:bg-neutral/10 h-9 px-4 py-2 mx-5"
   footer:
   - name: Kontakt
     pageRef: /kontakt

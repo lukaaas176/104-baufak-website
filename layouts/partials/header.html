@@ -10,7 +10,11 @@
   </a>
   <nav class="justify-end h-full flex items-center">
     {{- range $menuEntries }}
-      <a href="{{ .URL }}" class="content-center h-full px-5 items-center">
+      {{ if .Params.classes }}
+        <a href="{{ .URL }}" class="{{ .Params.classes }}">
+      {{ else }}
+        <a href="{{ .URL }}" class="content-center h-full px-5 items-center">
+      {{ end }}
       {{- if or ($page.IsMenuCurrent .Menu .) ($page.HasMenuCurrent .Menu .)}}
         <span class="transition-colors hover:drop-shadow font-bold">{{ .Name }}</span>
       {{- else }}

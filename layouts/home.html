@@ -1,34 +1,43 @@
+{{ define "cover" }}
+  <div class="max-w-8xl mx-auto px-4 sm:px-6 md:px-8 grid gap-20 grid-cols-2 place-items-center py-10">
+    {{ with resources.GetMatch "lander.*" }}
+        <img class="rounded-md shadow-md" src="{{ .RelPermalink }}" alt="">
+    {{ end }}
+    <div>
+      {{ with resources.GetMatch "logo.*" }}
+          <img class="float-right w-44" src="{{ .RelPermalink }}" alt="">
+      {{ end }}
+      <span class="text-sm">{{ .Site.Param "date" }}</span>
+      <h1 class="text-5xl font-bold">{{ .Site.Title }}</h1>
+
+      {{ range $i, $post := (where site.RegularPages "Type" "posts").Limit 2 }}
+          {{ if $i }}
+          <div class="shrink-0 bg-neutral h-[1px] w-8/12 mx-auto"></div>
+          {{ end }}
+
+          {{ with $post }}
+          <a class="block m-5" href="{{ .RelPermalink }}">
+            <span class="font-lg font-bold">{{ .LinkTitle }}</span><span class="text-sm"> {{ time.Format ":date_short" .PublishDate }}
+          {{ .Summary }}</span></a>
+          {{ end }}
+      {{ end }}
+      {{ with site.GetPage "/posts" }}
+        <div class="flex justify-end mt-5 mx-10">
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-neutral text-white shadow-md hover:bg-neutral/10 h-9 px-4 py-2" href="{{ .RelPermalink }}">Alle Neuigkeiten</a>
+        </div>
+      {{ end }}
+  </div>
+  </div>
+{{ end }}
+
 {{ define "main" }}
-  <main class="flex flex-col space-y-10" aria-role="main">
-    <div class="grid gap-20 grid-cols-2 place-items-center">
-        {{ with resources.GetMatch "lander.*" }}
-            <img class="rounded-md shadow-md" src="{{ .RelPermalink }}" alt="">
-        {{ end }}
-        <div>
-          {{ with resources.GetMatch "logo.*" }}
-              <img class="float-right w-44" src="{{ .RelPermalink }}" alt="">
-          {{ end }}
-          <span class="text-sm">{{ .Site.Param "date" }}</span>
-          <h1 class="text-5xl font-bold">{{ .Site.Title }}</h1>
-
-          {{ range $i, $post := (where site.RegularPages "Type" "posts").Limit 2 }}
-              {{ if $i }}
-              <div class="shrink-0 bg-black h-[1px] w-8/12 mx-auto"></div>
-              {{ end }}
-
-              {{ with $post }}
-              <a class="block m-5" href="{{ .RelPermalink }}">
-                <span class="font-lg font-bold">{{ .LinkTitle }}</span><span class="text-sm"> {{ time.Format ":date_short" .PublishDate }}
-              {{ .Summary }}</span></a>
-              {{ end }}
-          {{ end }}
-          {{ with site.GetPage "/posts" }}
-            <div class="flex justify-end mt-5 mx-10">
-              <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-white shadow-md hover:bg-primary/90 h-9 px-4 py-2" href="{{ .RelPermalink }}">Alle Neuigkeiten</a>
-            </div>
-          {{ end }}
-      </div>
+  <main class="flex flex-col space-y-10 py-5" aria-role="main">
+    <div class="flex flex-col self-center items-center">
+      <h3 class="text-xl font-bold">Mitreden!</h3>
+      <h2 class="text-3xl font-bold">Marktplatz zur 104. BauFaK</h2>
+      <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-white font-bold shadow-md hover:bg-primary/90 h-9 px-4 py-2 mt-4" href="https://www.baufak.de/baufak/marktplatz">Zum Marktplatz</a>
     </div>
+
 
     <div class="flex space-x-5">
       <div class="grow flex flex-col">

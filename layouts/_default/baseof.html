@@ -21,9 +21,14 @@
 
   </head>
   <body class="bg-neutral">
-    {{- block "header" . -}}
-    {{ partial "header.html" . }}
-    {{- end -}}
+    <div class="bg-primary text-neutral">
+      {{- block "header" . -}}
+      {{ partial "header.html" . }}
+      {{- end -}}
+      {{- block "cover" . -}}
+      {{ partial "default-cover.html" . }}
+      {{- end -}}
+    </div>
     <main class="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
     {{ block "main" . }}
     {{ end }}
