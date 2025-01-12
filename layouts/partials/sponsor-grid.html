@@ -1,7 +1,7 @@
 {{- $condition := .condition -}}
 <div class="max-w-7xl mx-auto grid grid-cols-4 place-items-center gap-10 {{ .classes }}">
     {{- $sponsors := where site.RegularPages "Type" "unsere-unterstuetzer" -}}
-    {{- range where $sponsors "Params.on-homepage" "eq" true -}}
+    {{- range where $sponsors $condition "eq" true -}}
         {{- $sponsor := . -}}
         <a class="block h-52 w-52" href="{{ $sponsor.Params.homepage }}">
         {{- with resources.Get .Params.image -}}
