@@ -1,0 +1,6 @@
+{{- if (.Get "list") -}}
+    {{- partial "sponsor-list" (dict "condition" (.Get "condition") "classes" (.Get "classes")) -}}
+{{- end }}
+{{- if (.Get "grid") -}}
+    {{- partial "sponsor-grid" (dict "condition" (.Get "condition") "classes" (.Get "classes")) -}}
+{{- end }}

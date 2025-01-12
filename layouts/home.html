@@ -42,8 +42,13 @@
 
     <div class="flex gap-10">
       <div class="grow flex flex-col">
-        <h1 class="pb-10" href="{{ .RelPermalink }}">Die Sponsoren</h1>
-        {{- partial "sponsor-grid.html" . -}}
+        <h1 class="pb-10" href="{{ .RelPermalink }}">Unsere Unterstützer</h1>
+        {{- partial "sponsor-grid.html" (dict "condition" "Params.on-homepage") -}}
+        <div class="flex w-full p-10 justify-end">
+          {{- with site.GetPage "/unsere-unterstuetzer" -}}
+              {{- partial "buttons/default.html" (dict "link" .RelPermalink "label" "Alle Sponsoren") -}}
+          {{- end -}}
+        </div>
       </div>
       <div class="drop-shadow-md">
         {{- partial "instagram.html" (.Site.Param "instagram-post") -}}

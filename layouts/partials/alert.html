@@ -1,0 +1,19 @@
+{{- $s := newScratch }}
+{{- $s.Set "bgColor" "bg-secondary" -}}
+{{- $s.Set "borderColor" "border-secondary-700" -}}
+{{- $s.Set "textColor" "text-black" -}}
+
+{{- if eq .type "info" -}}
+    {{- $s.Set "bgColor" "bg-emerald-100" -}}
+    {{- $s.Set "borderColor" "border-emerald-500" -}}
+    {{- $s.Set "textColor" "text-emerald-700" -}}
+{{- end -}}
+
+<div class="{{ $s.Get "bgColor" }} border-l-4 {{ $s.Get "borderColor" }} {{ $s.Get "textColor" }} p-4 rounded-md shadow-md {{ .classes }}">
+    {{- with .title | markdownify -}}
+        <p class="font-bold text-xl pb-2">{{ . }}</p>
+    {{- end -}}
+    {{- with .text | markdownify -}}
+        <p>{{ . }}</p>
+    {{- end -}}
+</div>
