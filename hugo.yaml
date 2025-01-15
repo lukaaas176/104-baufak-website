@@ -46,3 +46,12 @@ build:
   - source: layouts/.*
     target: css
 
+markup:
+  goldmark:
+    parser:
+      wrapStandAloneImageWithinParagraph: false
+      attribute:
+        block: true
+    renderHooks:
+      image:
+        enableDefault: true
