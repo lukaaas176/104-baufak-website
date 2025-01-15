@@ -1,5 +1,5 @@
 +++
-title = 'BBI Ingenieure GmbH'
+title = 'BBI INGENIEURE GMBH'
 image = 'sponsoren/bbi.png'
 platin = true
 homepage = 'https://www.bbi-ingenieure.de/'
