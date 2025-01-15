@@ -2,7 +2,7 @@
 
 <div class="flex gap-10 items-center my-10">
     {{- if and (.Get "image") (not (.Get "right")) -}}
-        <a class="flex-none block h-52 w-78" href="{{ $page.RelPermalink }}">
+        <a class="flex-none flex flex-col justify-center h-52 w-78" href="{{ $page.RelPermalink }}">
         {{- with or ($.Page.Resources.Get (.Get "image")) (resources.Get (.Get "image")) -}}
             <img class="max-w-full max-h-full rounded-md shadow-md transition-transform hover:scale-105" height="{{ .Height }}" width="{{ .Width }}" src="{{ .RelPermalink }}">
         {{- end -}}
@@ -10,7 +10,7 @@
     {{- end -}}
     <div><a href="{{ $page.RelPermalink }}"><h1 class="mb-2">{{ .Get "title" }}</h1></a>{{ .Inner | markdownify }}</div>
     {{- if and (.Get "image") (.Get "right") -}}
-        <a class="flex-none block h-52 w-78" href="{{ $page.RelPermalink }}">
+        <a class="flex-none flex flex-col justify-center h-52 w-78" href="{{ $page.RelPermalink }}">
         {{- with $.Page.Resources.Get (.Get "image") -}}
             <img class="max-w-full max-h-full rounded-md shadow-md transition-transform hover:scale-105" height="{{ .Height }}" width="{{ .Width }}" src="{{ .RelPermalink }}">
         {{- end -}}

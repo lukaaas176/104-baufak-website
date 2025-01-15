@@ -4,7 +4,7 @@
     {{- range where $sponsors $condition "eq" true -}}
         {{- $sponsor := . -}}
         <div class="flex items-center">
-            <a class="flex-none block h-52 w-52" href="{{ $sponsor.Params.homepage }}">
+            <a class="flex-none flex flex-col justify-center h-52 w-52" href="{{ $sponsor.Params.homepage }}">
             {{- with resources.Get .Params.image -}}
                 <img class="max-w-full max-h-full rounded-md shadow-md transition-transform hover:scale-105" height="{{ .Height }}" width="{{ .Width }}" src="{{ .RelPermalink }}" alt="{{ $sponsor.Title }}" title="{{ $sponsor.Title }}">
             {{- end -}}
