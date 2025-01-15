@@ -1,5 +1,5 @@
 +++
-date = '2024-01-17T23:03:49+01:00'
 title = 'Anmeldung'
 +++
-Die Anmeldung is derzeit noch nicht offen.
+# Liebe BauFaKler und Interessenten für die BauFaK, derzeit befindet sich die Website noch im Aufbau, weshalb eine Anmeldung noch nicht möglich ist.  
+## Sobald die Anmeldung möglich ist, werden wir uns bei euch melden.

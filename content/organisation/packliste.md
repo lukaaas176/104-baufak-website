@@ -1,13 +1,6 @@
 +++
-date = '2024-01-17T23:03:49+01:00'
 title = 'Packliste'
 +++
- - Unterwäsche für alle Tage, ggf. +1
- - T-Shirts, alte BauFaK-Shirts
- - Pullis
- - Hosen
- - Partyoutfit 
- - Schlafklamotten
- - Jacke
- - Sicherheitsschuhe
- - etc
+# Liebe BauFaKler und Interessenten für die BauFaK, derzeit befindet sich die Website noch im Aufbau, die Inhalte werden zeitnah erscheinen!
+
+Schreibt bei Fragen gerne der Organisation: [baufakorga.fsbgu@ed.tum.de](mailto:baufakorga.fsbgu@ed.tum.de)

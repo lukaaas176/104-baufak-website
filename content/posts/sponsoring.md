@@ -1,6 +1,5 @@
 +++
-date = '2024-02-05T23:03:58+01:00'
-title = 'Sponsoringsuche fertiggestellt'
-draft = true
+date = '2025-01-15T17:40:58+01:00'
+title = 'Website befindet sich im Aufbau'
 +++
-Mit sagenhaften 14 Sponsoren haben wir insgesamt 50.000 € an Spenden sammeln können. Ohne diese könnte diese BauFaK nicht stattfinden, wir sagen Dankeschön! Ihr findet alle Sponsoren auf der Startseite
+Die Website befindet sich derzeit noch im Aufbau.

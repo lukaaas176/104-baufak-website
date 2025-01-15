@@ -1,5 +1,4 @@
 +++
-date = '2024-01-17T23:03:49+01:00'
 title = 'Reader'
+description = 'Hier werden zu einem späteren Zeitpunkt der Pre- und Endreader der 104. BauFaK veröffentlicht.'
 +++
-der Pre-/EndReader der 104. BauFaK ist noch nicht veröffentlicht.

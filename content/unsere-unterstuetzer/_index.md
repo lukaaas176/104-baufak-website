@@ -9,10 +9,18 @@ Vom **28. Mai bis 1. Juni 2025** findet die 104. Bauingenieur-Fachschaften-Konfe
 Wenn Sie Interesse an einer Unterstützung haben, kontaktieren Sie uns gerne unter **[baufaksponsoring.fsbgu@ed.tum.de](mailto:baufaksponsoring.fsbgu@ed.tum.de)**. Auf Anfrage senden wir Ihnen ausführliche Informationen zu unseren Sponsoringpaketen.
 {{< /alert >}}
 
-# Unsere Platin, Gold und Silberunterstützer
+# Unsere Platinunterstützer
 
-{{< sponsors list=true condition="Params.on-homepage" classes="max-w-7xl mx-auto my-10">}}
+{{< sponsors list=true condition="Params.platin" classes="max-w-7xl mx-auto my-10">}}
+
+# Unsere Goldunterstützer
+
+{{< sponsors list=true condition="Params.gold" classes="max-w-7xl mx-auto my-10">}}
+
+# Unsere Silberunterstützer
+
+{{< sponsors list=true condition="Params.silber" classes="max-w-7xl mx-auto my-10">}}
 
 # Unsere Bronzeunterstützer
 
-{{< sponsors grid=true condition="Params.on-grid" classes="max-w-7xl mx-auto my-10">}}
+{{< sponsors grid=true condition="Params.bronze" classes="max-w-7xl mx-auto my-10">}}
