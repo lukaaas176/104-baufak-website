@@ -1,11 +1,11 @@
 {{- $page := . }}
 {{- $menuEntries := index site.Menus "footer" }}
 
-<footer class="text-sm flex justify-between items-center w-full h-20 px-30">
-  <span>
+<footer class="text-sm flex flex-col lg:flex-row justify-between items-center w-full h-20 px-30">
+  <span class="block">
     © {{ time.Format "2006" time.Now }} Fachschaft Bau, Geo Umwelt der TU München e.V. - Powered by Hugo
   </span>
-  <nav class="justify-end h-full flex items-center">
+  <nav class="justify-end h-full flex flex-col lg:flex-row items-center">
     {{- range $menuEntries }}
       <a href="{{ .URL }}" class="content-center h-full px-5 items-center">
       {{- if or ($page.IsMenuCurrent .Menu .) ($page.HasMenuCurrent .Menu .)}}
