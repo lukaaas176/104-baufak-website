@@ -1,0 +1,23 @@
+<div id="countdown" class="bg-primary text-sm w-full flex justify-center" hidden="true">
+</div>
+<script>
+    document.getElementById("countdown").hidden = false;
+    var countDownDate = new Date("2025/05/28 16:00:00").getTime();
+    
+    var x = setInterval(function() {
+      var distance = countDownDate - (new Date().getTime());
+    
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+      document.getElementById("countdown").innerHTML = "<p class='text-center'>Noch <strong>" + days + "</strong> Tage, <strong>" + hours + "</strong> Stunden, <strong>"
+      + minutes + "</strong> Minuten und <strong>" + seconds + "</strong> Sekunden</p>";
+    
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "<p>Die BauFak findet <strong>gerade</strong> statt!</p>";
+      }
+    }, 1000);
+</script>
