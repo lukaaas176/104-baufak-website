@@ -5,7 +5,7 @@
   {{- end -}}
   <div>
     {{- with resources.GetMatch "logo.*" -}}
-      <img class="float-right w-44 h-44" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}">
+      <img class="float-right w-22 h-22 lg:w-44 lg:h-44" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}">
     {{- end -}}
     <div class="text-sm">{{ .Site.Param "date" }}</div>
     <div class="text-5xl font-bold">{{ .Site.Title }}</div>
@@ -44,7 +44,7 @@
       <div class="grow flex flex-col">
         <h1 class="pb-10" href="{{ .RelPermalink }}">Unsere Unterstützer</h1>
         {{- partial "sponsor-grid.html" (dict "condition" "Params.platin") -}}
-        <div class="flex w-full p-10 justify-end">
+        <div class="flex w-full p-10 justify-center sm:justify-end">
           {{- with site.GetPage "/unsere-unterstuetzer" -}}
               {{- partial "buttons/default.html" (dict "link" .RelPermalink "label" "Alle Sponsoren") -}}
           {{- end -}}

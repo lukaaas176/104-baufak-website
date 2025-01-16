@@ -1,5 +1,5 @@
 {{- $condition := .condition -}}
-<div class="max-w-7xl mx-auto grid grid-cols-4 place-items-center gap-10 {{ .classes }}">
+<div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 place-items-center gap-10 {{ .classes }}">
     {{- $sponsors := where site.RegularPages "Type" "unsere-unterstuetzer" -}}
     {{- range where $sponsors $condition "eq" true -}}
         {{- $sponsor := . -}}

@@ -1,6 +1,6 @@
 {{- $page := $.Site.GetPage ($.Get "page")}}
 
-<div class="flex gap-10 items-center my-10">
+<div class="flex flex-col lg:flex-row gap-10 items-center my-10">
     {{- if and (.Get "image") (not (.Get "right")) -}}
         <a class="flex-none flex flex-col justify-center h-52 w-78" href="{{ $page.RelPermalink }}">
         {{- with or ($.Page.Resources.Get (.Get "image")) (resources.Get (.Get "image")) -}}
