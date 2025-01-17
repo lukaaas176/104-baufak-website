@@ -2,6 +2,10 @@
 title = 'BBI INGENIEURE GMBH'
 image = 'sponsoren/bbi.png'
 platin = true
+on-homepage = true
+weight = 1
 homepage = 'https://www.bbi-ingenieure.de/'
 +++
-**BBI INGENIEURE** planen und überwachen seit über 70 Jahren anspruchsvolle Projekte im gesamten Leistungsspektrum des Bauingenieurwesens. Über 60 Mitarbeiter, davon 25 am Standort Regensburg, stellen eine qualitativ hochwertige Ingenieurleistung sicher. Das Leistungsspektrum reicht von der Grundlagenbereitstellung mit Baugrund und Vermessung über die Planung von Infrastruktureinrichtungen (z. B. Straßen, Ver- und Entsorgung, Abwasserreinigung), Ingenieurbauwerken (z. B. Brücken, Stützmauern), der Tragwerksplanung (im Hoch-, Tief- und Ingenieurbau, Denkmalpflege) bis zur Begutachtung und Prüfung. Daneben bieten Sie im Bereich der Erschließung zur Komplettierung auch die Flächennutzungs- und Bauleitplanung.
+Stadt- oder Tragwerksplanung, Ingenieurbauwerke oder Verkehrsanlagen: Seit mehr als 90 Jahren vereint die BBI Gruppe alle Leistungen des Bauingenieurwesens. Inzwischen sind wir mit über 100 Kolleginnen und Kollegen in Landshut, Regensburg, Markt Schwaben, Dingolfing und Ingolstadt vor Ort.  
+Mit der regionalen Verwurzelung im südostbayerischen Raum pflegen wir langjährige partnerschaftliche Kontakte zu vielen treuen kommunalen Kunden. Darüber hinaus ist unser Know-how auch in luftigen Höhen wie etwa der Sanierung von Berghütten gefragt.  
+„Gute Beratung ist das beste Fundament.“
