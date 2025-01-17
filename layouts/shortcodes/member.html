@@ -1,0 +1,5 @@
+{{- with $.Page.Resources.Get (.Get "image") -}}
+<div class="h-70 lg:w-full relative">
+  <img class="lg:mx-auto h-full w-auto object-cover rounded-md shadow-md" height="{{ .Height }}" width="{{ .Width }}" src="{{ .RelPermalink }}">
+</div>
+{{- end -}}
