@@ -3,7 +3,7 @@
   <img class="h-full max-w-max rounded-md shadow-md" height="{{ .Height }}" width="{{ .Width }}" src="{{ .RelPermalink }}">
 {{- end -}}
   {{- if strings.ContainsNonSpace .Inner -}}
-  <div class="absolute p-3 top-0 left-0 rounded-md flex-col flex h-full w-full justify-center bg-black/80 text-white text-center text-wrap opacity-0 group-hover:opacity-100 group-active::opacity-100 transition-opacity select-none">
+  <div class="absolute p-3 top-0 left-0 rounded-md flex-col flex h-full w-full justify-center bg-black/80 text-white text-center text-wrap opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity select-none">
     <p class="h-0 group-hover:h-auto group-active:h-auto">
       {{ .Inner | markdownify }}
     </p>
