@@ -1,6 +1,6 @@
 {{- $pc := site.Config.Privacy.Instagram -}}
 {{- if not $pc.Disable -}}
-{{ $url := printf "https://i.instagram.com/api/v1/users/web_profile_info/?username=%s" . }}
+{{/*  {{ $url := printf "https://i.instagram.com/api/v1/users/web_profile_info/?username=%s" . }}
 {{ $opts := dict
   "headers" (dict "x-ig-app-id" "936619743392459")
 }}
@@ -14,7 +14,8 @@
   {{ else }}
     {{ warnf "Unable to get remote resource %q" $url }}
   {{ end }}
-{{ end }}
+{{ end }}  */}}
+{{- template "render-instagram" (dict "id" . "pc" $pc) -}}
 {{- end -}}
 
 {{- define "render-instagram" -}}
