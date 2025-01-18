@@ -1,6 +1,20 @@
 {{- $pc := site.Config.Privacy.Instagram -}}
 {{- if not $pc.Disable -}}
-    {{- template "render-instagram" (dict "id" . "pc" $pc) -}}
+{{ $url := printf "https://i.instagram.com/api/v1/users/web_profile_info/?username=%s" . }}
+{{ $opts := dict
+  "headers" (dict "x-ig-app-id" "936619743392459")
+}}
+{{ with try (resources.GetRemote $url $opts) }}
+  {{ with .Err }}
+    {{ warnf "%s" . }}
+  {{ else with .Value }}
+    {{ $data := . | transform.Unmarshal }}
+    {{ $images := $data.images }}
+    {{- template "render-instagram" (dict "id" ((index $data.data.user.edge_owner_to_timeline_media.edges 0).node.shortcode) "pc" $pc) -}}
+  {{ else }}
+    {{ warnf "Unable to get remote resource %q" $url }}
+  {{ end }}
+{{ end }}
 {{- end -}}
 
 {{- define "render-instagram" -}}
