@@ -18,4 +18,4 @@ Die ausrichtende Hochschule gestaltet für jede BauFaK eine eigene Website mit s
 
 {{<button link="https://www.baufak.de/" label="Mehr entdecken auf baufak.de" >}}
 
-{{<figure src="diagramm.png" class="pt-5" >}}
+{{<figure src="/Organigram_BauFaK.jpg" class="pt-5" >}}
