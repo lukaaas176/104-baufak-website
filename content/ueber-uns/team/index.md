@@ -11,15 +11,21 @@ description: Unser Team setzt sich aus aktiven Fachschaftlern, ehemaligen Fachsc
 {{<team>}}
 {{<member image="lena.jpg">}}
 # Lena Weigl
-Hauptorganisation
+## Hauptorganisation
+Master Bauingenieurwesen  
+3. Semester
 {{</member>}}
 {{<member image="adrian.jpg">}}
-# Adrian Benesh
-Hauptorganisation
+# Adrian Benesch
+## Hauptorganisation
+Bachelor Bauingenieurwesen  
+5. Semester
 {{</member>}}
 {{<member image="sarah.jpg">}}
 # Sarah Rauch
-Hauptorganisation
+## Hauptorganisation
+Master Bauingenieurwesen  
+1. Semester
 {{</member>}}
 {{<div class="px-5">}}
 # Die Hauptorganisation
