@@ -25,7 +25,7 @@ Bachelor Bauingenieurwesen
 # Sarah Rauch
 ## Hauptorganisation
 Master Bauingenieurwesen  
-1. Semester
+5. Semester
 {{</member>}}
 {{<div class="px-5">}}
 # Die Hauptorganisation
