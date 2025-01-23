@@ -24,7 +24,7 @@ Bachelor Bauingenieurwesen
 {{<member image="sarah.jpg">}}
 # Sarah Rauch
 ## Hauptorganisation
-Master Bauingenieurwesen  
+Master Bauingenieurwesen   
 5. Semester
 {{</member>}}
 {{<div class="px-5">}}
@@ -45,9 +45,17 @@ Das Planungsteam für Exkursionen der BauFaK organisiert Bildungsreisen zu spann
 {{</team>}}
 
 {{<team>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Magda.jpg">}}
+# Magdalena Neuberg
+## Finanzen
+Bachelor Bauingenieurwesen  
+7. Semester
 {{</member>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Marlene.jpg">}}
+# Marlene Willadt
+## Finanzen  
+Master Bauingenieurwesen  
+2. Semester
 {{</member>}}
 {{<div class="px-5">}}
 # Finanzen
@@ -56,9 +64,17 @@ Das Finanzteam der BauFaK kümmert sich um die Budgetplanung und Finanzierung de
 {{</team>}}
 
 {{<team right="true">}}
-{{<member image="platzhalter.png">}}
+{{<member image="Stefan.jpg">}}
+# Stefan Höhenleiter
+## Sponsoring
+Master Umweltingenieurwesen
+5. Semester
 {{</member>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Tommy.jpg">}}
+# Thomas Ruhland
+## Sponsoring
+Bachelor Bauingenieurwesen  
+X. Semester
 {{</member>}}
 {{<div class="px-5">}}
 # Sponsoring
@@ -89,9 +105,17 @@ Das Awareness-Team der BauFaK sorgt für ein respektvolles und inklusives Mitein
 {{</team>}}
 
 {{<team>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Claudia.jpg">}}
+# Claudia Fusek
+## PR und Fotos
+Bachelor Bauingenieurwesen  
+3. Semester 
 {{</member>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Jerry.jpg">}}
+# Geraldine Ahrens
+## PR und Fotos
+Bachelor Baueingenieurwesen  
+3. Semester
 {{</member>}}
 {{<div class="px-5">}}
 # PR und Fotos
@@ -111,7 +135,11 @@ Das Logistik-Team der BauFaK plant und koordiniert die organisatorischen Abläuf
 {{</team>}}
 
 {{<team>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Roman.jpg">}}
+# Roman Fleck
+## Plenum
+Bachelor Bauingenieurwesen  
+7. Semester
 {{</member>}}
 {{<member image="platzhalter.png">}}
 {{</member>}}
@@ -122,7 +150,11 @@ Das Plenums-Team der BauFaK organisiert und strukturiert die zentralen Sitzungen
 {{</team>}}
 
 {{<team right="true">}}
-{{<member image="platzhalter.png">}}
+{{<member image="Eli.jpg">}}
+# Elisabeth Barth
+## Reader
+Master Umweltingenieurwesen  
+3. Semester
 {{</member>}}
 {{<member image="platzhalter.png">}}
 {{</member>}}
@@ -133,9 +165,29 @@ Das Pre- und Endreader-Team der BauFaK ist für das Erstellen, Formatieren und S
 {{</team>}}
 
 {{<team>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Sebi.jpg">}}
+# Sebastian Hackl
+## Essen und Verpflegung
+Bachelor Baueingenieurwesen  
+3. Semester
 {{</member>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Lisa.jpg">}}
+# Lisa Büchner
+## Essen und Verpflegung
+Bachelor Umweltingenieurwesen  
+7. Semester
+{{</member>}}
+{{<member image="Eric.jpg">}}
+# Eric Ferrara
+## Essen und Verpflegung
+Master Umweltingenieurwesen  
+3. Semester
+{{</member>}}
+{{<member image="Carla.jpg">}}
+# Carla Weber  
+## Essen und Verpflegung
+Bachelor Umweltingenieurwesen  
+7. Semester
 {{</member>}}
 {{<div class="px-5">}}
 # Essen und Verpflegung
@@ -144,9 +196,17 @@ Das Verpflegungsteam der BauFaK sorgt für die Planung, Zubereitung und Bereitst
 {{</team>}}
 
 {{<team right="true">}}
-{{<member image="platzhalter.png">}}
+{{<member image="Lukas.jpg">}}
+# Lukas Santos
+## IT / Website / Anmeldung
+Bachelor Informatik  
+X. Semester
 {{</member>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Josh.jpg">}}
+# Joshua Teller
+## IT / Website / Anmeldung
+Bachelor Umweltingenieurwesen
+3. Semester
 {{</member>}}
 {{<div class="px-5">}}
 # IT / Website / Anmeldung
@@ -166,9 +226,11 @@ Das Unterkunftsteam der BauFaK organisiert und koordiniert die Unterbringung der
 {{</team>}}
 
 {{<team right="true">}}
-{{<member image="platzhalter.png">}}
-{{</member>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Hannes.jpg">}}
+# Hannes Geiger
+## Praxisperspektiven
+Bachelor Bauingenieurwesen  
+5. Semester 
 {{</member>}}
 {{<div class="px-5">}}
 # Praxisperspektiven
@@ -177,20 +239,30 @@ Das Team „Praxisperspektive“ der BauFaK ermöglicht den Teilnehmern Einblick
 {{</team>}}
 
 {{<team>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Chris.jpg">}}
+# Christian Leib 
+## Veranstaltung
+Master Baueingenieurwesen
+5. Semester
 {{</member>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Consti.jpg">}}
+# Constantin Weber
+## Veranstaltung
+Master Umweltingenieurwesen
+2. Semester
 {{</member>}}
 {{<div class="px-5">}}
-# Abendveranstaltung
-Das Team „Abendveranstaltung“ der BauFaK ist für die Planung, Organisation und Durchführung von Abendevents zuständig. Es kümmert sich um die Auswahl des Veranstaltungsorts, das Programm, die Unterhaltung und sorgt dafür, dass die Teilnehmer einen gelungenen und unvergesslichen Abschluss des Tages erleben.
+# Veranstaltung
+Das Team „Veranstaltung“ der BauFaK ist für die Planung, Organisation und Durchführung von Afterparties zuständig. Es kümmert sich um die Auswahl des Veranstaltungsorts, das Programm, die Unterhaltung und sorgt dafür, dass die Teilnehmer einen gelungenen und unvergesslichen Abschluss des Tages erleben.
 {{</div>}}
 {{</team>}}
 
 {{<team right="true">}}
-{{<member image="platzhalter.png">}}
-{{</member>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Metin.jpg">}}
+# Metin Firat 
+## Fee
+Bachelor Bauingenieurwesen
+7. Semester
 {{</member>}}
 {{<div class="px-5">}}
 # Gute Fee und Schilder Fee
