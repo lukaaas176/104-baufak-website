@@ -74,7 +74,7 @@ Master Umweltingenieurwesen
 # Thomas Ruhland
 ## Sponsoring
 Bachelor Bauingenieurwesen  
-X. Semester
+9. Semester
 {{</member>}}
 {{<div class="px-5">}}
 # Sponsoring
@@ -200,11 +200,10 @@ Das Verpflegungsteam der BauFaK sorgt für die Planung, Zubereitung und Bereitst
 # Lukas Santos
 ## IT / Website / Anmeldung
 Bachelor Informatik  
-X. Semester
+9. Semester
 {{</member>}}
 {{<member image="Josh.jpg">}}
 # Joshua Teller
-## IT / Website / Anmeldung
 Bachelor Umweltingenieurwesen
 3. Semester
 {{</member>}}
