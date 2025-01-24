@@ -204,6 +204,7 @@ Bachelor Informatik
 {{</member>}}
 {{<member image="Josh.jpg">}}
 # Joshua Teller
+## IT / Website / Anmeldung
 Bachelor Umweltingenieurwesen
 3. Semester
 {{</member>}}
@@ -259,7 +260,7 @@ Das Team „Veranstaltung“ der BauFaK ist für die Planung, Organisation und D
 {{<team right="true">}}
 {{<member image="Metin.jpg">}}
 # Metin Firat 
-## Fee
+## Gute Fee und Schilder Fee
 Bachelor Bauingenieurwesen
 7. Semester
 {{</member>}}
