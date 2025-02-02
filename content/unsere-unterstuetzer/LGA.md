@@ -4,7 +4,7 @@ image = 'sponsoren/LGA.png'
 gold = true
 on-homepage = true
 homepage = 'https://www.lga.de/'
-weight = 51
+weight = 52
 +++
 Die LGA Landesgewerbeanstalt Bayern ist ein ebenso geschichtsträchtiges wie modernes Unternehmen. Wichtigster Arbeitsbereich ist die Prüfstatik. Sie gewährleistet die Standsicherheit von Gebäuden, Brücken, Fliegenden Bauten und Tunneln, von tragenden Glas- und Holzkonstruktionen. Das Vier-Augen-Prinzip hat sich dabei in Deutschland sehr bewährt.  
 
