@@ -1,5 +1,7 @@
 +++
 title = 'Anmeldung'
 +++
-# Liebe BauFaKler und Interessenten für die BauFaK, derzeit befindet sich die Website noch im Aufbau, weshalb eine Anmeldung noch nicht möglich ist.  
-## Sobald die Anmeldung möglich ist, werden wir uns bei euch melden.
+
+Auf dieser Seite kannst du dich für die 104. BauFak in München anmelden. Bitte lies die Anmeldung genau durch und schreib uns bei Fragen oder Fehlern gerne eine Mail!
+
+{{< anmeldung >}}

@@ -1,0 +1,40 @@
+<form class="">
+    <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
+        {{ partial "anmeldung-field.html" (dict "id" "vorname" "label" "Vorname" "autofill" "given-name" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "nachname" "label" "Nachname" "autofill" "family-name" "width" "sm:col-span-3") }}
+
+        {{ partial "anmeldung-field.html" (dict "id" "email" "label" "Persönliche E-Mail" "autofill" "email" "type" "email" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "telefon" "label" "Telefonnummer" "autofill" "phone" "type" "tel" "width" "sm:col-span-3" "optional" true) }}
+
+        {{ partial "anmeldung-field.html" (dict "id" "hochschule" "label" "Hochschule" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-select.html" (dict "id" "statusgruppe" "label" "Statusgruppe" "width" "sm:col-span-3" "options" (slice "Gast" "Delegation")) }}
+
+        {{ partial "anmeldung-field.html" (dict "id" "wievielte-baufak" "label" "Deine wievielte BauFak ist die 104. BauFak?" "type" "number" "width" "sm:col-span-6") }}
+
+        {{ partial "anmeldung-toggle.html" (dict "id" "bauhelm" "label" "Hast du ein Bauhelm?" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-toggle.html" (dict "id" "sicherheitsschuhe" "label" "Hast du Sicherheitsschuhe?" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-toggle.html" (dict "id" "deutschlandticket" "label" "Hast du ein Deutschlandticket?" "width" "sm:col-span-6") }}
+
+        {{ partial "anmeldung-select.html" (dict "id" "ernaehrung" "label" "Ernährungsform" "width" "sm:col-span-3" "options" (slice "Vegetarisch" "Vegan")) }}
+        {{ partial "anmeldung-field.html" (dict "id" "allergien" "label" "Allergien" "width" "sm:col-span-3" "optional" "true") }}
+
+        {{ partial "anmeldung-select.html" (dict "id" "tshirt" "label" "T-Shirt" "width" "sm:col-span-3" "options" (slice "Ich möchte kein T-Shirt" "XS" "S" "M" "L" "XL" "2XL")) }}
+        {{ partial "anmeldung-select.html" (dict "id" "buddy" "label" "Buddyprogramm" "width" "sm:col-span-3" "options" (slice "Ich möchte kein Buddy" "Ich möchte ein Buddy")) }}
+
+        <div class="sm:col-span-6">
+            <label for="kommentar" class="block text-sm font-medium">Kommentar (optional)</label>
+            <div class="mt-2">
+                <textarea rows="5" name="kommentar" id="kommentar" class="block w-full rounded-md bg-white px-3 py-1.5 text-base outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-secondary-700/70 sm:text-sm/6"></textarea>
+            </div>
+        </div>
+
+        {{ partial "anmeldung-toggle.html" (dict "id" "datenschutz" "label" "Ich habe die Datenschutzerklärung zur Kenntnis genommen und stimme dieser zu" "width" "sm:col-span-6") "required" true}}
+        {{ partial "anmeldung-toggle.html" (dict "id" "teilnahmegebuehr" "label" "Ich habe die Teilnahmegebühr von x € zur Kenntnis genommen und überweise diese bis zum xx.xx.2025" "width" "sm:col-span-6") "required" true}}
+
+
+    </div>
+  
+    <div class="mt-10 flex justify-end">
+        <button type="submit" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-white font-medium shadow-md hover:bg-primary/90 h-9 px-4 py-2">Anmelden</button>
+    </div>
+</form>
