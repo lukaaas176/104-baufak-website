@@ -3,23 +3,43 @@
         {{ partial "anmeldung-field.html" (dict "id" "vorname" "label" "Vorname" "autofill" "given-name" "width" "sm:col-span-3") }}
         {{ partial "anmeldung-field.html" (dict "id" "nachname" "label" "Nachname" "autofill" "family-name" "width" "sm:col-span-3") }}
 
-        {{ partial "anmeldung-field.html" (dict "id" "email" "label" "Persönliche E-Mail" "autofill" "email" "type" "email" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "email" "label" "Persönliche E-Mail" "commentar" "Bitte keine Funktionsadressen wie vorstand@, info@ o.Ä.!" "autofill" "email" "type" "email" "width" "sm:col-span-3") }}
         {{ partial "anmeldung-field.html" (dict "id" "telefon" "label" "Telefonnummer" "autofill" "phone" "type" "tel" "width" "sm:col-span-3" "optional" true) }}
 
-        {{ partial "anmeldung-field.html" (dict "id" "hochschule" "label" "Hochschule" "width" "sm:col-span-3") }}
-        {{ partial "anmeldung-select.html" (dict "id" "statusgruppe" "label" "Statusgruppe" "width" "sm:col-span-3" "options" (slice "Gast" "Delegation")) }}
+        {{ partial "anmeldung-field.html" (dict "id" "hochschule" "label" "Hochschule/Universität" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-select.html" (dict "id" "statusgruppe" "label" "Statusgruppe" "width" "sm:col-span-3" "options" (slice "A: Vertreterinnen, Vertreter und Mitglieder der Fachschaften" "B: Ehemalige" "C: Gäste")) }}
 
-        {{ partial "anmeldung-field.html" (dict "id" "wievielte-baufak" "label" "Deine wievielte BauFak ist die 104. BauFak?" "type" "number" "width" "sm:col-span-6") }}
+        {{ partial "anmeldung-toggle.html" (dict "id" "erste-baufak" "label" "Ist die 104. BauFak deine erste BauFak?" "width" "sm:col-span-2") }}
+        {{ partial "anmeldung-field.html" (dict "id" "wievielte-baufak" "label" "Deine wievielte BauFak ist die 104. BauFak?" "type" "number" "width" "sm:col-span-4") }}
 
-        {{ partial "anmeldung-toggle.html" (dict "id" "bauhelm" "label" "Hast du ein Bauhelm?" "width" "sm:col-span-3") }}
-        {{ partial "anmeldung-toggle.html" (dict "id" "sicherheitsschuhe" "label" "Hast du Sicherheitsschuhe?" "width" "sm:col-span-3") }}
-        {{ partial "anmeldung-toggle.html" (dict "id" "deutschlandticket" "label" "Hast du ein Deutschlandticket?" "width" "sm:col-span-6") }}
+        {{ partial "anmeldung-toggle.html" (dict "id" "bauhelm" "label" "Hast du ein Bauhelm?" "width" "sm:col-span-2") }}
+        {{ partial "anmeldung-toggle.html" (dict "id" "sicherheitsschuhe" "label" "Hast du Sicherheitsschuhe?" "width" "sm:col-span-2") }}
+        {{ partial "anmeldung-toggle.html" (dict "id" "deutschlandticket" "label" "Hast du ein Deutschlandticket?" "width" "sm:col-span-2") }}
 
-        {{ partial "anmeldung-select.html" (dict "id" "ernaehrung" "label" "Ernährungsform" "width" "sm:col-span-3" "options" (slice "Vegetarisch" "Vegan")) }}
-        {{ partial "anmeldung-field.html" (dict "id" "allergien" "label" "Allergien" "width" "sm:col-span-3" "optional" "true") }}
+        {{ partial "anmeldung-select.html" (dict "id" "anreisezeitpunkt" "label" "Wann reist du an" "width" "sm:col-span-3" "options" (slice "" "Mittwoch, 28.05, 9:00" "Mittwoch, 28.05, 10:00" "Mittwoch, 28.05, 11:00" "Mittwoch, 28.05, 12:00" "Mittwoch, 28.05, 13:00" "Mittwoch, 28.05, 14:00" "Früher" "Später" "Weiß ich noch nicht")) }}
+        {{ partial "anmeldung-select.html" (dict "id" "anreisemittel" "label" "Wie reist du an" "width" "sm:col-span-3" "options" (slice "Zug" "Zu Fuß" "Auto" "Kutsche" "Surfboard" "Floß" "Weiß ich noch nicht") "commentar" "In der Münchner Innenstadt gibt es keine Parkplätze von der Universität") }}
+        {{ partial "anmeldung-select.html" (dict "id" "anreisezeitpunkt" "label" "Wann reist du ab" "width" "sm:col-span-3" "options" (slice "" "Sonntag, 01.06, 9:00" "Sonntag, 01.06, 10:00" "Sonntag, 01.06, 11:00" "Sonntag, 01.06, 12:00" "Sonntag, 01.06, 13:00" "Sonntag, 01.06, 14:00" "Früher" "Später" "Weiß ich noch nicht")) }}
+        {{ partial "anmeldung-select.html" (dict "id" "anreisemittel" "label" "Wie reist du ab" "width" "sm:col-span-3" "options" (slice "Zug" "Zu Fuß" "Auto" "Kutsche" "Surfboard" "Floß" "Weiß ich noch nicht")) }}
+
+        {{ partial "anmeldung-toggle.html" (dict "id" "schlafplatz" "label" "Benötigst du ein Schlafplatz?" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "kommentar-schlafplatz" "label" "Kommentar zum Schlafplatz" "width" "sm:col-span-3") }}
+
+        {{ partial "anmeldung-select.html" (dict "id" "schlafplatz-auswahl" "label" "Hast du eine Präferenz für dein Schlafplatz" "width" "sm:col-span-3" "options" (slice "Keine Präferenzen" "Bestimmte Personen" "Eigene Fachschaft" "FLINTA" "Schnarcherzimmer" "Ehemalige")) }}
+        {{ partial "anmeldung-field.html" (dict "id" "schlafplatz-personen" "label" "Welche Personen präferierst du?" "width" "sm:col-span-3") }}
+
+        {{ partial "anmeldung-select.html" (dict "id" "ernaehrung" "label" "Ernährungsform" "width" "sm:col-span-3" "options" (slice "Allesfressend" "Vegetarisch" "Vegan")) }}
+        <div class="sm:col-span-6 font-medium">Allergien</div>
+        {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-laktose" "label" "Laktose") }}
+        {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-universitaet" "label" "Universität") }}
+        {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-gluten" "label" "Gluten") }}
+        {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-nuesse" "label" "Nüsse") }}
+        {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-architekten" "label" "Architekten") }}
+        {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-soja" "label" "Soja") }}
+        {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-sonstige" "label" "Sonstige Allergien") }}
+        {{ partial "anmeldung-field.html" (dict "id" "allergien" "hidden" true) }}
 
         {{ partial "anmeldung-select.html" (dict "id" "tshirt" "label" "T-Shirt" "width" "sm:col-span-3" "options" (slice "Ich möchte kein T-Shirt" "XS" "S" "M" "L" "XL" "2XL")) }}
-        {{ partial "anmeldung-select.html" (dict "id" "buddy" "label" "Buddyprogramm" "width" "sm:col-span-3" "options" (slice "Ich möchte kein Buddy" "Ich möchte ein Buddy")) }}
+        {{ partial "anmeldung-select.html" (dict "id" "buddy" "label" "Buddyprogramm" "width" "sm:col-span-3" "options" (slice "" "Ich möchte ein Buddy" "Ich möchte kein Buddy" "Ich bin gerne ein Buddy")) }}
 
         <div class="sm:col-span-6">
             <label for="kommentar" class="block text-sm font-medium">Kommentar (optional)</label>
@@ -28,13 +48,85 @@
             </div>
         </div>
 
+        {{ partial "anmeldung-file.html" (dict "id" "immatrikulation" "label" "Immatrikulationsbescheinigung" "optional" "true" "commentar" "Du kannst deine Bescheinigung auch per Mail nachreichen")}}
+
         {{ partial "anmeldung-toggle.html" (dict "id" "datenschutz" "label" "Ich habe die Datenschutzerklärung zur Kenntnis genommen und stimme dieser zu" "width" "sm:col-span-6") "required" true}}
-        {{ partial "anmeldung-toggle.html" (dict "id" "teilnahmegebuehr" "label" "Ich habe die Teilnahmegebühr von x € zur Kenntnis genommen und überweise diese bis zum xx.xx.2025" "width" "sm:col-span-6") "required" true}}
-
-
+        {{ partial "anmeldung-toggle.html" (dict "id" "teilnahmegebuehr" "width" "sm:col-span-6") "required" true}}
     </div>
   
     <div class="mt-10 flex justify-end">
         <button type="submit" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-white font-medium shadow-md hover:bg-primary/90 h-9 px-4 py-2">Anmelden</button>
     </div>
 </form>
+
+<script>
+    document.getElementById("wievielte-baufak").onchange = function() {
+        if (Number.isNaN(document.getElementById("wievielte-baufak").value) || document.getElementById("wievielte-baufak").value < 1) {
+            document.getElementById("wievielte-baufak").value = document.getElementById("wievielte-baufak").defaultValue;
+            return;
+        }
+        document.getElementById("wievielte-baufak").defaultValue = document.getElementById("wievielte-baufak").value;
+    };
+    document.getElementById("erste-baufak").onchange = function() {
+        if (document.getElementById("erste-baufak").checked) {
+            document.getElementById("wievielte-baufak").value = "1";
+            document.getElementById("wievielte-baufak").disabled = true;
+        } else {
+            document.getElementById("wievielte-baufak").value = "1";
+            document.getElementById("wievielte-baufak").disabled = false;
+        }
+    };
+    document.getElementById("erste-baufak").onchange();
+    document.getElementById("schlafplatz").onchange = function() {
+        if (document.getElementById("schlafplatz").checked) {
+            document.getElementById("kommentar-schlafplatz").disabled = false;
+            document.getElementById("schlafplatz-auswahl").disabled = false;
+        } else {
+            document.getElementById("kommentar-schlafplatz").value = "";
+            document.getElementById("kommentar-schlafplatz").disabled = true;
+            document.getElementById("schlafplatz-auswahl").disabled = true;
+        }
+    };
+    document.getElementById("schlafplatz").onchange();
+    document.getElementById("schlafplatz-auswahl").onchange = function() {
+        if (document.getElementById("schlafplatz-auswahl").value == "Bestimmte Personen") {
+            document.getElementById("schlafplatz-personen").disabled = false;
+        } else {
+            document.getElementById("schlafplatz-personen").value = "";
+            document.getElementById("schlafplatz-personen").disabled = true;
+        }
+    };
+    document.getElementById("schlafplatz-auswahl").onchange();
+    document.getElementById("allergie-sonstige").onchange = function() {
+        if (document.getElementById("allergie-sonstige").checked) {
+            document.getElementById("allergien").parentNode.parentNode.hidden = false;
+            document.getElementById("allergien").value = "";
+        } else {
+            document.getElementById("allergien").parentNode.parentNode.hidden = true;
+        }
+    };
+    document.getElementById("allergie-sonstige").onchange();
+    gebuehren = {
+        "A": 20,
+        "B": 50,
+        "C": 100
+    };
+    gebuehr = "Ich habe die Teilnahmegebühr von %% € zur Kenntnis genommen und überweise diese bis zum xx.xx.2025";
+    document.getElementById("statusgruppe").onchange = function() {
+        price = gebuehren[document.getElementById("statusgruppe").value[0]];
+        document.getElementById("label-teilnahmegebuehr").innerHTML = gebuehr.replace("%%", price);
+    };
+    document.getElementById("statusgruppe").onchange();
+    document.getElementById("div-immatrikulation").ondragover = document.getElementById("div-immatrikulation").ondragenter = function(evt) {
+        evt.preventDefault();
+    };
+    document.getElementById("div-immatrikulation").ondrop = function(evt) {
+        evt.preventDefault();
+        document.getElementById("immatrikulation").files = evt.dataTransfer.files;
+        document.getElementById("immatrikulation").onchange();
+    };
+    document.getElementById("immatrikulation").onchange = function() {
+        document.getElementById("selection-immatrikulation").innerHTML = "Selected: " + document.getElementById("immatrikulation").files[0].name;
+        document.getElementById("selection-immatrikulation").hidden = false;
+    };
+</script>
