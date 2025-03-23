@@ -16,17 +16,17 @@
         {{ partial "anmeldung-toggle.html" (dict "id" "sicherheitsschuhe" "label" "Hast du Sicherheitsschuhe?" "width" "sm:col-span-2") }}
         {{ partial "anmeldung-toggle.html" (dict "id" "deutschlandticket" "label" "Hast du ein Deutschlandticket?" "width" "sm:col-span-2") }}
 
-        {{ partial "anmeldung-select.html" (dict "id" "anreisezeitpunkt" "label" "Wann reist du an" "width" "sm:col-span-3" "options" (slice "" "Mittwoch, 28.05, 9:00 - 10:00" "Mittwoch, 28.05, 10:00 - 11:00" "Mittwoch, 28.05, 11:00 - 12:00" "Mittwoch, 28.05, 12:00 - 13:00" "Mittwoch, 28.05, 13:00 - 14:00" "Mittwoch, 28.05, 14:00 - 15:00" "Früher" "Später" "Weiß ich noch nicht")) "width" "sm:col-span-3" }}
-        {{ partial "anmeldung-field.html" (dict "id" "anreisezeitpunkt-kommentar" "hidden" true "label" "Bitte gib die genaue Zeit deiner Anreise an" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-select.html" (dict "id" "anreisezeitpunkt" "label" "Wann reist du an" "width" "sm:col-span-3" "options" (slice "" "Mittwoch, 28.05, 9:00 - 10:00" "Mittwoch, 28.05, 10:00 - 11:00" "Mittwoch, 28.05, 11:00 - 12:00" "Mittwoch, 28.05, 12:00 - 13:00" "Mittwoch, 28.05, 13:00 - 14:00" "Mittwoch, 28.05, 14:00 - 15:00" "Mittwoch, 28.05, 15:00 - 22:00" "Donnerstag, 29.05" "Freitag, 30.05" "Früher" "Weiß ich noch nicht") "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "anreisezeitpunkt-kommentar" "label" "Bitte gib die genaue Zeit deiner Anreise an" "optional" true "width" "sm:col-span-3") }}
         {{ partial "anmeldung-select.html" (dict "id" "anreisemittel" "label" "Wie reist du an" "options" (slice "Zug" "Zu Fuß" "Auto" "Kutsche" "Surfboard" "Floß" "Weiß ich noch nicht") "commentar" "In der Müncher Innenstadt und am Hostel gibt es keine kostenlosen Parkplätze, genauerer Infos findet ihr auf der Website unter Organisation") }}
-        {{ partial "anmeldung-select.html" (dict "id" "abreisezeitpunkt" "label" "Wann reist du ab" "width" "sm:col-span-3" "options" (slice "" "Sonntag, 01.06, 7:00 - 8:00" "Sonntag, 01.06, 8:00 - 9:00" "Sonntag, 01.06, 9:00 - 10:00" "Sonntag, 01.06, 10:00 - 11:00" "Sonntag, 01.06, 11:00 - 12:00" "Sonntag, 01.06, 12:00 - 13:00" "Sonntag, 01.06, 13:00 - 14:00" "Sonntag, 01.06, 14:00 - 15:00" "Früher" "Später" "Weiß ich noch nicht") "width" "sm:col-span-3") }}
-        {{ partial "anmeldung-field.html" (dict "id" "abreisezeitpunkt-kommentar" "hidden" true "label" "Bitte gib die genaue Zeit deiner Abreise an" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-select.html" (dict "id" "abreisezeitpunkt" "label" "Wann reist du ab" "width" "sm:col-span-3" "options" (slice "" "Sonntag, 01.06, 7:00 - 8:00" "Sonntag, 01.06, 8:00 - 9:00" "Sonntag, 01.06, 9:00 - 10:00" "Sonntag, 01.06, 10:00 - 11:00" "Sonntag, 01.06, 11:00 - 12:00" "Sonntag, 01.06, 12:00 - 13:00" "Sonntag, 01.06, 13:00 - 14:00" "Sonntag, 01.06, 14:00 - 15:00" "Donnerstag, 29.05" "Freitag, 30.05" "Samstag, 31.05" "Später" "Weiß ich noch nicht") "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "abreisezeitpunkt-kommentar" "label" "Bitte gib die genaue Zeit deiner Abreise an" "optional" true "width" "sm:col-span-3") }}
         {{ partial "anmeldung-select.html" (dict "id" "abreisezeitpunkt" "label" "Wie reist du ab" "options" (slice "Zug" "Zu Fuß" "Auto" "Kutsche" "Surfboard" "Floß" "Weiß ich noch nicht")) }}
 
         {{ partial "anmeldung-toggle.html" (dict "id" "schlafplatz" "label" "Benötigst du ein Schlafplatz im Hostel?" "width" "sm:col-span-3") }}
         {{ partial "anmeldung-field.html" (dict "id" "kommentar-schlafplatz" "label" "Kommentar zum Schlafplatz" "width" "sm:col-span-3") }}
 
-        {{ partial "anmeldung-select.html" (dict "id" "schlafplatz-auswahl" "label" "Was für Präferenzen hast du bei deinem Zimmerpartnern" "width" "sm:col-span-3" "options" (slice "Keine Präferenzen" "Bestimmte Personen" "Eigene Fachschaft" "FLINTA" "Schnarcherzimmer" "Ehemalige")) }}
+        {{ partial "anmeldung-select.html" (dict "id" "schlafplatz-auswahl" "label" "Was für Präferenzen hast du bei deinen Zimmerpartnern" "width" "sm:col-span-3" "options" (slice "Keine Präferenzen" "Bestimmte Personen" "Eigene Fachschaft" "FLINTA" "Schnarcherzimmer" "Ehemalige")) }}
         {{ partial "anmeldung-field.html" (dict "id" "schlafplatz-personen" "label" "Welche Zimmerpartner hättest du gerne?" "width" "sm:col-span-3") }}
 
         {{ partial "anmeldung-select.html" (dict "id" "ernaehrung" "label" "Ernährungsform" "width" "sm:col-span-3" "options" (slice "Allesfressend" "Vegetarisch" "Vegan")) }}
@@ -75,9 +75,11 @@
             document.getElementById("wievielte-baufak").value = "1";
             document.getElementById("wievielte-baufak").disabled = true;
             document.getElementById("buddy").value = "Ich möchte ein Buddy";
+            document.getElementById("buddy").disabled = true;
         } else {
             document.getElementById("wievielte-baufak").value = "1";
             document.getElementById("wievielte-baufak").disabled = false;
+            document.getElementById("buddy").disabled = false;
         }
     };
     document.getElementById("erste-baufak").onchange();
@@ -108,30 +110,12 @@
         }
     };
     document.getElementById("allergie-sonstige").onchange();
-    document.getElementById("anreisezeitpunkt").onchange = function() {
-        if (document.getElementById("anreisezeitpunkt").value == "Früher" || document.getElementById("anreisezeitpunkt").value == "Später") {
-            document.getElementById("anreisezeitpunkt-kommentar").parentNode.parentNode.hidden = false;
-            document.getElementById("anreisezeitpunkt-kommentar").value = "";
-        } else {
-            document.getElementById("anreisezeitpunkt-kommentar").parentNode.parentNode.hidden = true;
-        }
-    };
-    document.getElementById("anreisezeitpunkt").onchange();
-    document.getElementById("abreisezeitpunkt").onchange = function() {
-        if (document.getElementById("abreisezeitpunkt").value == "Früher" || document.getElementById("abreisezeitpunkt").value == "Später") {
-            document.getElementById("abreisezeitpunkt-kommentar").parentNode.parentNode.hidden = false;
-            document.getElementById("abreisezeitpunkt-kommentar").value = "";
-        } else {
-            document.getElementById("abreisezeitpunkt-kommentar").parentNode.parentNode.hidden = true;
-        }
-    };
-    document.getElementById("abreisezeitpunkt").onchange();
     gebuehren = {
         "A": 20,
         "B": 50,
         "C": 100
     };
-    gebuehr = "Ich habe die Teilnahmegebühr von %% € zur Kenntnis genommen und überweise diese bis zum 15.5.2025. Für eine Rechnung melde ich mich rechtzeitig unter baufak104.fsbgu@ed.tum.de ";
+    gebuehr = "Ich habe die Teilnahmegebühr von %% € zur Kenntnis genommen und überweise diese bis zum 15.5.2025. Für eine Rechnung melde ich mich rechtzeitig unter baufakfinanzen.fsbgu@ed.tum.de";
     document.getElementById("statusgruppe").onchange = function() {
         price = gebuehren[document.getElementById("statusgruppe").value[0]];
         document.getElementById("label-teilnahmegebuehr").innerHTML = gebuehr.replace("%%", price);

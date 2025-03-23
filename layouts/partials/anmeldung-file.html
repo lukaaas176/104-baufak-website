@@ -2,7 +2,7 @@
 {{- $autofill := or .autofill .id -}}
 
 <div class="{{ $spanwidth }}">
-  <label for="{{ .id }}" class="block text-sm font-medium" id="div-{{ .id }}">{{ .label }} {{- if .optional }} (optional){{ end }}
+  <label for="{{ .id }}" class="block text-sm font-medium" id="div-{{ .id }}">{{ .label }}
     <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10 hover:cursor-grab" id="div-{{ .id }}">
       <div class="text-center">
         <svg class="mx-auto size-12 text-gray-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-slot="icon">
