@@ -1,12 +1,12 @@
 <form class="">
     <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
-        {{ partial "anmeldung-field.html" (dict "id" "vorname" "label" "Vorname" "autofill" "given-name" "width" "sm:col-span-3") }}
-        {{ partial "anmeldung-field.html" (dict "id" "nachname" "label" "Nachname" "autofill" "family-name" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "vorname" "label" "Vorname" "autofill" "given-name" "placeholder" "Ida" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "nachname" "label" "Nachname" "autofill" "family-name" "placeholder" "Dino"  "width" "sm:col-span-3") }}
 
-        {{ partial "anmeldung-field.html" (dict "id" "email" "label" "Persönliche E-Mail" "commentar" "Bitte keine Funktionsadressen wie vorstand@, info@ o.Ä.!" "autofill" "email" "type" "email" "width" "sm:col-span-3") }}
-        {{ partial "anmeldung-field.html" (dict "id" "telefon" "label" "Telefonnummer" "autofill" "phone" "type" "tel" "width" "sm:col-span-3" "optional" true) }}
+        {{ partial "anmeldung-field.html" (dict "id" "email" "label" "Persönliche E-Mail" "commentar" "Bitte keine Funktionsadressen wie vorstand@, info@ o.Ä.!" "autofill" "email" "type" "email" "placeholder" "ida@ikea.de"  "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "telefon" "label" "Telefonnummer" "autofill" "phone" "type" "tel" "placeholder" "089 32168"  "width" "sm:col-span-3" "optional" true) }}
 
-        {{ partial "anmeldung-field.html" (dict "id" "hochschule" "label" "Hochschule/Universität" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "hochschule" "label" "Hochschule/Universität" "placeholder" "Steinzeit Universität München" "width" "sm:col-span-3") }}
         {{ partial "anmeldung-select.html" (dict "id" "statusgruppe" "label" "Statusgruppe" "width" "sm:col-span-3" "options" (slice "A: Vertreterinnen, Vertreter und Mitglieder der Fachschaften" "B: Ehemalige" "C: Gäste")) }}
 
         {{ partial "anmeldung-toggle.html" (dict "id" "erste-baufak" "label" "Ist die 104. BauFak deine erste BauFak?" "width" "sm:col-span-2") }}
@@ -24,10 +24,10 @@
         {{ partial "anmeldung-select.html" (dict "id" "abreisezeitpunkt" "label" "Wie reist du ab" "options" (slice "Zug" "Zu Fuß" "Auto" "Kutsche" "Surfboard" "Floß" "Weiß ich noch nicht")) }}
 
         {{ partial "anmeldung-toggle.html" (dict "id" "schlafplatz" "label" "Benötigst du ein Schlafplatz im Hostel?" "width" "sm:col-span-3") }}
-        {{ partial "anmeldung-field.html" (dict "id" "kommentar-schlafplatz" "label" "Kommentar zum Schlafplatz" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "kommentar-schlafplatz" "label" "Kommentar zum Schlafplatz" "placeholder" "Könnte notfalls bei den Hauptorganisatoren schlafen" "width" "sm:col-span-3") }}
 
         {{ partial "anmeldung-select.html" (dict "id" "schlafplatz-auswahl" "label" "Was für Präferenzen hast du bei deinen Zimmerpartnern" "width" "sm:col-span-3" "options" (slice "Keine Präferenzen" "Bestimmte Personen" "Eigene Fachschaft" "FLINTA" "Schnarcherzimmer" "Ehemalige")) }}
-        {{ partial "anmeldung-field.html" (dict "id" "schlafplatz-personen" "label" "Welche Zimmerpartner hättest du gerne?" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "schlafplatz-personen" "label" "Welche Zimmerpartner hättest du gerne?" "placeholder" "Igor, Jimmy und Orka aus meiner Fachschaft" "width" "sm:col-span-3") }}
 
         {{ partial "anmeldung-select.html" (dict "id" "ernaehrung" "label" "Ernährungsform" "width" "sm:col-span-3" "options" (slice "Allesfressend" "Vegetarisch" "Vegan")) }}
         <div class="sm:col-span-6 font-medium">Allergien</div>
@@ -46,7 +46,7 @@
         <div class="sm:col-span-6">
             <label for="kommentar" class="block text-sm font-medium">Kommentar (optional)</label>
             <div class="mt-2">
-                <textarea rows="5" name="kommentar" id="kommentar" class="block w-full rounded-md bg-white px-3 py-1.5 text-base outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-secondary-700/70 sm:text-sm/6"></textarea>
+                <textarea rows="5" name="kommentar" id="kommentar" class="block w-full rounded-md bg-white px-3 py-1.5 text-base outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-secondary-700/70 sm:text-sm/6" placeholder="Ich freue mich sehr auf meine erste BauFak und hoffe möglichst viele Maskottchen kennen zu lernen."></textarea>
             </div>
         </div>
 
