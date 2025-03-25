@@ -120,8 +120,8 @@ function parseRegistration(formData: {[k: string]: string | File}): Registration
         abreisemittel: checkNotEmpty(formData, validationErrors, "abreisemittel", "Das Abreisemittel"),
         schlafplatz: "schlafplatz" in formData,
         kommentarSchlafplatz: getAsString(formData, validationErrors, "schlafplatz-kommentar", "Der Kommentar zum Schlafplatz"),
-        schlafplatzAuswahl: getAsString(formData, validationErrors, "kommentar-auswahl", "Die Zimmerpartnerpräferenz"),
-        schlafplatzPersonen: getAsString(formData, validationErrors, "kommentar-personen", "Die Zimmerpartner"),
+        schlafplatzAuswahl: getAsString(formData, validationErrors, "schlafplatz-auswahl", "Die Zimmerpartnerpräferenz"),
+        schlafplatzPersonen: getAsString(formData, validationErrors, "schlafplatz-personen", "Die Zimmerpartner"),
         ernaehrung: checkNotEmpty(formData, validationErrors, "ernaehrung", "Die Ernährungsform"),
         allergieLaktose: "allergie-laktose" in formData,
         allergieUniversitaet: "allergie-universitaet" in formData,
@@ -149,7 +149,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     console.log(JSON.stringify(formData));
     let body: RegistrationData | Map<string, string> = parseRegistration(formData);
     if (body instanceof Map) {
-        return Response.json(Object.fromEntries(body));
+        return Response.json(Object.fromEntries(body), { status: 400 });
     }
     
     return Response.json(body);

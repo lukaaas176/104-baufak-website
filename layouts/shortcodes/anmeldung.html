@@ -1,4 +1,4 @@
-<form action="/registration" method="post" enctype="multipart/form-data">
+<form id="registration">
     <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
         {{ partial "anmeldung-field.html" (dict "id" "vorname" "label" "Vorname" "autofill" "given-name" "placeholder" "Ida" "width" "sm:col-span-3") }}
         {{ partial "anmeldung-field.html" (dict "id" "nachname" "label" "Nachname" "autofill" "family-name" "placeholder" "Dino"  "width" "sm:col-span-3") }}
@@ -135,4 +135,38 @@
         document.getElementById("selection-immatrikulation").innerHTML = "Selected: " + document.getElementById("immatrikulation").files[0].name;
         document.getElementById("selection-immatrikulation").hidden = false;
     };
+
+    const form = document.getElementById("registration");
+    
+    async function sendData() {
+        const formData = new FormData(form);
+        for (divs in document.querySelectorAll("div.error")) {
+            divs.innerHTML = "";
+            if (!("hidden" in divs.classList)) {
+                errorDiv.classList.add("hidden");
+            }
+        }
+
+        try {
+            const response = await fetch("/registration", {
+                method: "POST",
+                body: new FormData(form),
+            });
+            if (response.status == 400) {
+                for ((key, value) in await response.json()) {
+                    const errorDiv = document.querySelector("#" + key + " + div.error");
+                    errorDiv.innerHTML = value;
+                    errorDiv.classList.remove("hidden");
+                }
+            }
+            console.log(await response.json());
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        sendData();
+    });
 </script>

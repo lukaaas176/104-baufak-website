@@ -2,9 +2,10 @@
 {{- $autofill := or .autofill .id -}}
 
 <div class="{{ $spanwidth }}">
-    <label for="{{ .id }}" class="inline-flex items-center cursor-pointer h-full">
+  <label for="{{ .id }}" class="inline-flex items-center cursor-pointer h-full">
         <input id="{{ .id }}" name="{{ .id }}" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-md focus:ring-blue-500 focus:ring-2 " {{- if .required }} required {{ end -}}>
     <span class="ms-3 text-sm font-medium" id="label-{{ .id }}">{{ .label }}</span>
+    <div class="error font-bold text-sm text-red-500 hidden"></div>
   </label>
   {{- if .commentar }}
   <span class="text-xs text-gray-400">{{ .commentar }}</span>
