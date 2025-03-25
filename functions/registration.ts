@@ -43,8 +43,8 @@ interface RegistrationData {
 }
 
 function getAsString(formData: {[k: string]: string | File}, validationErrors: Map<string, string>, name: string, humanName: string): string {
-    let entry: string | File;
-    if (!(name in formData) || !((entry = formData[name]) instanceof String)) {
+    let entry: string | File = formData[name];
+    if (entry == null || entry instanceof File) {
         validationErrors.set(name, humanName + " hat keine gültige Eingabe");
         return "";
     }
