@@ -148,7 +148,11 @@ function parseRegistration(formData: FormData): RegistrationData | Map<string, s
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
-    let body: RegistrationData | Map<string, string> = await context.request.formData()
-        .then(parseRegistration)
+    let formData: FormData = await context.request.formData();
+    let body: RegistrationData | Map<string, string> = parseRegistration(formData);
+    if (body instanceof Map) {
+        return Response.json(Object.fromEntries(body));
+    }
+    
     return Response.json(body);
 };
