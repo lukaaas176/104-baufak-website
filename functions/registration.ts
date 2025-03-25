@@ -42,16 +42,16 @@ interface RegistrationData {
     readonly teilnahmegebuehr: boolean;
 }
 
-function getAsString(formData: FormData, validationErrors: Map<string, string>, name: string, humanName: string): string {
+function getAsString(formData: {[k: string]: string | File}, validationErrors: Map<string, string>, name: string, humanName: string): string {
     let entry: string | File;
-    if (!formData.has(name) || !((entry = formData.get(name)) instanceof String)) {
+    if (!(name in formData) || !((entry = formData[name]) instanceof String)) {
         validationErrors.set(name, humanName + " hat keine gültige Eingabe");
         return "";
     }
     return entry as string;
 }
 
-function getStatusGruppe(formData: FormData, validationErrors: Map<string, string>): StatusGruppe {
+function getStatusGruppe(formData: {[k: string]: string | File}, validationErrors: Map<string, string>): StatusGruppe {
     switch (getAsString(formData, validationErrors, "statusgruppe", "Statusgruppe")) {
         case StatusGruppe.VERTRETER:
             return StatusGruppe.VERTRETER;
@@ -65,7 +65,7 @@ function getStatusGruppe(formData: FormData, validationErrors: Map<string, strin
     }
 }
 
-function checkNotEmpty(formData: FormData, validationErrors: Map<string, string>, name: string, humanName: string): string {
+function checkNotEmpty(formData: {[k: string]: string | File}, validationErrors: Map<string, string>, name: string, humanName: string): string {
     let entry: string = getAsString(formData, validationErrors, name, humanName);
     if (entry.trim().length == 0) {
         validationErrors.set(name, humanName + " darf nicht leer sein!");
@@ -73,7 +73,7 @@ function checkNotEmpty(formData: FormData, validationErrors: Map<string, string>
     return entry;
 }
 
-function checkEmail(formData: FormData, validationErrors: Map<string, string>): string {
+function checkEmail(formData: {[k: string]: string | File}, validationErrors: Map<string, string>): string {
     let entry: string = checkNotEmpty(formData, validationErrors, "email", "Die E-Mail");
     if (!entry.match(/^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/)) {
         validationErrors.set("email", "Die E-Mail hat ein ungültiges Format!");
@@ -81,12 +81,12 @@ function checkEmail(formData: FormData, validationErrors: Map<string, string>): 
     return entry;
 }
 
-function parseRegistration(formData: FormData): RegistrationData | Map<string, string> {
+function parseRegistration(formData: {[k: string]: string | File}): RegistrationData | Map<string, string> {
     let validationErrors: Map<string, string> = new Map();
     let data: RegistrationData = null;
     
     let statusGruppe: StatusGruppe = getStatusGruppe(formData, validationErrors);
-    let ersteBauFaK: boolean = formData.has("erste-baufak");
+    let ersteBauFaK: boolean = "erste-baufak" in formData;
     let wievielteBaufak = parseInt(checkNotEmpty(formData, validationErrors, "wievielte-baufak", "Die wievielte BauFaK"));
     if (wievielteBaufak == Number.NaN || wievielteBaufak < 1) {
         validationErrors.set("wievielte-baufak", "Die wievielte BauFaK ist keine gültige Zahl");
@@ -94,10 +94,10 @@ function parseRegistration(formData: FormData): RegistrationData | Map<string, s
     if (ersteBauFaK && wievielteBaufak != 1) {
         validationErrors.set("wievielte-baufak", "Da spielt jemand mit dem Formular ;)");
     }
-    if (!formData.has("datenschutz")) {
+    if (!("datenschutz" in formData)) {
         validationErrors.set("datenschutz", "Der Datenschutz muss akzeptiert werden!");
     }
-    if (!formData.has("teilnahmegebuehr")) {
+    if (!("teilnahmegebuehr" in formData)) {
         validationErrors.set("teilnahmegebuehr", "Die Teilnahmegebühr muss akzeptiert werden!");
     }
     data = {
@@ -109,33 +109,33 @@ function parseRegistration(formData: FormData): RegistrationData | Map<string, s
         statusGruppe: statusGruppe,
         ersteBaufak: ersteBauFaK,
         wievielteBaufak: wievielteBaufak,
-        bauhelm: formData.has("bauhelm"),
-        sicherheitsschuhe: formData.has("sicherheitsschuhe"),
-        deutschlandticket: formData.has("deutschlandticket"),
+        bauhelm: "bauhelm" in formData,
+        sicherheitsschuhe: "sicherheitsschuhe" in formData,
+        deutschlandticket: "deutschlandticket" in formData,
         anreisezeitpunkt: checkNotEmpty(formData, validationErrors, "anreisezeitpunkt", "Der Anreisezeitpunkt"),
         anreisezeitpunktKommentar: getAsString(formData, validationErrors, "anreisezeitpunkt-kommentar", "Die genaue Zeit der Anreise"),
         anreisemittel: checkNotEmpty(formData, validationErrors, "anreisemittel", "Das Anreisemittel"),
         abreisezeitpunkt: checkNotEmpty(formData, validationErrors, "abreisezeitpunkt", "Der Abreisezeitpunkt"),
         abreisezeitpunktKommentar: getAsString(formData, validationErrors, "abreisezeitpunkt-kommentar", "Die genaue Zeit der Abreise"),
         abreisemittel: checkNotEmpty(formData, validationErrors, "abreisemittel", "Das Abreisemittel"),
-        schlafplatz: formData.has("schlafplatz"),
+        schlafplatz: "schlafplatz" in formData,
         kommentarSchlafplatz: getAsString(formData, validationErrors, "schlafplatz-kommentar", "Der Kommentar zum Schlafplatz"),
         schlafplatzAuswahl: getAsString(formData, validationErrors, "kommentar-auswahl", "Die Zimmerpartnerpräferenz"),
         schlafplatzPersonen: getAsString(formData, validationErrors, "kommentar-personen", "Die Zimmerpartner"),
         ernaehrung: checkNotEmpty(formData, validationErrors, "ernaehrung", "Die Ernährungsform"),
-        allergieLaktose: formData.has("allergie-laktose"),
-        allergieUniversitaet: formData.has("allergie-universitaet"),
-        allergieGluten: formData.has("allergie-gluten"),
-        allergieNuesse: formData.has("allergie-nuesse"),
-        allergieArchitekten: formData.has("allergie-architekten"),
-        allergieSoja: formData.has("allergie-soja"),
+        allergieLaktose: "allergie-laktose" in formData,
+        allergieUniversitaet: "allergie-universitaet" in formData,
+        allergieGluten: "allergie-gluten" in formData,
+        allergieNuesse: "allergie-nuesse" in formData,
+        allergieArchitekten: "allergie-architekten" in formData,
+        allergieSoja: "allergie-soja" in formData,
         allergien: getAsString(formData, validationErrors, "allergien", "Die sonstigen Allergien"),
         tshirt: checkNotEmpty(formData, validationErrors, "tshirt", "Das T-Shirt"),
         buddy: checkNotEmpty(formData, validationErrors, "buddy", "Das Buddyprogramm"),
         immatbescheinigung: null,
         kommentar: getAsString(formData, validationErrors, "kommentar", "Der Kommentar"),
-        datenschutz: formData.has("datenschutz"),
-        teilnahmegebuehr: formData.has("teilnahmegebuehr")  
+        datenschutz: "datenschutz" in formData,
+        teilnahmegebuehr: "teilnahmegebuehr" in formData
     };
     
     if (0 < validationErrors.size)
@@ -145,8 +145,8 @@ function parseRegistration(formData: FormData): RegistrationData | Map<string, s
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
-    let formData: FormData = await context.request.formData();
-    console.log(JSON.stringify(Object.fromEntries(formData)));
+    let formData: {[k: string]: string | File} = await context.request.formData().then(Object.fromEntries);
+    console.log(JSON.stringify(formData));
     let body: RegistrationData | Map<string, string> = parseRegistration(formData);
     if (body instanceof Map) {
         return Response.json(Object.fromEntries(body));
