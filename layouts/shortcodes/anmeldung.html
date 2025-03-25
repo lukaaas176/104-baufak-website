@@ -73,31 +73,31 @@
     document.getElementById("erste-baufak").onchange = function() {
         if (document.getElementById("erste-baufak").checked) {
             document.getElementById("wievielte-baufak").value = "1";
-            document.getElementById("wievielte-baufak").disabled = true;
+            document.getElementById("wievielte-baufak").readOnly = true;
             document.getElementById("buddy").value = "Ich möchte ein Buddy";
-            document.getElementById("buddy").disabled = true;
+            document.getElementById("buddy").readOnly = true;
         } else {
             document.getElementById("wievielte-baufak").value = "1";
-            document.getElementById("wievielte-baufak").disabled = false;
-            document.getElementById("buddy").disabled = false;
+            document.getElementById("wievielte-baufak").readOnly = false;
+            document.getElementById("buddy").readOnly = false;
         }
     };
     document.getElementById("erste-baufak").onchange();
     document.getElementById("schlafplatz").onchange = function() {
         if (document.getElementById("schlafplatz").checked) {
-            document.getElementById("schlafplatz-auswahl").disabled = false;
+            document.getElementById("schlafplatz-auswahl").readOnly = false;
         } else {
-            document.getElementById("schlafplatz-auswahl").disabled = true;
+            document.getElementById("schlafplatz-auswahl").readOnly = true;
         }
     };
     document.getElementById("schlafplatz").checked = true;
     document.getElementById("schlafplatz").onchange();
     document.getElementById("schlafplatz-auswahl").onchange = function() {
         if (document.getElementById("schlafplatz-auswahl").value == "Bestimmte Personen") {
-            document.getElementById("schlafplatz-personen").disabled = false;
+            document.getElementById("schlafplatz-personen").readOnly = false;
         } else {
             document.getElementById("schlafplatz-personen").value = "";
-            document.getElementById("schlafplatz-personen").disabled = true;
+            document.getElementById("schlafplatz-personen").readOnly = true;
         }
     };
     document.getElementById("schlafplatz-auswahl").onchange();
