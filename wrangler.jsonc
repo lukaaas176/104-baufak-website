@@ -2,5 +2,6 @@
   "name": "104-baufak",
   "pages_build_output_dir": "./public",
   "compatibility_date": "2025-03-25",
-  "upload_source_maps": true
+  "upload_source_maps": true,
+  "keep_vars": true
 }
