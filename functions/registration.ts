@@ -137,6 +137,9 @@ function parseRegistration(formData: FormData): RegistrationData | Map<string, s
         datenschutz: formData.has("datenschutz"),
         teilnahmegebuehr: formData.has("teilnahmegebuehr")  
     };
+    console.log(validationErrors.size);
+    console.log(validationErrors);
+    console.log(data);
     
     if (0 < validationErrors.size)
         return validationErrors;
@@ -145,8 +148,7 @@ function parseRegistration(formData: FormData): RegistrationData | Map<string, s
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
-    let body: string = await context.request.formData()
+    let body: RegistrationData | Map<string, string> = await context.request.formData()
         .then(parseRegistration)
-        .then(JSON.stringify);
-    return new Response(body);
+    return Response.json(body);
 };
