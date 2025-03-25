@@ -75,7 +75,7 @@ function checkNotEmpty(formData: FormData, validationErrors: Map<string, string>
 
 function checkEmail(formData: FormData, validationErrors: Map<string, string>): string {
     let entry: string = checkNotEmpty(formData, validationErrors, "email", "Die E-Mail");
-    if (!entry.match(/^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$)/)) {
+    if (!entry.match(/^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/)) {
         validationErrors.set("email", "Die E-Mail hat ein ungültiges Format!");
     }
     return entry;
