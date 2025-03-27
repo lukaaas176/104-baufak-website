@@ -1,3 +1,3 @@
-<span{{- with (.Get "class") }} class="{{ . }}"{{- end -}}>
-    {{ .Inner | markdownify }}
-</span>
+<div{{- with (.Get "class") }} class="{{ . }}"{{- end -}}>
+    {{ .Inner }}
+</div>
