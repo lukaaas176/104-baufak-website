@@ -1,0 +1,14 @@
+<div class="max-w-sm bg-secondary-700 text-gray-100 rounded-md hover:bg-secondary-700/95 hover:shadow-md">
+    {{- with resources.Get (.Get "image") -}}
+        <img class="rounded-t-md" height="{{ .Height }}" width="{{ .Width }}" src="{{ .RelPermalink }}">
+    {{- end -}}
+    <div class="p-5">
+        <h5 class="mb-2 text-2xl font-bold">{{ (.Get "title") }}</h5>
+            <ul class="list-disc ml-8">
+                {{- range after 1 (strings.Split (strings.TrimSpace .Inner) "- ") -}}
+                    <li>{{ . | markdownify }}</li>
+                {{- end -}}
+            </ul>
+    </div>
+</div>
+
