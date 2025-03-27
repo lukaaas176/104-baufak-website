@@ -1,6 +1,6 @@
 ---
 title: 'Zeitplan'
-description: "Was wäre eine BauFak ohne Zeitplan für den Ablauf?"
+description: "Was wäre eine BauFak ohne Zeitplan für den Ablauf? Veröffentlicht, aber noch unter Vorbehalt von Änderungen."
 ---
 Schreibt uns gerne unter [baufakorga.fsbgu@ed.tum.de](mailto:baufakorga.fsbgu@ed.tum.de) falls ihr Fragen oder Anmerkungen zu dem Zeitplan habt!
 
