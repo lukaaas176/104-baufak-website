@@ -1,6 +1,9 @@
 ---
 title: Packliste
+description: Wir haben euch eine Packliste zusammengestellt, damit ihr nichts wichtiges vergesst, wenn ihr zu unserer BauFaK in München anreist.
 ---
+Falls ihr Anmerkungen zu dieser Packliste habt, meldet euch gerne unter [baufakorga.fsbgu@ed.tum.de](mailto:baufakorga.fsbgu@ed.tum.de)!
+
 
 {{<grid>}}
 
