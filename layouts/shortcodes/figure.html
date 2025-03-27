@@ -11,7 +11,7 @@
     {{- end -}}
   {{- end -}}
 
-  <img src="{{ $src }}" class="rounded-md shadow-md"
+  <img src="{{ $src }}" class="rounded-md shadow-md max-w-full max-h-full"
     {{- if or (.Get "alt") (.Get "caption") }}
     alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}"
     {{- end -}}
