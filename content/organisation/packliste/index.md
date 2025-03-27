@@ -15,7 +15,7 @@ Falls ihr Anmerkungen zu dieser Packliste habt, meldet euch gerne unter [baufako
 - Pullis 
 - Sicherheitsschuhe
 - Hosen 
-- Bauhelm + Warnweste (werhat)
+- Bauhelm + Warnweste (wer hat)
 - Kleidung für Mottoparty *(Das Motto wird zeitnah veröffentlicht)*
 {{</card>}}
 
