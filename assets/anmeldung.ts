@@ -29,10 +29,11 @@ const sleepingPreferencesInput: HTMLElement | null = document.getElementById("sc
 if (sleepingToggle instanceof HTMLInputElement && sleepingSelect instanceof HTMLSelectElement && sleepingPreferencesInput instanceof HTMLInputElement && statusGroupSelect instanceof HTMLSelectElement) {
     sleepingToggle.addEventListener("change", () => {
         sleepingSelect.disabled = !sleepingToggle.checked;
+        sleepingSelect.dispatchEvent(new Event("change"));
         statusGroupSelect.dispatchEvent(new Event("change"));
     });
     sleepingSelect.addEventListener("change", () => {
-        sleepingPreferencesInput.disabled = sleepingSelect.selectedIndex != 1;
+        sleepingPreferencesInput.disabled = sleepingSelect.selectedIndex != 1 || sleepingSelect.disabled;
     });
     sleepingToggle.checked = true;
     sleepingToggle.dispatchEvent(new Event("change"));
