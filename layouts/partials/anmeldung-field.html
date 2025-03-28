@@ -5,7 +5,8 @@
 <div class="{{ $spanwidth }}" {{ if .hidden -}} hidden {{- end}}>
     <label for="{{ .id }}" class="block text-sm font-medium">{{ .label }} {{- if .optional }} (optional){{ end }}</label>
     <div class="mt-2">
-        <input type="{{ $type }}" name="{{ .id }}" id="{{ .id }}" autocomplete="{{ $autofill }}" {{ if not .optional -}} required {{- end }} class="block w-full rounded-md bg-white px-3 py-1.5 text-base outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-secondary-700/70 sm:text-sm/6 read-only:bg-gray-100 read-only:cursor-not-allowed" {{- if .placeholder }} placeholder="{{ .placeholder }}" {{- end }}>
+        <input type="{{ $type }}" name="{{ .id }}" id="{{ .id }}" autocomplete="{{ $autofill }}" {{ if not .optional -}} required {{- end }} {{ if .inputmode -}} inputmode="{{ .inputmode }}" {{- end }} class="block w-full rounded-md bg-white px-3 py-1.5 text-base outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-secondary-700/70 sm:text-sm/6 disabled:bg-gray-100 disabled:cursor-not-allowed" {{- if .placeholder }} placeholder="{{ .placeholder }}" {{- end }} {{- if .pattern }} pattern="{{ .pattern }}" {{- end }} {{- if .min }} min="{{ .min }}" {{- end }} {{- if .max }} max="{{ .max }}" {{- end }}>
+        <span class="errorMessage text-xs text-red-500 hidden">{{ or .error "Bitte gib eine gültige Eingabe ein"}}</span>
     </div>
     {{- if .commentar }}
     <span class="text-xs text-gray-400">{{ .commentar }}</span>

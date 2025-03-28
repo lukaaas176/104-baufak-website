@@ -1,16 +1,16 @@
 <form id="registration">
     <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
-        {{ partial "anmeldung-field.html" (dict "id" "vorname" "label" "Vorname" "autofill" "given-name" "placeholder" "Ida" "width" "sm:col-span-3") }}
-        {{ partial "anmeldung-field.html" (dict "id" "nachname" "label" "Nachname" "autofill" "family-name" "placeholder" "Dino"  "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "vorname" "label" "Vorname" "autofill" "given-name" "placeholder" "Ida" "pattern" "^[\\p{Letter}\\s\\-.']+$" "error" "Bitte gib einen gültigen Vornamen ein" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "nachname" "label" "Nachname" "autofill" "family-name" "placeholder" "Dino" "pattern" "^[\\p{Letter}\\s\\-.']+$" "error" "Bitte gib einen gültigen Nachnamen ein" "width" "sm:col-span-3") }}
 
-        {{ partial "anmeldung-field.html" (dict "id" "email" "label" "Persönliche E-Mail" "commentar" "Bitte keine Funktionsadressen wie vorstand@, info@ o.Ä.!" "autofill" "email" "type" "email" "placeholder" "ida@ikea.de"  "width" "sm:col-span-3") }}
-        {{ partial "anmeldung-field.html" (dict "id" "telefon" "label" "Telefonnummer" "autofill" "phone" "type" "tel" "placeholder" "089 32168"  "width" "sm:col-span-3" "optional" true) }}
+        {{ partial "anmeldung-field.html" (dict "id" "email" "label" "Persönliche E-Mail" "commentar" "Bitte keine Funktionsadressen wie vorstand@, info@ o.Ä.!" "autofill" "email" "type" "email" "placeholder" "ida@ikea.de" "pattern" "^[\\w\\-\\.]+@([\\w\\-]+\\.)+[\\w\\-]{2,}$" "error" "Bitte gib eine gültige E-Mail Adresse ein" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "telefon" "label" "Telefonnummer" "autofill" "phone" "type" "tel" "placeholder" "+49 89 32168" "pattern" "^[\\d\\-+\\s\\(\\)]{5,}$" "error" "Bitte gib eine gültige Telefonnummer an" "width" "sm:col-span-3" "optional" true "inputmode" "numeric") }}
 
-        {{ partial "anmeldung-field.html" (dict "id" "hochschule" "label" "Hochschule/Universität" "placeholder" "Steinzeit Universität München" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "hochschule" "label" "Hochschule/Universität" "placeholder" "Steinzeit Universität München" "error" "Bitte gib eine Hochschule oder Universität an" "width" "sm:col-span-3") }}
         {{ partial "anmeldung-select.html" (dict "id" "statusgruppe" "label" "Statusgruppe" "width" "sm:col-span-3" "options" (slice "A: Vertreterinnen, Vertreter und Mitglieder der Fachschaften" "B: Ehemalige" "C: Gäste")) }}
 
         {{ partial "anmeldung-toggle.html" (dict "id" "erste-baufak" "label" "Ist die 104. BauFak deine erste BauFak?" "width" "sm:col-span-2") }}
-        {{ partial "anmeldung-field.html" (dict "id" "wievielte-baufak" "label" "Deine wievielte BauFak ist die 104. BauFak?" "type" "number" "width" "sm:col-span-4") }}
+        {{ partial "anmeldung-field.html" (dict "id" "wievielte-baufak" "label" "Deine wievielte BauFak ist die 104. BauFak?" "width" "sm:col-span-4" "type" "number" "inputmode" "numeric" "min" "1" "max" "104") }}
 
         {{ partial "anmeldung-toggle.html" (dict "id" "bauhelm" "label" "Hast du ein Bauhelm?" "width" "sm:col-span-2") }}
         {{ partial "anmeldung-toggle.html" (dict "id" "sicherheitsschuhe" "label" "Hast du Sicherheitsschuhe?" "width" "sm:col-span-2") }}
@@ -23,7 +23,7 @@
         {{ partial "anmeldung-field.html" (dict "id" "abreisezeitpunkt-kommentar" "label" "Bitte gib die genaue Zeit deiner Abreise an" "optional" true "width" "sm:col-span-3") }}
         {{ partial "anmeldung-select.html" (dict "id" "abreisemittel" "label" "Wie reist du ab" "options" (slice "" "Zug" "Zu Fuß" "Auto" "Kutsche" "Surfboard" "Floß" "Weiß ich noch nicht")) }}
 
-        {{ partial "anmeldung-toggle.html" (dict "id" "schlafplatz" "label" "Benötigst du ein Schlafplatz im Hostel?" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-toggle.html" (dict "id" "schlafplatz" "label" "Benötigst du ein Schlafplatz im Hostel?" "width" "sm:col-span-3" "defaultChecked" true) }}
         {{ partial "anmeldung-field.html" (dict "id" "schlafplatz-kommentar" "label" "Kommentar zum Schlafplatz" "placeholder" "Könnte notfalls bei den Hauptorganisatoren schlafen" "width" "sm:col-span-3" "optional" true) }}
 
         {{ partial "anmeldung-select.html" (dict "id" "schlafplatz-auswahl" "label" "Was für Präferenzen hast du bei deinen Zimmerpartnern" "width" "sm:col-span-3" "options" (slice "Keine Präferenzen" "Bestimmte Personen" "Eigene Fachschaft" "FLINTA" "Schnarcherzimmer" "Ehemalige")) }}
@@ -38,7 +38,7 @@
         {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-architekten" "label" "Architekten") }}
         {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-soja" "label" "Soja") }}
         {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-sonstige" "label" "Sonstige Allergien") }}
-        {{ partial "anmeldung-field.html" (dict "id" "allergien" "hidden" true) }}
+        {{ partial "anmeldung-field.html" (dict "id" "allergien" "error" "Bitte gib deine sonstigen Allergien an" "hidden" true) }}
 
         {{ partial "anmeldung-select.html" (dict "id" "tshirt" "label" "T-Shirt" "width" "sm:col-span-3" "options" (slice "" "Ich möchte kein T-Shirt" "XS" "S" "M" "L" "XL" "2XL")) }}
         {{ partial "anmeldung-select.html" (dict "id" "buddy" "label" "Buddyprogramm" "width" "sm:col-span-3" "options" (slice "" "Ich möchte ein Buddy" "Ich möchte kein Buddy" "Ich bin gerne ein Buddy")) }}
@@ -62,109 +62,19 @@
     </div>
 </form>
 
-<script>
-    document.getElementById("wievielte-baufak").onchange = function() {
-        if (Number.isNaN(document.getElementById("wievielte-baufak").value) || document.getElementById("wievielte-baufak").value < 1) {
-            document.getElementById("wievielte-baufak").value = document.getElementById("wievielte-baufak").defaultValue;
-            return;
-        }
-        document.getElementById("wievielte-baufak").defaultValue = document.getElementById("wievielte-baufak").value;
-    };
-    document.getElementById("erste-baufak").onchange = function() {
-        if (document.getElementById("erste-baufak").checked) {
-            document.getElementById("wievielte-baufak").value = "1";
-            document.getElementById("wievielte-baufak").readOnly = true;
-            document.getElementById("buddy").value = "Ich möchte ein Buddy";
-            document.getElementById("buddy").readOnly = true;
-        } else {
-            document.getElementById("wievielte-baufak").value = "1";
-            document.getElementById("wievielte-baufak").readOnly = false;
-            document.getElementById("buddy").readOnly = false;
-        }
-    };
-    document.getElementById("erste-baufak").onchange();
-    document.getElementById("schlafplatz").onchange = function() {
-        if (document.getElementById("schlafplatz").checked) {
-            document.getElementById("schlafplatz-auswahl").readOnly = false;
-        } else {
-            document.getElementById("schlafplatz-auswahl").readOnly = true;
-        }
-    };
-    document.getElementById("schlafplatz").checked = true;
-    document.getElementById("schlafplatz").onchange();
-    document.getElementById("schlafplatz-auswahl").onchange = function() {
-        if (document.getElementById("schlafplatz-auswahl").value == "Bestimmte Personen") {
-            document.getElementById("schlafplatz-personen").readOnly = false;
-        } else {
-            document.getElementById("schlafplatz-personen").value = "";
-            document.getElementById("schlafplatz-personen").readOnly = true;
-        }
-    };
-    document.getElementById("schlafplatz-auswahl").onchange();
-    document.getElementById("allergie-sonstige").onchange = function() {
-        if (document.getElementById("allergie-sonstige").checked) {
-            document.getElementById("allergien").parentNode.parentNode.hidden = false;
-            document.getElementById("allergien").value = "";
-            document.getElementById("allergien").required = true;
-        } else {
-            document.getElementById("allergien").parentNode.parentNode.hidden = true;
-            document.getElementById("allergien").required = false;
-        }
-    };
-    document.getElementById("allergie-sonstige").onchange();
-    gebuehren = {
-        "A": 20,
-        "B": 50,
-        "C": 100
-    };
-    gebuehr = "Ich habe die Teilnahmegebühr von %% € zur Kenntnis genommen und überweise diese bis zum 15.5.2025. Für eine Rechnung melde ich mich rechtzeitig unter baufakfinanzen.fsbgu@ed.tum.de";
-    document.getElementById("statusgruppe").onchange = function() {
-        price = gebuehren[document.getElementById("statusgruppe").value[0]];
-        document.getElementById("label-teilnahmegebuehr").innerHTML = gebuehr.replace("%%", price);
-    };
-    document.getElementById("statusgruppe").onchange();
-    document.getElementById("div-immatrikulation").ondragover = document.getElementById("div-immatrikulation").ondragenter = function(evt) {
-        evt.preventDefault();
-    };
-    document.getElementById("div-immatrikulation").ondrop = function(evt) {
-        evt.preventDefault();
-        document.getElementById("immatrikulation").files = evt.dataTransfer.files;
-        document.getElementById("immatrikulation").onchange();
-    };
-    document.getElementById("immatrikulation").onchange = function() {
-        document.getElementById("selection-immatrikulation").innerHTML = "Selected: " + document.getElementById("immatrikulation").files[0].name;
-        document.getElementById("selection-immatrikulation").hidden = false;
-    };
-
-    const form = document.getElementById("registration");
-    
-    async function sendData() {
-        const formData = new FormData(form);
-        for (divs in document.querySelectorAll("div.error")) {
-            divs.innerHTML = "";
-            divs.classList.add("hidden");
-        }
-
-        try {
-            const response = await fetch("/registration", {
-                method: "POST",
-                body: new FormData(form),
-            });
-            if (response.status == 400) {
-                for ((key, value) in await response.json()) {
-                    const errorDiv = document.querySelector("#" + key + " + div.error");
-                    errorDiv.innerHTML = value;
-                    errorDiv.classList.remove("hidden");
-                }
-            }
-            console.log(await response.json());
-        } catch (e) {
-            console.error(e);
-        }
-    }
-
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        sendData();
-    });
-</script>
+{{ with resources.Get "anmeldung.ts" }}
+  {{ $opts := dict
+    "minify" hugo.IsProduction
+    "sourceMap" (cond hugo.IsProduction "" "external")
+    "targetPath" "anmeldung.js"
+  }}
+  {{ with . | js.Build $opts }}
+    {{ if hugo.IsProduction }}
+      {{ with . | fingerprint }}
+        <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+      {{ end }}
+    {{ else }}
+      <script src="{{ .RelPermalink }}"></script>
+    {{ end }}
+  {{ end }}
+{{ end }}
