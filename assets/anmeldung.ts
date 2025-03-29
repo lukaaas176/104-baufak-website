@@ -122,27 +122,33 @@ document.querySelectorAll("select").forEach(element => {
 
 const form: HTMLElement | null = document.getElementById("registration");
 const feedbackDiv: HTMLElement | null = document.getElementById("feedback");
+const submitButton: HTMLElement | null = document.getElementById("submit-btn");
 
-async function sendData(formData: FormData, feedbackDiv: HTMLElement) {
+async function sendData(formData: FormData, feedbackDiv: HTMLElement, button: HTMLButtonElement) {
     let response: Response = await fetch("/registration", {
         method: "POST",
         body: formData
     });
     if (response.status == 200) {
         feedbackDiv.innerText = "Du hast dich erfolgreich angemeldet. Bitte überprüfe dein E-Mail Posteingang sowie auch Spam!";
-        feedbackDiv.classList.remove("hidden");
+        feedbackDiv.classList.remove("hidden", "bg-red-100", "border-red-500");
         feedbackDiv.classList.add("bg-emerald-100", "border-emerald-500");
+        button.innerText = "Angemeldet";
+        button.classList.remove("bg-primary", "disabled:opacity-50");
+        button.classList.add("bg-emerald-500");
         return;
     }
     feedbackDiv.innerText = await response.text();
-    feedbackDiv.classList.remove("hidden");
+    feedbackDiv.classList.remove("hidden", "bg-emerald-100", "border-emerald-500");
     feedbackDiv.classList.add("bg-red-100", "border-red-500");
+    button.disabled = false;
     return;
 }
 
-if (form instanceof HTMLFormElement && feedbackDiv instanceof HTMLElement) {
+if (form instanceof HTMLFormElement && feedbackDiv instanceof HTMLElement && submitButton instanceof HTMLButtonElement) {
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-        sendData(new FormData(form), feedbackDiv);
+        sendData(new FormData(form), feedbackDiv, submitButton);
+        submitButton.disabled = true;
     });
 }
