@@ -199,14 +199,14 @@ async function sendMail(data: RegistrationData, token: string): Promise<boolean>
         body: JSON.stringify({
             "from": "anmeldung@baufak.santos.dev",
             "to": data.email,
-            "reply-to": "baufak104.fsbgu@ed.tum.de",
+            "reply_to": "baufak104.fsbgu@ed.tum.de",
             subject: "Anmeldung zur 104. BauFaK",
             html: formatMail(mailHTML, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString()),
             text: formatMail(mailTXT, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString()),
             attachments: data.immatbescheinigung ? [ {
                 "filename": "immatbescheinigung.pdf",
                 "content": data.immatbescheinigung
-            } ] : []
+            }] : []
         })
     });
     if (response.status != 200) {
