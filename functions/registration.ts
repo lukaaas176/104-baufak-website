@@ -200,12 +200,14 @@ async function sendMail(data: RegistrationData, token: string): Promise<boolean>
         return false;
     }
 
+    console.log(`Send mail to ${data.email}!`)
+
     return true;
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
     let formData: {[k: string]: string | File} = await context.request.formData().then(Object.fromEntries);
-    console.log(JSON.stringify(formData));
+    console.log(`Received registration data: ${JSON.stringify(formData)}`);
     let data: RegistrationData | Set<string> = parseRegistration(formData);
     if (data instanceof Set) {
         return new Response([...data].join("\n"), { status: 400 });

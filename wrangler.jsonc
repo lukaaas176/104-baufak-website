@@ -5,8 +5,5 @@
   "upload_source_maps": true,
   "vars": {
     "HUGO_VERSION": "0.141.0"
-  },
-  "build": {
-    "command": "hugo --gc --minify"
   }
 }
