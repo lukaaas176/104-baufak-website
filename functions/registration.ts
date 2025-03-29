@@ -195,11 +195,7 @@ async function sendMail(data: RegistrationData, token: string): Promise<boolean>
         "to": data.email,
         subject: "Anmeldung zur 104. BauFaK",
         html: formatMail(mailHTML, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString()),
-        text: formatMail(mailTXT, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString()),
-        attachments: data.immatbescheinigung ? [ {
-            "content": data.immatbescheinigung,
-            "filename": "immatbescheinigung.pdf"
-        }] : []
+        text: formatMail(mailTXT, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString())
     });
     let response: Response = await fetch("https://api.resend.com/emails", {
         method: "POST",
