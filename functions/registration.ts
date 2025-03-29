@@ -95,6 +95,13 @@ function parseRegistration(formData: {[k: string]: string | File}): Registration
             validationErrors.add("Die wievielte BauFaK ist keine gültige Zahl");
         }
     }
+    let immatbescheinigung: File = null;
+    if (formData["immatbescheinigung"] instanceof File) {
+        immatbescheinigung = formData["immatbescheinigung"];
+        if (10000000 <  immatbescheinigung.size) { // 10 MB
+            immatbescheinigung = null;
+        }
+    }
     
     if (!("datenschutz" in formData)) {
         validationErrors.add("Der Datenschutz muss akzeptiert werden!");
@@ -139,7 +146,7 @@ function parseRegistration(formData: {[k: string]: string | File}): Registration
         allergien: getAsString(formData, validationErrors, "allergien", "Die sonstigen Allergien"),
         tshirt: checkNotEmpty(formData, validationErrors, "tshirt", "Das T-Shirt"),
         buddy: getAsString(formData, validationErrors, "buddy", "Das Buddyprogramm"),
-        immatbescheinigung: null,
+        immatbescheinigung: immatbescheinigung,
         kommentar: getAsString(formData, validationErrors, "kommentar", "Der Kommentar"),
         datenschutz: "datenschutz" in formData,
         teilnahmegebuehr: "teilnahmegebuehr" in formData
@@ -176,9 +183,17 @@ function calculateFee(data: RegistrationData): number {
 
 // @ts-ignore
 import mailHTML from "./registration.html";
+// @ts-ignore
+import mailTXT from "./registration.txt";
 
 async function sendMail(data: RegistrationData, token: string): Promise<boolean> {
-    String.bind
+    let attachment: any = null;
+    if (data.immatbescheinigung) {
+        attachment = {
+            "filename": data.immatbescheinigung.name,
+            "content": btoa(String.fromCharCode(...await data.immatbescheinigung.bytes()))
+        };
+    }
 
     let response: Response = await fetch("https://api.resend.com/emails", {
         method: "POST",
@@ -189,8 +204,11 @@ async function sendMail(data: RegistrationData, token: string): Promise<boolean>
         body: JSON.stringify({
             "from": "anmeldung@baufak.santos.dev",
             "to": data.email,
+            "reply-to": "baufak104.fsbgu@ed.tum.de",
             subject: "Anmeldung zur 104. BauFaK",
-            html: formatMail(mailHTML, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString())
+            html: formatMail(mailHTML, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString()),
+            text: formatMail(mailTXT, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString()),
+            attachments: attachment ? [ attachment ] : []
         })
     });
     if (response.status != 200) {

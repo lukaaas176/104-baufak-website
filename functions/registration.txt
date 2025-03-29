@@ -1,0 +1,51 @@
+Liebe Teilnehmer*in,
+vielen Dank für deine erfolgreiche Anmeldung zu der 104. Bauingenieur-Fachschaften-Konferenz! Mit dieser E-Mail wollen wir dir noch einmal deine Daten übersichtlich präsentieren, bitte überprüfe alles einmal und melde dich bei uns unter baufak104.fsbgu@ed.tum.de wenn was nicht passt!
+
+Vorname: ${vorname}
+Nachname: ${nachname}
+E-Mail Adresse: ${email}
+Telefonnummer: ${telefon}
+Hochschule/Universität: ${hochschule}
+Statusgruppe: ${statusGruppe}
+Bist du das erste Mail auf der BauFaK: ${ersteBaufak}
+Deine wievielte BauFaK ist die 104.: ${wievielteBaufak}
+Besitzt du ein Bauhelm: ${bauhelm}
+Besitzt du Sicherheitsschuhe: ${sicherheitsschuhe}
+Besitzt du ein Deutschlandticket: ${deutschlandticket}
+Wann reist du an: ${anreisezeitpunkt}
+Kommentar zur Anreise: ${anreisezeitpunktKommentar}
+Wie reist du an: ${anreisemittel}
+Wann reist du ab: ${abreisezeitpunkt}
+Kommentar zur Abreise: ${abreisezeitpunktKommentar}
+Wie reist du ab: ${abreisemittel}
+Benötigst du ein Schlafplatz: ${schlafplatz}
+Kommentar zum Schlafplatz: ${kommentarSchlafplatz}
+Präferenzen bei Zimmerpartnern: ${schlafplatzAuswahl}
+Welche Zimmerpartnern: ${schlafplatzPersonen}
+Ernährungsform: ${ernaehrung}
+Allergie auf Laktose: ${allergieLaktose}
+Allergie auf Universität: ${allergieUniversitaet}
+Allergie auf Gluten: ${allergieGluten}
+Allergie auf Nüsse: ${allergieNuesse}
+Allergie auf Architekten: ${allergieArchitekten}
+Allergie auf Soja: ${allergieSoja}
+Sonstige Allergien: ${allergien}
+T-Shirt: ${tshirt}
+Buddyprogramm: ${buddy}
+Immatbescheinigung: Im Anhang falls vorhanden, ansonsten bei Statusgruppe A an baufak104.fsbgu@ed.tum.de nachschicken!
+Kommentar: ${kommentar}
+Buddyprogramm: ${buddy}
+
+Vergiss nicht, bei https://104-muenchen.baufak.de/organisation/ vorbeizuschauen, da haben wir für euch Informationen über den Zeitplan, die Anreise und Unterkunft, Packliste, Exkursionen zur Verfügung gestellt!
+Was nun? Überweise noch deinen Teilnehmerbetrag von TEILNEHMERBETRAG € rechtzeitig bis zum 15.5.2025. Falls du dafür eine Rechnung hast, melde dich bitte ebenfalls rechtzeitig an baufakfinanzen.fsbgu@ed.tum.de!
+
+Die Bankverbindung:
+Fachschaft Bau Geo Umwelt der TU München e.V.
+IBAN: DE15 7005 1540 0281 2307 89
+BIC: BYLADEM1DAH
+Verwendungszweck: Bitte gebe deinen Namen und deine Hochschule an
+
+Wir freuen uns, dich in München begrüßen zu dürfen!
+
+Servus!
+Deine BauFaK Hauptorgas
