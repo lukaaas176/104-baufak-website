@@ -4,7 +4,7 @@
 <div class="{{ $spanwidth }}">
     <label for="{{ .id }}" class="block text-sm font-medium">{{ .label }} {{- if .optional }} (optional){{ end }}</label>
     <div class="mt-2 grid grid-cols-1">
-        <select id="{{ .id }}" name="{{ .id }}" autocomplete="{{ $autofill }}" class="col-start-1 row-start-1 appearance-none w-full rounded-md bg-white px-3 py-1.5 text-base outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-secondary-700/70 sm:text-sm/6 disabled:bg-gray-100 disabled:cursor-not-allowed font-sans" {{ if not .optional -}} required {{- end }}>
+        <select id="{{ .id }}" name="{{ .id }}" autocomplete="{{ $autofill }}" class="col-start-1 row-start-1 appearance-none w-full rounded-md bg-white px-3 py-1.5 text-base outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-secondary-700/70 sm:text-sm/6 disabled:bg-gray-100 disabled:cursor-not-allowed font-sans overflow-hidden overflow-ellipsis" {{ if not .optional -}} required {{- end }}>
             {{- range .options -}}
                 <option class="font-sans">{{ . }}</option>
             {{- end -}}
