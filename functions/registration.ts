@@ -185,13 +185,16 @@ function calculateFee(data: RegistrationData): number {
 import mailHTML from "./registration.html";
 // @ts-ignore
 import mailTXT from "./registration.txt";
+// @ts-ignore
+import { Buffer } from 'node:buffer';
 
 async function sendMail(data: RegistrationData, token: string): Promise<boolean> {
     let attachment: any = null;
     if (data.immatbescheinigung) {
+        let arrayBuffer: ArrayBuffer = await data.immatbescheinigung.arrayBuffer();
         attachment = [{
             "filename": data.immatbescheinigung.name,
-            "content": btoa(String.fromCharCode(...await data.immatbescheinigung.bytes()))
+            "content": Buffer.from(arrayBuffer).toString("base64")
         }];
     }
 
