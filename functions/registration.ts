@@ -42,16 +42,15 @@ interface RegistrationData {
     readonly teilnahmegebuehr: boolean;
 }
 
-function getAsString(formData: {[k: string]: string | File}, validationErrors: Map<string, string>, name: string, humanName: string): string {
+function getAsString(formData: {[k: string]: string | File}, validationErrors: Set<string>, name: string, humanName: string): string {
     let entry: string | File = formData[name];
-    if (entry == null || entry instanceof File) {
-        validationErrors.set(name, humanName + " hat keine gültige Eingabe");
-        return "";
+    if (entry instanceof String) {
+        return entry as string;
     }
-    return entry as string;
+    return "";
 }
 
-function getStatusGruppe(formData: {[k: string]: string | File}, validationErrors: Map<string, string>): StatusGruppe {
+function getStatusGruppe(formData: {[k: string]: string | File}, validationErrors: Set<string>): StatusGruppe {
     switch (getAsString(formData, validationErrors, "statusgruppe", "Statusgruppe")) {
         case StatusGruppe.VERTRETER:
             return StatusGruppe.VERTRETER;
@@ -60,52 +59,58 @@ function getStatusGruppe(formData: {[k: string]: string | File}, validationError
         case StatusGruppe.GAESTE:
             return StatusGruppe.GAESTE;
         default:
-            validationErrors.set("statusgruppe", "Die Statusgruppe hat keine gültige Auswahl");
+            validationErrors.add("Die Statusgruppe hat keine gültige Auswahl");
             return null;
     }
 }
 
-function checkNotEmpty(formData: {[k: string]: string | File}, validationErrors: Map<string, string>, name: string, humanName: string): string {
+function checkNotEmpty(formData: {[k: string]: string | File}, validationErrors: Set<string>, name: string, humanName: string): string {
     let entry: string = getAsString(formData, validationErrors, name, humanName);
     if (entry.trim().length == 0) {
-        validationErrors.set(name, humanName + " darf nicht leer sein!");
+        validationErrors.add(humanName + " darf nicht leer sein!");
     }
     return entry;
 }
 
-function checkEmail(formData: {[k: string]: string | File}, validationErrors: Map<string, string>): string {
-    let entry: string = checkNotEmpty(formData, validationErrors, "email", "Die E-Mail");
-    if (!entry.match(/^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$/)) {
-        validationErrors.set("email", "Die E-Mail hat ein ungültiges Format!");
+function checkPattern(formData: {[k: string]: string | File}, validationErrors: Set<string>, name: string, humanName: string, pattern: RegExp): string {
+    let entry: string = checkNotEmpty(formData, validationErrors, name, humanName);
+    if (!entry.match(pattern)) {
+        validationErrors.add(humanName + " hat ein ungültiges Format!");
     }
     return entry;
 }
 
-function parseRegistration(formData: {[k: string]: string | File}): RegistrationData | Map<string, string> {
-    let validationErrors: Map<string, string> = new Map();
+function parseRegistration(formData: {[k: string]: string | File}): RegistrationData | Set<string> {
+    let validationErrors: Set<string> = new Set();
     let data: RegistrationData = null;
     
     let statusGruppe: StatusGruppe = getStatusGruppe(formData, validationErrors);
     let ersteBauFaK: boolean = "erste-baufak" in formData;
-    let wievielteBaufak = parseInt(checkNotEmpty(formData, validationErrors, "wievielte-baufak", "Die wievielte BauFaK"));
-    if (wievielteBaufak == Number.NaN || wievielteBaufak < 1) {
-        validationErrors.set("wievielte-baufak", "Die wievielte BauFaK ist keine gültige Zahl");
+    let wievielteBaufak: number = 1;
+    if (!ersteBauFaK) {
+        wievielteBaufak = parseInt(checkNotEmpty(formData, validationErrors, "wievielte-baufak", "Die wievielte BauFaK"));
+        if (wievielteBaufak == Number.NaN || wievielteBaufak < 1 || 104 < wievielteBaufak) {
+            validationErrors.add("Die wievielte BauFaK ist keine gültige Zahl");
+        }
     }
-    if (ersteBauFaK && wievielteBaufak != 1) {
-        validationErrors.set("wievielte-baufak", "Da spielt jemand mit dem Formular ;)");
-    }
+    
     if (!("datenschutz" in formData)) {
-        validationErrors.set("datenschutz", "Der Datenschutz muss akzeptiert werden!");
+        validationErrors.add("Der Datenschutz muss akzeptiert werden!");
     }
     if (!("teilnahmegebuehr" in formData)) {
-        validationErrors.set("teilnahmegebuehr", "Die Teilnahmegebühr muss akzeptiert werden!");
+        validationErrors.add("Die Teilnahmegebühr muss akzeptiert werden!");
+    }
+
+    let telefonNummer: string = getAsString(formData, validationErrors, "telefon", "Die Telefonnummer");
+    if (telefonNummer != "" && !telefonNummer.match(/^[\d\-+\s\(\)]{5,}$/)) {
+        validationErrors.add("Die Telefonnummer hat ein ungültiges Format!");
     }
     data = {
-        vorname: checkNotEmpty(formData, validationErrors, "vorname", "Der Vorname"),
-        nachname: checkNotEmpty(formData, validationErrors, "nachname", "Der Nachname"),
-        email: checkEmail(formData, validationErrors),
-        telefon: checkNotEmpty(formData, validationErrors, "telefon", "Die Telefonnummer"),
-        hochschule: checkNotEmpty(formData, validationErrors, "hochschule", "Die Hochschule"),
+        vorname: checkPattern(formData, validationErrors, "vorname", "Der Vorname", /^[\p{Letter}\s\-.']+$/v),
+        nachname: checkPattern(formData, validationErrors, "nachname", "Der Nachname", /^[\p{Letter}\s\-.']+$/v),
+        email: checkPattern(formData, validationErrors, "email", "Die E-Mail", /^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$/),
+        telefon: telefonNummer,
+        hochschule: checkPattern(formData, validationErrors, "hochschule", "Die Hochschule", /^[\p{Letter}\s\-.']+$/v),
         statusGruppe: statusGruppe,
         ersteBaufak: ersteBauFaK,
         wievielteBaufak: wievielteBaufak,
@@ -131,7 +136,7 @@ function parseRegistration(formData: {[k: string]: string | File}): Registration
         allergieSoja: "allergie-soja" in formData,
         allergien: getAsString(formData, validationErrors, "allergien", "Die sonstigen Allergien"),
         tshirt: checkNotEmpty(formData, validationErrors, "tshirt", "Das T-Shirt"),
-        buddy: checkNotEmpty(formData, validationErrors, "buddy", "Das Buddyprogramm"),
+        buddy: getAsString(formData, validationErrors, "buddy", "Das Buddyprogramm"),
         immatbescheinigung: null,
         kommentar: getAsString(formData, validationErrors, "kommentar", "Der Kommentar"),
         datenschutz: "datenschutz" in formData,
@@ -147,9 +152,9 @@ function parseRegistration(formData: {[k: string]: string | File}): Registration
 export const onRequestPost: PagesFunction<Env> = async (context) => {
     let formData: {[k: string]: string | File} = await context.request.formData().then(Object.fromEntries);
     console.log(JSON.stringify(formData));
-    let body: RegistrationData | Map<string, string> = parseRegistration(formData);
-    if (body instanceof Map) {
-        return Response.json(Object.fromEntries(body), { status: 400 });
+    let body: RegistrationData | Set<string> = parseRegistration(formData);
+    if (body instanceof Set) {
+        return Response.json(body, { status: 400 });
     }
     
     return Response.json(body);

@@ -1,4 +1,4 @@
-<form id="registration">
+<form id="registration" method="post" enctype="multipart/form-data">
     <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
         {{ partial "anmeldung-field.html" (dict "id" "vorname" "label" "Vorname" "autofill" "given-name" "placeholder" "Ida" "pattern" "^[\\p{Letter}\\s\\-.']+$" "error" "Bitte gib einen gültigen Vornamen ein" "width" "sm:col-span-3") }}
         {{ partial "anmeldung-field.html" (dict "id" "nachname" "label" "Nachname" "autofill" "family-name" "placeholder" "Dino" "pattern" "^[\\p{Letter}\\s\\-.']+$" "error" "Bitte gib einen gültigen Nachnamen ein" "width" "sm:col-span-3") }}
@@ -6,7 +6,7 @@
         {{ partial "anmeldung-field.html" (dict "id" "email" "label" "Persönliche E-Mail" "commentar" "Bitte keine Funktionsadressen wie vorstand@, info@ o.Ä.!" "autofill" "email" "type" "email" "placeholder" "ida@ikea.de" "pattern" "^[\\w\\-\\.]+@([\\w\\-]+\\.)+[\\w\\-]{2,}$" "error" "Bitte gib eine gültige E-Mail Adresse ein" "width" "sm:col-span-3") }}
         {{ partial "anmeldung-field.html" (dict "id" "telefon" "label" "Telefonnummer" "autofill" "phone" "type" "tel" "placeholder" "+49 89 32168" "pattern" "^[\\d\\-+\\s\\(\\)]{5,}$" "error" "Bitte gib eine gültige Telefonnummer an" "width" "sm:col-span-3" "optional" true "inputmode" "numeric") }}
 
-        {{ partial "anmeldung-field.html" (dict "id" "hochschule" "label" "Hochschule/Universität" "placeholder" "Steinzeit Universität München" "error" "Bitte gib eine Hochschule oder Universität an" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "hochschule" "label" "Hochschule/Universität" "placeholder" "Steinzeit Universität München" "pattern" "^[\\p{Letter}\\s\\-.']+$" "error" "Bitte gib eine Hochschule oder Universität an" "width" "sm:col-span-3") }}
         {{ partial "anmeldung-select.html" (dict "id" "statusgruppe" "label" "Statusgruppe" "width" "sm:col-span-3" "options" (slice "A: Vertreterinnen, Vertreter und Mitglieder der Fachschaften" "B: Ehemalige" "C: Gäste")) }}
 
         {{ partial "anmeldung-toggle.html" (dict "id" "erste-baufak" "label" "Ist die 104. BauFak deine erste BauFak?" "width" "sm:col-span-2") }}
