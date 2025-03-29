@@ -1,5 +1,5 @@
 +++
-title = 'DIE LGA – DAS DIENSTLEISTUNGSUNTERNEHMEN'
+title = 'DIE LGA – DAS DIENSTㅤLEISTUNGSㅤUNTERNEHMEN'
 image = 'sponsoren/LGA.png'
 gold = true
 on-homepage = true
