@@ -154,7 +154,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     console.log(JSON.stringify(formData));
     let body: RegistrationData | Set<string> = parseRegistration(formData);
     if (body instanceof Set) {
-        return Response.json(body, { status: 400 });
+        return new Response([...body].join("\n"), { status: 400 });
     }
     
     return Response.json(body);
