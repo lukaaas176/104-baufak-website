@@ -36,7 +36,7 @@ interface RegistrationData {
     readonly allergien: string;
     readonly tshirt: string;
     readonly buddy: string;
-    readonly immatbescheinigung: File;
+    readonly immatbescheinigung: string;
     readonly kommentar: string;
     readonly datenschutz: boolean;
     readonly teilnahmegebuehr: boolean;
@@ -81,8 +81,10 @@ function checkPattern(formData: {[k: string]: string | File}, validationErrors: 
     }
     return entry;
 }
+// @ts-ignore
+import { Buffer } from 'node:buffer';
 
-function parseRegistration(formData: {[k: string]: string | File}): RegistrationData | Set<string> {
+async function parseRegistration(formData: {[k: string]: string | File}): Promise<RegistrationData | Set<string>> {
     let validationErrors: Set<string> = new Set();
     let data: RegistrationData = null;
     
@@ -95,11 +97,12 @@ function parseRegistration(formData: {[k: string]: string | File}): Registration
             validationErrors.add("Die wievielte BauFaK ist keine gültige Zahl");
         }
     }
-    let immatbescheinigung: File = null;
+    let immatbescheinigung: string = null;
     if (formData["immatrikulation"] instanceof File) {
-        immatbescheinigung = formData["immatrikulation"];
-        if (10000000 <  immatbescheinigung.size) { // 10 MB
-            immatbescheinigung = null;
+        if (10000000 <  formData["immatrikulation"].size) { // 10 MB
+            validationErrors.add("Der Immatrikulationsbescheinigung ist zu groß!");
+        } else {
+            immatbescheinigung = Buffer.from(await formData["immatrikulation"].arrayBuffer()).toString("base64");
         }
     }
     
@@ -185,19 +188,8 @@ function calculateFee(data: RegistrationData): number {
 import mailHTML from "./registration.html";
 // @ts-ignore
 import mailTXT from "./registration.txt";
-// @ts-ignore
-import { Buffer } from 'node:buffer';
 
 async function sendMail(data: RegistrationData, token: string): Promise<boolean> {
-    let attachment: any = null;
-    if (data.immatbescheinigung) {
-        let arrayBuffer: ArrayBuffer = await data.immatbescheinigung.arrayBuffer();
-        attachment = [{
-            "filename": data.immatbescheinigung.name,
-            "content": Buffer.from(arrayBuffer).toString("base64")
-        }];
-    }
-
     let response: Response = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
@@ -211,7 +203,10 @@ async function sendMail(data: RegistrationData, token: string): Promise<boolean>
             subject: "Anmeldung zur 104. BauFaK",
             html: formatMail(mailHTML, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString()),
             text: formatMail(mailTXT, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString()),
-            attachments: attachment ? [ attachment ] : []
+            attachments: data.immatbescheinigung ? [ {
+                "filename": "immatbescheinigung.pdf",
+                "content": data.immatbescheinigung
+            } ] : []
         })
     });
     if (response.status != 200) {
@@ -229,7 +224,7 @@ async function sendMail(data: RegistrationData, token: string): Promise<boolean>
 export const onRequestPost: PagesFunction<Env> = async (context) => {
     let formData: {[k: string]: string | File} = await context.request.formData().then(Object.fromEntries);
     console.log(`Received registration data: ${JSON.stringify(formData)}`);
-    let data: RegistrationData | Set<string> = parseRegistration(formData);
+    let data: RegistrationData | Set<string> = await parseRegistration(formData);
     if (data instanceof Set) {
         return new Response([...data].join("\n"), { status: 400 });
     }
