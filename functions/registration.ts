@@ -193,8 +193,14 @@ async function sendMail(data: RegistrationData, token: string): Promise<boolean>
     let body: string = JSON.stringify({
         "from": "Anmeldung 104. BauFaK <anmeldung@baufak.santos.dev>",
         "to": data.email,
+        "reply_to": "baufak104.fsbgu@ed.tum.de",
         subject: "Anmeldung zur 104. BauFaK",
         html: formatMail(mailHTML, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString()),
+        text: formatMail(mailTXT, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString()),
+        attachments: data.immatbescheinigung ? [ {
+            "content": data.immatbescheinigung,
+            "filename": "immatbescheinigung.pdf"
+        }] : []
     });
     let response: Response = await fetch("https://api.resend.com/emails", {
         method: "POST",
