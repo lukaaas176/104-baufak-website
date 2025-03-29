@@ -44,7 +44,7 @@ interface RegistrationData {
 
 function getAsString(formData: {[k: string]: string | File}, validationErrors: Set<string>, name: string, humanName: string): string {
     let entry: string | File = formData[name];
-    if (entry instanceof String) {
+    if (typeof entry === "string") {
         return entry as string;
     }
     return "";
@@ -68,6 +68,7 @@ function checkNotEmpty(formData: {[k: string]: string | File}, validationErrors:
     let entry: string = getAsString(formData, validationErrors, name, humanName);
     if (entry.trim().length == 0) {
         validationErrors.add(humanName + " darf nicht leer sein!");
+        return "";
     }
     return entry;
 }
@@ -76,6 +77,7 @@ function checkPattern(formData: {[k: string]: string | File}, validationErrors: 
     let entry: string = checkNotEmpty(formData, validationErrors, name, humanName);
     if (!entry.match(pattern)) {
         validationErrors.add(humanName + " hat ein ungültiges Format!");
+        return "";
     }
     return entry;
 }
