@@ -119,3 +119,30 @@ document.querySelectorAll("select").forEach(element => {
         });
     }
 });
+
+const form: HTMLElement | null = document.getElementById("registration");
+const feedbackDiv: HTMLElement | null = document.getElementById("feedback");
+
+async function sendData(formData: FormData, feedbackDiv: HTMLElement) {
+    let response: Response = await fetch("/registration", {
+        method: "POST",
+        body: formData
+    });
+    if (response.status == 200) {
+        feedbackDiv.innerText = "Du hast dich erfolgreich angemeldet. Bitte überprüfe dein E-Mail Posteingang sowie auch Spam!";
+        feedbackDiv.classList.remove("hidden");
+        feedbackDiv.classList.add("bg-emerald-100", "border-emerald-500");
+        return;
+    }
+    feedbackDiv.innerText = await response.text();
+    feedbackDiv.classList.remove("hidden");
+    feedbackDiv.classList.add("bg-red-100", "border-red-500");
+    return;
+}
+
+if (form instanceof HTMLFormElement && feedbackDiv instanceof HTMLElement) {
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        sendData(new FormData(form), feedbackDiv);
+    });
+}

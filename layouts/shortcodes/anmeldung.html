@@ -1,4 +1,4 @@
-<form id="registration" method="post" enctype="multipart/form-data">
+<form id="registration">
     <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
         {{ partial "anmeldung-field.html" (dict "id" "vorname" "label" "Vorname" "autofill" "given-name" "placeholder" "Ida" "pattern" "^[\\p{Letter}\\s\\-.']+$" "error" "Bitte gib einen gültigen Vornamen ein" "width" "sm:col-span-3") }}
         {{ partial "anmeldung-field.html" (dict "id" "nachname" "label" "Nachname" "autofill" "family-name" "placeholder" "Dino" "pattern" "^[\\p{Letter}\\s\\-.']+$" "error" "Bitte gib einen gültigen Nachnamen ein" "width" "sm:col-span-3") }}
@@ -59,6 +59,9 @@
   
     <div class="mt-10 flex justify-end">
         <button type="submit" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-white font-medium shadow-md hover:bg-primary/90 h-9 px-4 py-2">Anmelden</button>
+    </div>
+
+    <div id="feedback" class="mt-5 border-l-4 p-4 rounded-md shadow-md font-semibold hidden">
     </div>
 </form>
 
