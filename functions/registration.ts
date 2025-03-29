@@ -190,29 +190,30 @@ import mailHTML from "./registration.html";
 import mailTXT from "./registration.txt";
 
 async function sendMail(data: RegistrationData, token: string): Promise<boolean> {
+    let body: string = JSON.stringify({
+        "from": "anmeldung@baufak.santos.dev",
+        "to": data.email,
+        "reply_to": "baufak104.fsbgu@ed.tum.de",
+        subject: "Anmeldung zur 104. BauFaK",
+        html: formatMail(mailHTML, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString()),
+        text: formatMail(mailTXT, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString()),
+        attachments: data.immatbescheinigung ? [ {
+            "filename": "immatbescheinigung.pdf",
+            "content": data.immatbescheinigung
+        }] : []
+    });
     let response: Response = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
             "Authorization": "Bearer " + token,
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-            "from": "anmeldung@baufak.santos.dev",
-            "to": data.email,
-            "reply_to": "baufak104.fsbgu@ed.tum.de",
-            subject: "Anmeldung zur 104. BauFaK",
-            html: formatMail(mailHTML, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString()),
-            text: formatMail(mailTXT, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString()),
-            attachments: data.immatbescheinigung ? [ {
-                "filename": "immatbescheinigung.pdf",
-                "content": data.immatbescheinigung
-            }] : []
-        })
+        body: body
     });
     if (response.status != 200) {
         console.log("Couldn't send mail");
-        console.log("Data: " + JSON.stringify(data));
-        console.log("Response: " + JSON.stringify(response));
+        console.log("Body: " + body)
+        console.log("Response " + response.status + ": " + JSON.stringify(response));
         return false;
     }
 
