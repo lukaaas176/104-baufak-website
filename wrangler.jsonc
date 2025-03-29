@@ -1,9 +1,12 @@
 {
   "name": "104-baufak",
   "pages_build_output_dir": "./public",
-  "compatibility_date": "2025-03-25",
+  "compatibility_date": "2025-03-20",
   "upload_source_maps": true,
   "vars": {
     "HUGO_VERSION": "0.141.0"
+  },
+  "build": {
+    "command": "hugo --gc --minify"
   }
 }

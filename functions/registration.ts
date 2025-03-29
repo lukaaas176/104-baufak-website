@@ -151,13 +151,70 @@ function parseRegistration(formData: {[k: string]: string | File}): Registration
         return data;
 }
 
+function formatMail(template: string, data: RegistrationData) {
+    return Object.keys(data).reduce((acc, key) => acc.replaceAll(`\$\{${key}\}`, data[key]), template);
+}
+
+function calculateFee(data: RegistrationData): number {
+    let fee: number = 0;
+    switch (data.statusGruppe) {
+        case StatusGruppe.VERTRETER:
+            fee = 50;
+            break;
+        case StatusGruppe.EHEMALIGE:
+            fee = 100;
+            if (!data.schlafplatz) {
+                fee -= 10;
+            }
+            break;
+        case StatusGruppe.GAESTE:
+            fee = 150;
+            break;
+    }
+    return fee;
+}
+
+// @ts-ignore
+import mailHTML from "./registration.html";
+
+async function sendMail(data: RegistrationData, token: string): Promise<boolean> {
+    String.bind
+
+    let response: Response = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+            "Authorization": "Bearer " + token,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "from": "anmeldung@baufak.santos.dev",
+            "to": data.email,
+            subject: "Anmeldung zur 104. BauFaK",
+            html: formatMail(mailHTML, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString())
+        })
+    });
+    if (response.status != 200) {
+        console.log("Couldn't send mail");
+        console.log("Data: " + JSON.stringify(data));
+        console.log("Response: " + JSON.stringify(response));
+        return false;
+    }
+
+    return true;
+}
+
 export const onRequestPost: PagesFunction<Env> = async (context) => {
     let formData: {[k: string]: string | File} = await context.request.formData().then(Object.fromEntries);
     console.log(JSON.stringify(formData));
-    let body: RegistrationData | Set<string> = parseRegistration(formData);
-    if (body instanceof Set) {
-        return new Response([...body].join("\n"), { status: 400 });
+    let data: RegistrationData | Set<string> = parseRegistration(formData);
+    if (data instanceof Set) {
+        return new Response([...data].join("\n"), { status: 400 });
     }
+    let mailSent: boolean = await sendMail(data, context.env.RESEND_TOKEN);
     
-    return Response.json(body);
+    if (!mailSent) {
+        return new Response("Konnten die Anmeldemail nicht verschicken. Bitte probiere es später noch einmal!", { status: 400 });
+    }
+
+    return Response.json(data);
 };
