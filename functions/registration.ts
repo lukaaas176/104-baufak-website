@@ -96,8 +96,8 @@ function parseRegistration(formData: {[k: string]: string | File}): Registration
         }
     }
     let immatbescheinigung: File = null;
-    if (formData["immatbescheinigung"] instanceof File) {
-        immatbescheinigung = formData["immatbescheinigung"];
+    if (formData["immatrikulation"] instanceof File) {
+        immatbescheinigung = formData["immatrikulation"];
         if (10000000 <  immatbescheinigung.size) { // 10 MB
             immatbescheinigung = null;
         }
@@ -189,10 +189,10 @@ import mailTXT from "./registration.txt";
 async function sendMail(data: RegistrationData, token: string): Promise<boolean> {
     let attachment: any = null;
     if (data.immatbescheinigung) {
-        attachment = {
+        attachment = [{
             "filename": data.immatbescheinigung.name,
             "content": btoa(String.fromCharCode(...await data.immatbescheinigung.bytes()))
-        };
+        }];
     }
 
     let response: Response = await fetch("https://api.resend.com/emails", {
