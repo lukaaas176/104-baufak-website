@@ -49,11 +49,14 @@ async function parseRegistration(formData: {[k: string]: string | File}): Promis
     let statusGruppe: StatusGruppe = getStatusGruppe(formData, validationErrors);
     let ersteBauFaK: boolean = "erste-baufak" in formData;
     let wievielteBaufak: number = 1;
+    let buddy: string = getAsString(formData, validationErrors, "buddy", "Das Buddyprogramm");
     if (!ersteBauFaK) {
         wievielteBaufak = parseInt(checkNotEmpty(formData, validationErrors, "wievielte-baufak", "Die wievielte BauFaK"));
         if (wievielteBaufak == Number.NaN || wievielteBaufak < 1 || 104 < wievielteBaufak) {
             validationErrors.add("Die wievielte BauFaK ist keine gültige Zahl");
         }
+    } else {
+        buddy = "Ich möchte ein Buddy";
     }
     let immatbescheinigung: string = null;
     if (formData["immatrikulation"] instanceof File) {
@@ -106,7 +109,7 @@ async function parseRegistration(formData: {[k: string]: string | File}): Promis
         allergieSoja: "allergie-soja" in formData,
         allergien: getAsString(formData, validationErrors, "allergien", "Die sonstigen Allergien"),
         tshirt: checkNotEmpty(formData, validationErrors, "tshirt", "Das T-Shirt"),
-        buddy: getAsString(formData, validationErrors, "buddy", "Das Buddyprogramm"),
+        buddy: buddy,
         immatbescheinigung: immatbescheinigung,
         kommentar: getAsString(formData, validationErrors, "kommentar", "Der Kommentar"),
         datenschutz: "datenschutz" in formData,
