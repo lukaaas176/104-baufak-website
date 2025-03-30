@@ -1,5 +1,9 @@
 import { StatusGruppe, RegistrationData } from "./registration-types";
 
+function escape(field: string): string {
+    return `"${field.replace(/"/g, '""')}"`
+}
+
 export const onRequestGet: PagesFunction<Env> = async (context) => {
     if (!context.request.headers.has("Authorization")) {
         return new Response(null, {
@@ -32,8 +36,8 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
         return new Response("Es existieren keine Anmeldungen");
     }
     let firstResult: any = result.results[0];
-    let header: string = Object.keys(firstResult).join(",");
-    let rows: string = result.results.map(row => Object.values(row).join(',')).join('\n');
+    let header: string = Object.keys(firstResult).map(escape).join(",");
+    let rows: string = result.results.map(row => Object.values(row).map(escape).join(',')).join('\n');
     let body: string = header + "\n" + rows;
     return new Response(body, {
         headers: {
