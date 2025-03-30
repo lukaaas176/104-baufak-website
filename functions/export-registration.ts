@@ -37,7 +37,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
     }
     let firstResult: any = result.results[0];
     let header: string = Object.keys(firstResult).map(escape).join(",");
-    let rows: string = result.results.map(row => Object.values(row).map(escape).join(',')).join('\n');
+    let rows: string = result.results.map(row => Object.values(row).map(entry => entry.toString()).map(escape).join(',')).join('\n');
     let body: string = header + "\n" + rows;
     return new Response(body, {
         headers: {
