@@ -10,11 +10,15 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
         });
     } else {
         let authorizationHeader: string = context.request.headers.get("Authorization");
+        if (!authorizationHeader.startsWith("Basic ")) {
+            return new Response("No Basic Auth", { status: 401 });
+        }
+        authorizationHeader = atob(authorizationHeader.substring(6));
         if (!authorizationHeader.startsWith("baufak:")) {
             return new Response("Invalid User", { status: 401 });
         }
         authorizationHeader = authorizationHeader.substring(7);
-        if (atob(authorizationHeader) != context.env.EXPORT_TOKEN) {
+        if (authorizationHeader != context.env.EXPORT_TOKEN) {
             return new Response("Invalid Token", { status: 401 });
         }
     }
