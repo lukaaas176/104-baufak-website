@@ -227,6 +227,7 @@ async function saveRegistration(data: RegistrationData, database: D1Database): P
     if (!result.success) {
         console.log("Couldn't save entry: " + JSON.stringify(result.meta));
     }
+    console.log("Saved entry to database");
 
     return result.success;
 }
@@ -238,6 +239,7 @@ async function uploadImmatrikulation(data: RegistrationData, bucket: R2Bucket): 
             contentDisposition: `attachment; filename="immatrikulationsbescheinigung_${data.nachname}_${data.vorname}.pdf"`,
             contentType: "application/pdf"
     }});
+    console.log("Uploaded as file " + filename);
     data.immatbescheinigungId = filename;
 
     return true;
