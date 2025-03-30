@@ -22,7 +22,24 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
             return new Response("Invalid Token", { status: 401 });
         }
     }
-    let response: D1Response = await context.env.DB.prepare("SELECT vorname, nachname, email, telefon, hochschule, statusGruppe, ersteBaufak, wievielteBaufak, bauhelm, sicherheitsschuhe, deutschlandticket, anreisezeitpunkt, anreisezeitpunktKommentar, anreisemittel, abreisezeitpunkt, abreisezeitpunktKommentar, abreisemittel, schlafplatz, kommentarSchlafplatz, schlafplatzAuswahl, schlafplatzPersonen, ernaehrung, allergieLaktose, allergieUniversitaet, allergieGluten, allergieNuesse, allergieArchitekten, allergieSoja, allergien, tshirt, buddy, kommentar, datenschutz, teilnahmegebuehr FROM registrations")
-        .all();
-    return Response.json(response);
+    let result: D1Result = await context.env.DB.prepare("SELECT vorname, nachname, email, telefon, hochschule, statusGruppe, ersteBaufak, wievielteBaufak, bauhelm, sicherheitsschuhe, deutschlandticket, anreisezeitpunkt, anreisezeitpunktKommentar, anreisemittel, abreisezeitpunkt, abreisezeitpunktKommentar, abreisemittel, schlafplatz, kommentarSchlafplatz, schlafplatzAuswahl, schlafplatzPersonen, ernaehrung, allergieLaktose, allergieUniversitaet, allergieGluten, allergieNuesse, allergieArchitekten, allergieSoja, allergien, tshirt, buddy, kommentar, datenschutz, teilnahmegebuehr FROM registrations")
+        .all<string>();
+    if (!result.success) {
+        console.log(result)
+        return new Response("Konnte die Anmeldungen nicht abrufen", { status: 500 });
+    }
+    if (result.results.length == 0) {
+        return new Response("Es existieren keine Anmeldungen");
+    }
+    let firstResult: any = result.results[0];
+    let header: string = Object.keys(firstResult).join(",");
+    let rows: string = result.results.map(row => Object.values(row).join(',')).join('\n');
+    let body: string = header + "\n" + rows;
+    return new Response(body, {
+        headers: {
+            "Content-Type": "text/csv;charset=UTF-8",
+            "Content-Length": body.length.toString(),
+            "Content-Disposition": 'attachment; filename="anmeldungen.csv"'
+        }
+    })
 };
