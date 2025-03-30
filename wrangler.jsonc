@@ -16,6 +16,12 @@
           "database_id": "c8cbbb0c-d750-4828-a62c-4ab559bd476e"
         }
   ],
+  "r2_buckets": [
+    {
+      "binding": "R2_BUCKET",
+      "bucket_name": "104-baufak-files"
+    }
+  ],
   "env": {
     "production": {
       "d1_databases": [

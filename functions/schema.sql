@@ -35,5 +35,6 @@ CREATE TABLE IF NOT EXISTS registrations (
   buddy TEXT,
   kommentar TEXT,
   datenschutz INTEGER,
-  teilnahmegebuehr INTEGER
+  teilnahmegebuehr INTEGER,
+  immatbescheinigungId TEXT
 );

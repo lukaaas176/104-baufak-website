@@ -58,12 +58,12 @@ async function parseRegistration(formData: {[k: string]: string | File}): Promis
     } else {
         buddy = "Ich möchte ein Buddy";
     }
-    let immatbescheinigung: string = null;
+    let immatbescheinigung: ArrayBuffer = null;
     if (formData["immatrikulation"] instanceof File) {
         if (10000000 <  formData["immatrikulation"].size) { // 10 MB
             validationErrors.add("Der Immatrikulationsbescheinigung ist zu groß!");
         } else {
-            immatbescheinigung = Buffer.from(await formData["immatrikulation"].arrayBuffer()).toString("base64");
+            immatbescheinigung = await formData["immatrikulation"].arrayBuffer();
         }
     }
     
@@ -159,7 +159,7 @@ async function sendMail(data: RegistrationData, token: string): Promise<boolean>
         html: formatMail(mailHTML, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString()),
         text: formatMail(mailTXT, data).replace("TEILNEHMERBETRAG", calculateFee(data).toString()),
         attachments: data.immatbescheinigung ? [ {
-            "content": data.immatbescheinigung,
+            "content": Buffer.from(data.immatbescheinigung).toString("base64"),
             "filename": "immatbescheinigung.pdf"
         }] : []
     });
@@ -184,7 +184,7 @@ async function sendMail(data: RegistrationData, token: string): Promise<boolean>
 }
 
 async function saveRegistration(data: RegistrationData, database: D1Database): Promise<boolean> {
-    let result: D1Result = await database.prepare("INSERT INTO registrations (vorname, nachname, email, telefon, hochschule, statusGruppe, ersteBaufak, wievielteBaufak, bauhelm, sicherheitsschuhe, deutschlandticket, anreisezeitpunkt, anreisezeitpunktKommentar, anreisemittel, abreisezeitpunkt, abreisezeitpunktKommentar, abreisemittel, schlafplatz, kommentarSchlafplatz, schlafplatzAuswahl, schlafplatzPersonen, ernaehrung, allergieLaktose, allergieUniversitaet, allergieGluten, allergieNuesse, allergieArchitekten, allergieSoja, allergien, tshirt, buddy, kommentar, datenschutz, teilnahmegebuehr) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+    let result: D1Result = await database.prepare("INSERT INTO registrations (vorname, nachname, email, telefon, hochschule, statusGruppe, ersteBaufak, wievielteBaufak, bauhelm, sicherheitsschuhe, deutschlandticket, anreisezeitpunkt, anreisezeitpunktKommentar, anreisemittel, abreisezeitpunkt, abreisezeitpunktKommentar, abreisemittel, schlafplatz, kommentarSchlafplatz, schlafplatzAuswahl, schlafplatzPersonen, ernaehrung, allergieLaktose, allergieUniversitaet, allergieGluten, allergieNuesse, allergieArchitekten, allergieSoja, allergien, tshirt, buddy, kommentar, datenschutz, teilnahmegebuehr, immatbescheinigungId) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
         .bind(
             data.vorname,
             data.nachname,
@@ -219,7 +219,8 @@ async function saveRegistration(data: RegistrationData, database: D1Database): P
             data.buddy,
             data.kommentar,
             data.datenschutz,
-            data.teilnahmegebuehr
+            data.teilnahmegebuehr,
+            data.immatbescheinigungId
         )
         .run();
 
@@ -230,12 +231,31 @@ async function saveRegistration(data: RegistrationData, database: D1Database): P
     return result.success;
 }
 
+async function uploadImmatrikulation(data: RegistrationData, bucket: R2Bucket): Promise<boolean> {
+    const filename: string = crypto.randomUUID();
+    const response: R2Object | null = await bucket.put(filename, data.immatbescheinigung, {
+        httpMetadata: {
+            contentDisposition: `attachment; filename="immatrikulationsbescheinigung_${data.nachname}_${data.vorname}.pdf"`,
+            contentType: "application/pdf"
+    }});
+    if (!(response instanceof R2Object)) {
+        return false;
+    }
+    data.immatbescheinigungId = filename;
+
+    return true;
+}
+
 export const onRequestPost: PagesFunction<Env> = async (context) => {
     let formData: {[k: string]: string | File} = await context.request.formData().then(Object.fromEntries);
     console.log(`Received registration data: ${JSON.stringify(formData)}`);
     let data: RegistrationData | Set<string> = await parseRegistration(formData);
     if (data instanceof Set) {
         return new Response([...data].join("\n"), { status: 400 });
+    }
+    let immatrikulationId: boolean = await uploadImmatrikulation(data, context.env.R2_BUCKET);
+    if (!immatrikulationId) {
+        return new Response("Konnten die Immatrikulationsbescheinigung nicht speichern. Bitte probiere es später noch einmal!", { status: 400 });
     }
     let saveIntoDatabase: boolean = await saveRegistration(data, context.env.DB);
     if (!saveIntoDatabase) {
