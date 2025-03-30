@@ -233,14 +233,11 @@ async function saveRegistration(data: RegistrationData, database: D1Database): P
 
 async function uploadImmatrikulation(data: RegistrationData, bucket: R2Bucket): Promise<boolean> {
     const filename: string = crypto.randomUUID();
-    const response: R2Object | null = await bucket.put(filename, data.immatbescheinigung, {
+    await bucket.put(filename, data.immatbescheinigung, {
         httpMetadata: {
             contentDisposition: `attachment; filename="immatrikulationsbescheinigung_${data.nachname}_${data.vorname}.pdf"`,
             contentType: "application/pdf"
     }});
-    if (!(response instanceof R2Object)) {
-        return false;
-    }
     data.immatbescheinigungId = filename;
 
     return true;
