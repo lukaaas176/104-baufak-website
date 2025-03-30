@@ -222,6 +222,53 @@ async function sendMail(data: RegistrationData, token: string): Promise<boolean>
     return true;
 }
 
+async function saveRegistration(data: RegistrationData, database: D1Database): Promise<boolean> {
+    let result: D1Result = await database.prepare("INSERT INTO registrations (vorname, nachname, email, telefon, hochschule, statusGruppe, ersteBaufak, wievielteBaufak, bauhelm, sicherheitsschuhe, deutschlandticket, anreisezeitpunkt, anreisezeitpunktKommentar, anreisemittel, abreisezeitpunkt, abreisezeitpunktKommentar, abreisemittel, schlafplatz, kommentarSchlafplatz, schlafplatzAuswahl, schlafplatzPersonen, ernaehrung, allergieLaktose, allergieUniversitaet, allergieGluten, allergieNuesse, allergieArchitekten, allergieSoja, allergien, tshirt, buddy, kommentar, datenschutz, teilnahmegebuehr) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+        .bind(
+            data.vorname,
+            data.nachname,
+            data.email,
+            data.telefon,
+            data.hochschule,
+            data.statusGruppe,
+            data.ersteBaufak,
+            data.wievielteBaufak,
+            data.bauhelm,
+            data.sicherheitsschuhe,
+            data.deutschlandticket,
+            data.anreisezeitpunkt,
+            data.anreisezeitpunktKommentar,
+            data.anreisemittel,
+            data.abreisezeitpunkt,
+            data.abreisezeitpunktKommentar,
+            data.abreisemittel,
+            data.schlafplatz,
+            data.kommentarSchlafplatz,
+            data.schlafplatzAuswahl,
+            data.schlafplatzPersonen,
+            data.ernaehrung,
+            data.allergieLaktose,
+            data.allergieUniversitaet,
+            data.allergieGluten,
+            data.allergieNuesse,
+            data.allergieArchitekten,
+            data.allergieSoja,
+            data.allergien,
+            data.tshirt,
+            data.buddy,
+            data.kommentar,
+            data.datenschutz,
+            data.teilnahmegebuehr
+        )
+        .run();
+
+    if (!result.success) {
+        console.log("Couldn't save entry: " + JSON.stringify(result.meta));
+    }
+
+    return result.success;
+}
+
 export const onRequestPost: PagesFunction<Env> = async (context) => {
     let formData: {[k: string]: string | File} = await context.request.formData().then(Object.fromEntries);
     console.log(`Received registration data: ${JSON.stringify(formData)}`);
@@ -229,6 +276,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     if (data instanceof Set) {
         return new Response([...data].join("\n"), { status: 400 });
     }
+    let saveIntoDatabase: boolean = await saveRegistration(data, context.env.DB);
+    if (!saveIntoDatabase) {
+        return new Response("Konnten die Anmeldung nicht speichern. Bitte probiere es später noch einmal!", { status: 400 });
+    }
+
     let mailSent: boolean = await sendMail(data, context.env.RESEND_TOKEN);
     
     if (!mailSent) {
