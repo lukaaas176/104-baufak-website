@@ -7,7 +7,7 @@ E-Mail Adresse: ${email}
 Telefonnummer: ${telefon}
 Hochschule/Universität: ${hochschule}
 Statusgruppe: ${statusGruppe}
-Bist du das erste Mail auf der BauFaK: ${ersteBaufak}
+Bist du das erste Mal auf der BauFaK: ${ersteBaufak}
 Deine wievielte BauFaK ist die 104.: ${wievielteBaufak}
 Besitzt du ein Bauhelm: ${bauhelm}
 Besitzt du Sicherheitsschuhe: ${sicherheitsschuhe}
