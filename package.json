@@ -2,6 +2,11 @@
   "devDependencies": {
     "@parcel/watcher": "^2.5.0",
     "@tailwindcss/cli": "^4.0.0-beta.8",
-    "tailwindcss": "^4.0.0-beta.8"
+    "@types/node": "^22.13.14",
+    "tailwindcss": "^4.0.0-beta.8",
+    "wrangler": "^4.4.0"
+  },
+  "dependencies": {
+    "resend": "^4.2.0"
   }
 }
