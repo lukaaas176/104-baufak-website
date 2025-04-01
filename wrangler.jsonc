@@ -30,7 +30,16 @@
           "database_name": "production-104-baufak",
           "database_id": "7c3555f9-a09b-46fa-88bb-b8a1bd2d51bc"
         }
-      ]
+      ],
+      "r2_buckets": [
+        {
+          "binding": "R2_BUCKET",
+          "bucket_name": "104-baufak-files"
+        }
+      ],
+      "vars": {
+        "HUGO_VERSION": "0.141.0"
+      }
     }
   }
 }
