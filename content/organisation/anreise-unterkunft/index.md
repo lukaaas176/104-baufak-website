@@ -31,8 +31,27 @@ Ihr seid auf euch allein gestellt, da unser Empfangskomitee keine okkulten, spir
 ## Weitere wichtige Informationen für die Anfahrt
 Wenn ihr weitere Informationen zum Nahverkehr in München braucht, dann schaut einfach mal unter **[www.mvv-muenchen.de](https://www.mvv-muenchen.de)**!
 
+{{<maps-embedded src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5326.343636976034!2d11.565601477082824!3d48.1487645712447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e7261336d8c11%3A0x79a04d44dc5bf19d!2sTechnical%20University%20of%20Munich!5e0!3m2!1sen!2sde!4v1743511726019!5m2!1sen!2sde">}}
+
 # Veranstaltungsort/der Campus
 Der Großteil der Veranstaltung wird auf dem Stammgelände der Technischen Universität München (TUM) stattfinden, in der Arcisstraße 21, mitten im Museumsviertel Münchens. Genaue Raumpläne und Skizzen mit detaillierten Informationen zu den Veranstaltungsorten werden kurz vor der Veranstaltung bereitgestellt. Ein Lageplan des Geländes ist im Folgenden dargestellt.
 
-{{<figure src="innenstadt.png">}}
+{{<figure src="innenstadt.png" class="py-3">}}
 
+# Unterkunft
+Aufgrund des parallel stattfindenden Champions-League-Finales müssen wir euch leider auf zwei Hostels aufteilen. Die genaue Zuteilung der Zimmer und Hostels erhaltet ihr kurz vor der Veranstaltung.
+
+Die beiden Hostels, in denen ihr untergebracht werdet, sind:
+
+{{<span class="underline">}}[**a&o München Hackerbrücke**  
+Arnulfstr. 102  
+80636 München - Deutschland](https://www.google.com/maps/dir/?api=1&destination=a%26o%20Hostel%20M%C3%BCnchen%20Hackerbr%C3%BCcke%2C%20Arnulfstra%C3%9Fe%20102%2C%2080636%20M%C3%BCnchen&travelmode=transit&origin=Technical%20University%20of%20Munich%2C%20Arcisstra%C3%9Fe%2021%2C%2080333%20M%C3%BCnchen){{</span>}}  
++49 89 45 23 59 - 58 00
+
+{{<span class="underline">}}[**a&o München Laim**  
+Landsberger Straße 338  
+80687 München - Deutschland](https://www.google.com/maps/dir/?api=1&destination=a%26o%20M%C3%BCnchen%20Laim%2C%20Landsberger%20Stra%C3%9Fe%20338%2C%2080687%20M%C3%BCnchen&travelmode=transit&origin=Technical%20University%20of%20Munich%2C%20Arcisstra%C3%9Fe%2021%2C%2080333%20M%C3%BCnchen){{</span>}}  
++49 89 2441108 3200
+
+{{<maps-embedded src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2277.728360224443!2d11.540121083127206!3d48.14578009924795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e7604e10fe0ad%3A0x7887d9614edda19!2sa%26o%20Hostel%20M%C3%BCnchen%20Hackerbr%C3%BCcke!5e0!3m2!1sen!2sde!4v1743511906712!5m2!1sen!2sde">}}
+{{<maps-embedded src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.2450868372684!2d11.492238357001046!3d48.14408003764144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e77d598ac813d%3A0x86dfd4e8ab042f33!2sa%26o%20Hostel%20Munich%20Laim!5e0!3m2!1sen!2sde!4v1743512194460!5m2!1sen!2sde">}}
