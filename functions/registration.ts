@@ -234,6 +234,10 @@ async function saveRegistration(data: RegistrationData, database: D1Database): P
 }
 
 async function uploadImmatrikulation(data: RegistrationData, bucket: R2Bucket): Promise<boolean> {
+    if (data.immatbescheinigung == null) {
+        console.log("No Immatrikulationsfile provided, not uploading!");
+        return true;
+    }
     const filename: string = crypto.randomUUID();
     await bucket.put(filename, data.immatbescheinigung, {
         httpMetadata: {

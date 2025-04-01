@@ -36,7 +36,7 @@ export interface RegistrationData {
     readonly allergien: string;
     readonly tshirt: string;
     readonly buddy: string;
-    readonly immatbescheinigung: ArrayBuffer;
+    readonly immatbescheinigung?: ArrayBuffer;
     immatbescheinigungId?: string;
     readonly kommentar: string;
     readonly datenschutz: boolean;
