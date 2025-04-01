@@ -37,7 +37,7 @@ export interface RegistrationData {
     readonly tshirt: string;
     readonly buddy: string;
     readonly immatbescheinigung?: ArrayBuffer;
-    immatbescheinigungId?: string;
+    immatbescheinigungId: string;
     readonly kommentar: string;
     readonly datenschutz: boolean;
     readonly teilnahmegebuehr: boolean;
