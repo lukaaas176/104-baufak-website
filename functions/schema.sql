@@ -36,5 +36,6 @@ CREATE TABLE IF NOT EXISTS registrations (
   kommentar TEXT,
   datenschutz INTEGER,
   teilnahmegebuehr INTEGER,
-  immatbescheinigungId TEXT
+  immatbescheinigungId TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

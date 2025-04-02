@@ -111,6 +111,7 @@ async function parseRegistration(formData: {[k: string]: string | File}): Promis
         tshirt: checkNotEmpty(formData, validationErrors, "tshirt", "Das T-Shirt"),
         buddy: buddy,
         immatbescheinigung: immatbescheinigung,
+        immatbescheinigungId: "",
         kommentar: getAsString(formData, validationErrors, "kommentar", "Der Kommentar"),
         datenschutz: "datenschutz" in formData,
         teilnahmegebuehr: "teilnahmegebuehr" in formData
@@ -236,7 +237,6 @@ async function saveRegistration(data: RegistrationData, database: D1Database): P
 async function uploadImmatrikulation(data: RegistrationData, bucket: R2Bucket): Promise<boolean> {
     if (data.immatbescheinigung == null) {
         console.log("No Immatrikulationsfile provided, not uploading!");
-        data.immatbescheinigungId = "";
         return true;
     }
     const filename: string = crypto.randomUUID();
