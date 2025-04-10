@@ -7,7 +7,7 @@ description: Unser Team setzt sich aus aktiven Fachschaftlern, ehemaligen Fachsc
 {{<figure src="../team.jpg" class="pb-10">}}
 
 
-
+{{<easteregg image="dino.png">}}
 {{<team>}}
 {{<member image="lena.jpg">}}
 # Lena Weigl
@@ -32,6 +32,7 @@ Master Bauingenieurwesen
 Die Hauptorganisation einer BauFaK (Bauingenieur-Fachschaftenkonferenz) koordiniert die Planung und Durchführung der Konferenz, stellt die Location, Verpflegung und Unterkunft bereit und kümmert sich um die finanzielle Organisation. Zudem organisiert sie das Programm, einschließlich der Arbeitskreise, Vorträge und Freizeitaktivitäten, und ist für die Kommunikation mit Teilnehmer*innen und Partnern verantwortlich.
 {{</span>}}
 {{</team>}}
+{{</easteregg>}}
 
 {{<team right="true">}}
 {{<member image="platzhalter.png">}}

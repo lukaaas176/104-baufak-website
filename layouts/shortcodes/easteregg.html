@@ -1,0 +1,22 @@
+<div class="">
+    <div class="peer">
+        {{ .Inner }}
+    </div>
+
+    {{- $u := urls.Parse (.Get "image") -}}
+    {{- $src := $u.String -}}
+    {{- if not $u.IsAbs -}}
+        {{- with or (.Page.Resources.Get $u.Path) (resources.Get $u.Path) -}}
+        {{- $src = .RelPermalink -}}
+        {{- end -}}
+    {{- end -}}
+
+    <img src="{{ $src }}" class="fixed -bottom-64 peer-hover:-translate-y-3/4 left-0 size-64 transition-transform z-50"
+        {{- if or (.Get "alt") (.Get "caption") }}
+        alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}"
+        {{- end -}}
+        {{- with .Get "width" }} width="{{ . }}"{{ end -}}
+        {{- with .Get "height" }} height="{{ . }}"{{ end -}}
+        {{- with .Get "loading" }} loading="{{ . }}"{{ end -}}
+    >
+</div>
