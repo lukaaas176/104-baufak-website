@@ -4,8 +4,14 @@ summary: Der Erfolg der BauFaK hängt nicht nur von der Planung und den Ressourc
 description: Unser Team setzt sich aus aktiven Fachschaftlern, ehemaligen Fachschaftlern sowie Freunden und Bekannten aus anderen Fachschaften zusammen, die alle tatkräftig mithelfen, damit die BauFaK reibungslos über die Bühne geht
 ---
 
-{{<figure src="../team.jpg" class="pb-10">}}
-
+{{<div class="carousel pb-10 rounded-md drop-shadow-md">}}
+{{<div class="carousel-item max-w-full">}}
+{{<figure src="../team.jpg">}}
+{{</div>}}
+{{<div class="carousel-item max-w-full">}}
+{{<figure src="hos.jpg">}}
+{{</div>}}
+{{</div>}}
 
 {{<easteregg image="dino.png">}}
 {{<team>}}
