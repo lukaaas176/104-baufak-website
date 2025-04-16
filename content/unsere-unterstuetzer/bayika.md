@@ -1,9 +1,9 @@
 +++
 title = 'Bayerische Ingenieurekammer-Bau'
 image = 'sponsoren/bayika.png'
-silber = true
+gold = true
 on-homepage = true
-weight = 102
+weight = 53
 homepage = 'https://www.bayika.de/de/'
 +++
 Die Bayerische Ingenieurekammer-Bau ist die Berufsvertretung der bayerischen Ingenieure aus Bauwesen und Bauwirtschaft, Freien Berufen und öffentlichem Dienst im Freistaat Bayern.
