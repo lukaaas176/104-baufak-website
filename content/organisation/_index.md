@@ -9,7 +9,7 @@ Schreibt bei Fragen gerne der Organisation: [baufakorga.fsbgu@ed.tum.de](mailto:
 Ihr findet hier den aktuellen Zeitplan für die 104. BauFak in München sowohl zum Anschauen als auch zum Runterladen!
 {{</section-card>}}
 
-{{<section-card title="Anreise und Unterkunft" image="/organisation/packliste/sonstiges.jpg" page="/organisation/anreise-unterkunft">}}
+{{<section-card title="Anreise und Unterkunft" image="/organisation/standort.jpg" page="/organisation/anreise-unterkunft">}}
 Hier findet ihr Informationen, wo es für die Bauingenieur-Fachschaften-Konferenz hingeht und was für Unterkünfte wir euch organisiert haben!
 {{</section-card>}}
 
