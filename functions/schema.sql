@@ -66,3 +66,14 @@ CREATE TABLE IF NOT EXISTS standleiterregistrations (
   datenschutz INTEGER,
   immatbescheinigungId TEXT
 );
+
+CREATE TABLE IF NOT EXISTS exkursionen (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  vorname TEXT,
+  nachname TEXT,
+  email TEXT,
+  exkursion1 TEXT,
+  exkursion2 TEXT,
+  exkursion3 TEXT,
+  datenschutz INTEGER
+);
