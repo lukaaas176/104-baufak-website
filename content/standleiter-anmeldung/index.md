@@ -1,7 +1,11 @@
 +++
-title = 'Anmeldung'
+title = 'Anmeldung für Standleitungen'
 +++
 
-Auf dieser Seite kannst du dich für die 104. BauFak in München anmelden. Bitte lies die Anmeldung genau durch und schreib uns bei Fragen oder Fehlern gerne eine Mail an **[baufak104.fsbgu@ed.tum.de](mailto:baufak104.fsbgu@ed.tum.de)**!
+{{< alert title="Achtung" classes="my-10">}}
+Diese Anmeldung ist nur für Standleitungen der 104. BauFaK gedacht! Wenn du diesen Link nicht von der Hauptorga zugeschickt bekommen hast, bist du hier tendenziell falsch!
 
-{{< anmeldung >}}
+**[Klick hier](/anmeldung)** für die normale Anmeldung!
+{{< /alert >}}
+
+{{< standleiter-anmeldung >}}
