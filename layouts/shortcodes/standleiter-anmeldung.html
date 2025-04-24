@@ -1,0 +1,69 @@
+<form id="registration">
+    <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
+        {{ partial "anmeldung-field.html" (dict "id" "vorname" "label" "Vorname" "autofill" "given-name" "placeholder" "Ida" "pattern" "^[\\p{Letter}\\s\\-.']+$" "error" "Bitte gib einen gültigen Vornamen ein" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "nachname" "label" "Nachname" "autofill" "family-name" "placeholder" "Dino" "pattern" "^[\\p{Letter}\\s\\-.']+$" "error" "Bitte gib einen gültigen Nachnamen ein" "width" "sm:col-span-3") }}
+
+        {{ partial "anmeldung-field.html" (dict "id" "email" "label" "Persönliche E-Mail" "commentar" "Bitte keine Funktionsadressen wie vorstand@, info@ o.Ä.!" "autofill" "email" "type" "email" "placeholder" "ida@ikea.de" "pattern" "^[\\w\\-\\.]+@([\\w\\-]+\\.)+[\\w\\-]{2,}$" "error" "Bitte gib eine gültige E-Mail Adresse ein" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-field.html" (dict "id" "telefon" "label" "Telefonnummer" "autofill" "phone" "type" "tel" "placeholder" "+49 89 32168" "pattern" "^[\\d\\-+\\s\\(\\)]{5,}$" "error" "Bitte gib eine gültige Telefonnummer an" "width" "sm:col-span-3" "optional" true "inputmode" "numeric") }}
+
+        {{ partial "anmeldung-field.html" (dict "id" "hochschule" "label" "Hochschule/Universität" "placeholder" "Steinzeit Universität München" "pattern" "^[\\p{Letter}\\s\\-.']+$" "error" "Bitte gib eine Hochschule oder Universität an" "width" "sm:col-span-3") }}
+        {{ partial "anmeldung-select.html" (dict "id" "statusgruppe" "label" "Statusgruppe" "width" "sm:col-span-3" "options" (slice "A: Vertreterinnen, Vertreter und Mitglieder der Fachschaften" "B: Ehemalige" "C: Gäste")) }}
+
+        {{ partial "anmeldung-toggle.html" (dict "id" "erste-baufak" "label" "Ist die 104. BauFak deine erste BauFak?" "width" "sm:col-span-2") }}
+        {{ partial "anmeldung-field.html" (dict "id" "wievielte-baufak" "label" "Deine wievielte BauFak ist die 104. BauFak?" "width" "sm:col-span-4" "type" "number" "inputmode" "numeric" "min" "1" "max" "104") }}
+
+        {{ partial "anmeldung-toggle.html" (dict "id" "bauhelm" "label" "Hast du ein Bauhelm?" "width" "sm:col-span-2") }}
+        {{ partial "anmeldung-toggle.html" (dict "id" "sicherheitsschuhe" "label" "Hast du Sicherheitsschuhe?" "width" "sm:col-span-2") }}
+        {{ partial "anmeldung-toggle.html" (dict "id" "deutschlandticket" "label" "Hast du ein Deutschlandticket?" "width" "sm:col-span-2") }}
+
+        {{ partial "anmeldung-select.html" (dict "id" "ernaehrung" "label" "Ernährungsform" "width" "sm:col-span-3" "options" (slice "" "Allesfressend" "Vegetarisch" "Vegan")) }}
+        <div class="sm:col-span-6 font-medium">Allergien</div>
+        {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-laktose" "label" "Laktose") }}
+        {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-universitaet" "label" "Universität") }}
+        {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-gluten" "label" "Gluten") }}
+        {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-nuesse" "label" "Nüsse") }}
+        {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-architekten" "label" "Architekten") }}
+        {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-soja" "label" "Soja") }}
+        {{ partial "anmeldung-checkbox.html" (dict "id" "allergie-sonstige" "label" "Sonstige Allergien") }}
+        {{ partial "anmeldung-field.html" (dict "id" "allergien" "error" "Bitte gib deine sonstigen Allergien an" "hidden" true) }}
+
+        {{ partial "anmeldung-select.html" (dict "id" "tshirt" "label" "T-Shirt" "width" "sm:col-span-3" "options" (slice "" "Ich möchte kein T-Shirt" "XS" "S" "M" "L" "XL" "2XL")) }}
+        {{ partial "anmeldung-select.html" (dict "id" "buddy" "label" "Buddyprogramm" "width" "sm:col-span-3" "options" (slice "" "Ich möchte ein Buddy" "Ich möchte kein Buddy" "Ich bin gerne ein Buddy")) }}
+
+        <div class="sm:col-span-6">
+            <label for="kommentar" class="block text-sm font-medium">Kommentar (optional)</label>
+            <div class="mt-2">
+                <textarea rows="5" name="kommentar" id="kommentar" class="block w-full rounded-md bg-white px-3 py-1.5 text-base outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-secondary-700/70 sm:text-sm/6" placeholder="Ich freue mich sehr auf meine erste BauFak und hoffe möglichst viele Maskottchen kennen zu lernen."></textarea>
+            </div>
+        </div>
+
+        {{ partial "anmeldung-file.html" (dict "id" "immatrikulation" "label" "Immatrikulationsbescheinigung" "optional" "true" "commentar" "Du kannst deine Bescheinigung auch per Mail an baufak104.fsbgu@ed.tum.de nachreichen. Für die Statusgruppe A ist eine Bescheinigung verpflichend!")}}
+
+        <div class="block sm:col-span-6"><a class="underline font-bold" href="/datenschutz" target="_blank">Die Datenschutzerklärung</a></div>
+        {{ partial "anmeldung-toggle.html" (dict "id" "datenschutz" "label" "Ich habe die Datenschutzerklärung zur Kenntnis genommen und stimme dieser zu" "width" "sm:col-span-6") "required" true}}
+    </div>
+  
+    <div class="mt-10 flex justify-end">
+        <button id="submit-btn" type="submit" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-white font-medium shadow-md hover:bg-primary/90 h-9 px-4 py-2">Anmelden</button>
+    </div>
+
+    <div id="feedback" class="mt-5 border-l-4 p-4 rounded-md shadow-md font-semibold hidden">
+    </div>
+</form>
+
+{{ with resources.Get "standleiter-anmeldung.ts" }}
+  {{ $opts := dict
+    "minify" hugo.IsProduction
+    "sourceMap" (cond hugo.IsProduction "" "external")
+    "targetPath" "standleiter-anmeldung.js"
+  }}
+  {{ with . | js.Build $opts }}
+    {{ if hugo.IsProduction }}
+      {{ with . | fingerprint }}
+        <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+      {{ end }}
+    {{ else }}
+      <script src="{{ .RelPermalink }}"></script>
+    {{ end }}
+  {{ end }}
+{{ end }}
