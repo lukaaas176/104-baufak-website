@@ -24,3 +24,7 @@ Wenn Sie Interesse an einer Unterstützung haben, kontaktieren Sie uns gerne unt
 # Unsere Bronzeunterstützer
 
 {{< sponsors grid=true condition="Params.bronze" classes="max-w-7xl mx-auto my-10">}}
+
+# Unsere sonstige Unterstützer
+
+{{< sponsors grid=true condition="Params.sonstige" classes="max-w-7xl mx-auto my-10">}}
