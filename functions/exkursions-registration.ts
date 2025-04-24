@@ -45,9 +45,9 @@ async function parseRegistration(formData: {[k: string]: string | File}): Promis
         vorname: checkPattern(formData, validationErrors, "vorname", "Der Vorname", /^[\p{Letter}\s\-.']+$/v),
         nachname: checkPattern(formData, validationErrors, "nachname", "Der Nachname", /^[\p{Letter}\s\-.']+$/v),
         email: checkPattern(formData, validationErrors, "email", "Die E-Mail", /^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$/),
-        exkursion1: checkPattern(formData, validationErrors, "exkursion-1", "Die erste Exkursion", /^[\p{Letter}\s\-\.']+$/v),
-        exkursion2: checkPattern(formData, validationErrors, "exkursion-2", "Die zweite Exkursion", /^[\p{Letter}\s\-\.']+$/v),
-        exkursion3: checkPattern(formData, validationErrors, "exkursion-3", "Die dritte Exkursion", /^[\p{Letter}\s\-\.']+$/v),
+        exkursion1: checkPattern(formData, validationErrors, "exkursion-1", "Die erste Exkursion", /^[\p{Letter}\d\s\-.']+$/v),
+        exkursion2: checkPattern(formData, validationErrors, "exkursion-2", "Die zweite Exkursion", /^[\p{Letter}\d\s\-.']+$/v),
+        exkursion3: checkPattern(formData, validationErrors, "exkursion-3", "Die dritte Exkursion", /^[\p{Letter}\d\s\-.']+$/v),
         datenschutz: "datenschutz" in formData,
     };
     
