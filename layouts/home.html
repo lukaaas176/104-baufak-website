@@ -16,7 +16,7 @@
       {{- end -}}
       {{- with $post -}}
         <a class="block my-5" href="{{ .RelPermalink }}">
-          <span class="text-lg font-bold">{{ .LinkTitle }}</span><span class="text-sm"> {{ time.Format ":date_short" .PublishDate }}
+          <span class="text-lg font-bold">{{ .LinkTitle }}</span><span class="text-sm"> {{ time.Format ":date_short" .PublishDate }}<br />
             {{- .Summary -}}
           </span>
         </a>
