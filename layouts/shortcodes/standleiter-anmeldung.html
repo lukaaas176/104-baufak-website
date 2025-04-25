@@ -4,7 +4,7 @@
         {{ partial "anmeldung-field.html" (dict "id" "nachname" "label" "Nachname" "autofill" "family-name" "placeholder" "Dino" "pattern" "^[\\p{Letter}\\s\\-.']+$" "error" "Bitte gib einen gültigen Nachnamen ein" "width" "sm:col-span-3") }}
 
         {{ partial "anmeldung-field.html" (dict "id" "email" "label" "Persönliche E-Mail" "commentar" "Bitte keine Funktionsadressen wie vorstand@, info@ o.Ä.!" "autofill" "email" "type" "email" "placeholder" "ida@ikea.de" "pattern" "^[\\w\\-\\.]+@([\\w\\-]+\\.)+[\\w\\-]{2,}$" "error" "Bitte gib eine gültige E-Mail Adresse ein" "width" "sm:col-span-3") }}
-        {{ partial "anmeldung-field.html" (dict "id" "telefon" "label" "Telefonnummer" "autofill" "phone" "type" "tel" "placeholder" "+49 89 32168" "pattern" "^[\\d\\-+\\s\\(\\)]{5,}$" "error" "Bitte gib eine gültige Telefonnummer an" "width" "sm:col-span-3" "optional" true "inputmode" "numeric") }}
+        {{ partial "anmeldung-field.html" (dict "id" "telefon" "label" "Telefonnummer" "autofill" "phone" "type" "tel" "placeholder" "+49 89 32168" "pattern" "^[\\d\\-+\\s\\(\\)]{5,}$" "error" "Bitte gib eine gültige Telefonnummer an" "width" "sm:col-span-3" "inputmode" "numeric") }}
 
         {{ partial "anmeldung-field.html" (dict "id" "hochschule" "label" "Hochschule/Universität" "placeholder" "Steinzeit Universität München" "pattern" "^[\\p{Letter}\\s\\-.']+$" "error" "Bitte gib eine Hochschule oder Universität an" "width" "sm:col-span-3") }}
         {{ partial "anmeldung-select.html" (dict "id" "statusgruppe" "label" "Statusgruppe" "width" "sm:col-span-3" "options" (slice "A: Vertreterinnen, Vertreter und Mitglieder der Fachschaften" "B: Ehemalige" "C: Gäste")) }}
@@ -28,7 +28,6 @@
         {{ partial "anmeldung-field.html" (dict "id" "allergien" "error" "Bitte gib deine sonstigen Allergien an" "hidden" true) }}
 
         {{ partial "anmeldung-select.html" (dict "id" "tshirt" "label" "T-Shirt" "width" "sm:col-span-3" "options" (slice "" "Ich möchte kein T-Shirt" "XS" "S" "M" "L" "XL" "2XL")) }}
-        {{ partial "anmeldung-select.html" (dict "id" "buddy" "label" "Buddyprogramm" "width" "sm:col-span-3" "options" (slice "" "Ich möchte ein Buddy" "Ich möchte kein Buddy" "Ich bin gerne ein Buddy")) }}
 
         <div class="sm:col-span-6">
             <label for="kommentar" class="block text-sm font-medium">Kommentar (optional)</label>

@@ -49,14 +49,11 @@ async function parseRegistration(formData: {[k: string]: string | File}): Promis
     let statusGruppe: StatusGruppe = getStatusGruppe(formData, validationErrors);
     let ersteBauFaK: boolean = "erste-baufak" in formData;
     let wievielteBaufak: number = 1;
-    let buddy: string = getAsString(formData, validationErrors, "buddy", "Das Buddyprogramm");
     if (!ersteBauFaK) {
         wievielteBaufak = parseInt(checkNotEmpty(formData, validationErrors, "wievielte-baufak", "Die wievielte BauFaK"));
         if (wievielteBaufak == Number.NaN || wievielteBaufak < 1 || 104 < wievielteBaufak) {
             validationErrors.add("Die wievielte BauFaK ist keine gültige Zahl");
         }
-    } else {
-        buddy = "Ich möchte ein Buddy";
     }
     let immatbescheinigung: ArrayBuffer = null;
     if (formData["immatrikulation"] instanceof File) {
@@ -96,7 +93,6 @@ async function parseRegistration(formData: {[k: string]: string | File}): Promis
         allergieSoja: "allergie-soja" in formData,
         allergien: getAsString(formData, validationErrors, "allergien", "Die sonstigen Allergien"),
         tshirt: checkNotEmpty(formData, validationErrors, "tshirt", "Das T-Shirt"),
-        buddy: buddy,
         immatbescheinigung: immatbescheinigung,
         kommentar: getAsString(formData, validationErrors, "kommentar", "Der Kommentar"),
         datenschutz: "datenschutz" in formData
@@ -152,7 +148,7 @@ async function sendMail(data: StandleiterRegistrationData, token: string): Promi
 }
 
 async function saveRegistration(data: StandleiterRegistrationData, database: D1Database): Promise<boolean> {
-    let result: D1Result = await database.prepare("INSERT INTO standleiterregistrations (vorname, nachname, email, telefon, hochschule, statusGruppe, ersteBaufak, wievielteBaufak, bauhelm, sicherheitsschuhe, deutschlandticket, ernaehrung, allergieLaktose, allergieUniversitaet, allergieGluten, allergieNuesse, allergieArchitekten, allergieSoja, allergien, tshirt, buddy, kommentar, datenschutz, immatbescheinigungId) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+    let result: D1Result = await database.prepare("INSERT INTO standleiterregistrations (vorname, nachname, email, telefon, hochschule, statusGruppe, ersteBaufak, wievielteBaufak, bauhelm, sicherheitsschuhe, deutschlandticket, ernaehrung, allergieLaktose, allergieUniversitaet, allergieGluten, allergieNuesse, allergieArchitekten, allergieSoja, allergien, tshirt, kommentar, datenschutz, immatbescheinigungId) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
         .bind(
             data.vorname,
             data.nachname,
@@ -174,7 +170,6 @@ async function saveRegistration(data: StandleiterRegistrationData, database: D1D
             data.allergieSoja,
             data.allergien,
             data.tshirt,
-            data.buddy,
             data.kommentar,
             data.datenschutz,
             data.immatbescheinigungId

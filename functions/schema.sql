@@ -61,7 +61,6 @@ CREATE TABLE IF NOT EXISTS standleiterregistrations (
   allergieSoja INTEGER,
   allergien TEXT,
   tshirt TEXT,
-  buddy TEXT,
   kommentar TEXT,
   datenschutz INTEGER,
   immatbescheinigungId TEXT

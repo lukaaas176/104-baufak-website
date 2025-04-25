@@ -70,8 +70,8 @@ async function sendMail(data: ExkursionsRegistration, token: string): Promise<bo
     let body: string = JSON.stringify({
         "from": "Anmeldung 104. BauFaK <anmeldung@baufak.santos.dev>",
         "to": data.email,
-        "reply_to": "baufak104.fsbgu@ed.tum.de",
-        "cc": "baufak104.fsbgu@ed.tum.de",
+        "reply_to": "baufak.exkursionen.fsbgu@ed.tum.de",
+        "cc": "baufak.exkursionen.fsbgu@ed.tum.de",
         subject: "Anmeldung zu den Exkursionen der 104. BauFaK",
         html: formatMail(mailHTML, data),
         text: formatMail(mailTXT, data)

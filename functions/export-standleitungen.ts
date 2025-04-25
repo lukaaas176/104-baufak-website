@@ -26,7 +26,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
             return new Response("Invalid Token", { status: 401 });
         }
     }
-    let result: D1Result = await context.env.DB.prepare("SELECT vorname, nachname, email, telefon, hochschule, statusGruppe, ersteBaufak, wievielteBaufak, bauhelm, sicherheitsschuhe, deutschlandticket, ernaehrung, allergieLaktose, allergieUniversitaet, allergieGluten, allergieNuesse, allergieArchitekten, allergieSoja, allergien, tshirt, buddy, kommentar, datenschutz, immatbescheinigungId FROM standleiterregistrations")
+    let result: D1Result = await context.env.DB.prepare("SELECT vorname, nachname, email, telefon, hochschule, statusGruppe, ersteBaufak, wievielteBaufak, bauhelm, sicherheitsschuhe, deutschlandticket, ernaehrung, allergieLaktose, allergieUniversitaet, allergieGluten, allergieNuesse, allergieArchitekten, allergieSoja, allergien, tshirt, kommentar, datenschutz, immatbescheinigungId FROM standleiterregistrations")
         .all<string>();
     if (!result.success) {
         console.log(result)

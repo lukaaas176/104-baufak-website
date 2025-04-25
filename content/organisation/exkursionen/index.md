@@ -5,6 +5,6 @@ Alle Exkursionen werden hier kurz vor der Baufak vorgestellt. Zudem findet ihr h
 
 # Anmeldung zu den Exkursionen
 
-Hier könnt ihr euch zu den Exkursionen anmelden. Bitte beachtet, dass ihr das nur als Teilnehmer an der 104. BauFaK machen könnt, ansonsten werden wir eure Anmeldung ignorieren müssen.
+Hier könnt ihr euch zu den Exkursionen anmelden. Bitte beachtet, dass ihr das nur als Teilnehmer an der 104. BauFaK machen könnt, ansonsten werden wir eure Anmeldung ignorieren müssen. Bitte meldet euch mit der gleichen E-Mail-Adresse wie bei der Anmeldung an.
 
 {{< exkursions-anmeldung >}}

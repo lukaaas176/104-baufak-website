@@ -1,18 +1,14 @@
 const standleiterFirstBauFaKInput: HTMLElement | null = document.getElementById("erste-baufak");
 const standleiterWhichBauFaKInput: HTMLElement | null = document.getElementById("wievielte-baufak");
-const standleiterBuddySelect: HTMLElement | null = document.getElementById("buddy");
 
-if (standleiterFirstBauFaKInput instanceof HTMLInputElement && standleiterWhichBauFaKInput instanceof HTMLInputElement && standleiterBuddySelect instanceof HTMLSelectElement) {
+if (standleiterFirstBauFaKInput instanceof HTMLInputElement && standleiterWhichBauFaKInput instanceof HTMLInputElement) {
     standleiterFirstBauFaKInput.addEventListener("change", () => {
         if (standleiterFirstBauFaKInput.checked) {
             standleiterWhichBauFaKInput.value = "1";
             standleiterWhichBauFaKInput.disabled = true;
-            standleiterBuddySelect.selectedIndex = 1;
-            standleiterBuddySelect.disabled = true;
         } else {
             standleiterWhichBauFaKInput.value = "1";
             standleiterWhichBauFaKInput.disabled = false;
-            standleiterBuddySelect.disabled = false;
         }
     });
     standleiterFirstBauFaKInput.dispatchEvent(new Event("change"));

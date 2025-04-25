@@ -64,7 +64,6 @@ export interface StandleiterRegistrationData {
     readonly allergieSoja: boolean;
     readonly allergien: string;
     readonly tshirt: string;
-    readonly buddy: string;
     readonly immatbescheinigung?: ArrayBuffer;
     immatbescheinigungId: string;
     readonly kommentar: string;
