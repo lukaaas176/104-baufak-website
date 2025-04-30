@@ -21,10 +21,8 @@ Allergie auf Architekten: ${allergieArchitekten}
 Allergie auf Soja: ${allergieSoja}
 Sonstige Allergien: ${allergien}
 T-Shirt: ${tshirt}
-Buddyprogramm: ${buddy}
 Immatbescheinigung: Im Anhang falls vorhanden, ansonsten bei Statusgruppe A an baufak104.fsbgu@ed.tum.de nachschicken!
 Kommentar: ${kommentar}
-Buddyprogramm: ${buddy}
 
 Danke fürs Helfen!
 
