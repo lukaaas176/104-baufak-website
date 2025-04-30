@@ -1,0 +1,14 @@
+Liebe Teilnehmer*in,
+vielen Dank für deine erfolgreiche Anmeldung zu den Exkursionen der 104. Bauingenieur-Fachschaften-Konferenz! Mit dieser E-Mail wollen wir dir noch einmal deine Daten übersichtlich präsentieren, bitte überprüfe alles einmal und melde dich bei uns unter baufak104.fsbgu@ed.tum.de wenn was nicht passt!
+
+Vorname: ${vorname}
+Nachname: ${nachname}
+E-Mail Adresse: ${email}
+1. Präferenz für die Exkursion: ${exkursion1}
+2. Präferenz für die Exkursion: ${exkursion2}
+3. Präferenz für die Exkursion: ${exkursion3}
+
+Vergiss nicht, bei https://104-muenchen.baufak.de/organisation/exkursionen/ vorbeizuschauen, da findest du noch einmal alle Informationen über die Exkursionen!
+
+Servus!
+Deine BauFaK Hauptorgas

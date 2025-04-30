@@ -42,3 +42,30 @@ export interface RegistrationData {
     readonly datenschutz: boolean;
     readonly teilnahmegebuehr: boolean;
 }
+
+export interface StandleiterRegistrationData {
+    readonly vorname: string;
+    readonly nachname: string;
+    readonly email: string;
+    readonly telefon: string;
+    readonly hochschule: string;
+    readonly statusGruppe: StatusGruppe;
+    readonly ersteBaufak: boolean;
+    readonly wievielteBaufak: number;
+    readonly bauhelm: boolean;
+    readonly sicherheitsschuhe: boolean;
+    readonly deutschlandticket: boolean;
+    readonly ernaehrung: string;
+    readonly allergieLaktose: boolean;
+    readonly allergieUniversitaet: boolean;
+    readonly allergieGluten: boolean;
+    readonly allergieNuesse: boolean;
+    readonly allergieArchitekten: boolean;
+    readonly allergieSoja: boolean;
+    readonly allergien: string;
+    readonly tshirt: string;
+    readonly immatbescheinigung?: ArrayBuffer;
+    immatbescheinigungId: string;
+    readonly kommentar: string;
+    readonly datenschutz: boolean;
+}

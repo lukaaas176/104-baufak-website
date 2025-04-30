@@ -41,7 +41,7 @@ Der Großteil der Veranstaltung wird auf dem Stammgelände der Technischen Unive
 # Unterkunft
 Aufgrund des parallel stattfindenden Champions-League-Finales müssen wir euch leider auf zwei Hostels aufteilen. Die genaue Zuteilung der Zimmer und Hostels erhaltet ihr kurz vor der Veranstaltung.
 
-Die beiden Hostels, in denen ihr untergebracht werdet, sind (*Für Navigation auf die Adresse drücken ;)*):
+Die beiden Hostels, in denen ihr untergebracht werdet, sind *(Für Navigation auf die Adresse drücken ;))*:
 
 {{<span class="underline">}}[**a&o München Hackerbrücke**  
 Arnulfstr. 102  

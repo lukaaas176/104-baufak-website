@@ -38,3 +38,41 @@ CREATE TABLE IF NOT EXISTS registrations (
   teilnahmegebuehr INTEGER,
   immatbescheinigungId TEXT
 );
+
+CREATE TABLE IF NOT EXISTS standleiterregistrations (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  vorname TEXT,
+  nachname TEXT,
+  email TEXT,
+  telefon TEXT,
+  hochschule TEXT,
+  statusGruppe TEXT,
+  ersteBaufak INTEGER,
+  wievielteBaufak INTEGER,
+  bauhelm INTEGER,
+  sicherheitsschuhe INTEGER,
+  deutschlandticket INTEGER,
+  ernaehrung TEXT,
+  allergieLaktose INTEGER,
+  allergieUniversitaet INTEGER,
+  allergieGluten INTEGER,
+  allergieNuesse INTEGER,
+  allergieArchitekten INTEGER,
+  allergieSoja INTEGER,
+  allergien TEXT,
+  tshirt TEXT,
+  kommentar TEXT,
+  datenschutz INTEGER,
+  immatbescheinigungId TEXT
+);
+
+CREATE TABLE IF NOT EXISTS exkursionen (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  vorname TEXT,
+  nachname TEXT,
+  email TEXT,
+  exkursion1 TEXT,
+  exkursion2 TEXT,
+  exkursion3 TEXT,
+  datenschutz INTEGER
+);
