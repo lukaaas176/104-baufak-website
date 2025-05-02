@@ -252,6 +252,8 @@ async function uploadImmatrikulation(data: RegistrationData, bucket: R2Bucket): 
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
+    return new Response("Die Anmeldung ist geschlossen", { status: 400 });
+    /*
     let formData: {[k: string]: string | File} = await context.request.formData().then(Object.fromEntries);
     console.log(`Received registration data: ${JSON.stringify(formData)}`);
     let data: RegistrationData | Set<string> = await parseRegistration(formData);
@@ -273,5 +275,5 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         return new Response("Konnten die Anmeldemail nicht verschicken. Bitte probiere es später noch einmal!", { status: 400 });
     }
 
-    return Response.json(data);
+    return Response.json(data);*/
 };
