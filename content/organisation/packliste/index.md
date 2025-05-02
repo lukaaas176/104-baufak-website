@@ -2,8 +2,11 @@
 title: Packliste
 description: Wir haben euch eine Packliste zusammengestellt, damit ihr nichts wichtiges vergesst, wenn ihr zu unserer BauFaK in München anreist.
 ---
-Falls ihr Anmerkungen zu dieser Packliste habt, meldet euch gerne unter [baufakorga.fsbgu@ed.tum.de](mailto:baufakorga.fsbgu@ed.tum.de)!
 
+
+{{< alert title="Mottoparty!!!" classes="my-10">}}
+Unser Motto für die Mottoparty: **"nur noch 2 Wochen - seit 2 Jahren" - Gründe für eine Bauverzögerung**
+{{< /alert>}}
 
 {{<grid>}}
 
@@ -16,7 +19,7 @@ Falls ihr Anmerkungen zu dieser Packliste habt, meldet euch gerne unter [baufako
 - Sicherheitsschuhe
 - Hosen 
 - Bauhelm + Warnweste (wer hat)
-- Kleidung für Mottoparty *(Das Motto wird zeitnah veröffentlicht)*
+- Kleidung für Mottoparty
 {{</card>}}
 
 {{<card title="Schlafen" image="/organisation/packliste/schlafen.jpg">}}
@@ -56,6 +59,9 @@ Falls ihr Anmerkungen zu dieser Packliste habt, meldet euch gerne unter [baufako
 - Personalausweis/Reisepass
 - Regenschirm 
 - Deutschlandticket (wer hat)
+- Brotzeitbox (für Lunchpaket bei Exkursion)
 {{</card>}}
 
 {{</grid>}}
+ 
+ Falls ihr Anmerkungen zu dieser Packliste habt, meldet euch gerne unter [baufakorga.fsbgu@ed.tum.de](mailto:baufakorga.fsbgu@ed.tum.de)!
