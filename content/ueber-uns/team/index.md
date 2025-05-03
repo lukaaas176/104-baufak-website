@@ -303,22 +303,22 @@ Das Einkaufsteam der BauFaK ist für die Beschaffung aller benötigten Materiali
 {{<team>}}
 {{<member image="ida.jpeg">}}
 # Ida
-## Maskottchen
+## Dino
 Bauingenieurwesen  
 {{</member>}}
 {{<member image="jimmy.jpeg">}}
 # Jimmy
-## Maskottchen
+## Schwein
 Bauingenieurwesen  
 {{</member>}}
 {{<member image="orka.jpeg">}}
 # Orka
-## Maskottchen
+## Orka
 Bauingenieurwesen  
 {{</member>}}
 {{<member image="igor.jpeg">}}
 # Igor
-## Maskottchen
+## Dino
 Bauingenieurwesen  
 {{</member>}}
 {{</team>}}
