@@ -4,7 +4,7 @@
         {{ partial "anmeldung-field.html" (dict "id" "nachname" "label" "Nachname" "autofill" "family-name" "placeholder" "Dino" "pattern" "^[\\p{Letter}\\s\\-.']+$" "error" "Bitte gib einen gültigen Nachnamen ein" "width" "sm:col-span-3") }}
 
         {{ partial "anmeldung-field.html" (dict "id" "email" "label" "Persönliche E-Mail" "commentar" "Bitte keine Funktionsadressen wie vorstand@, info@ o.Ä.!" "autofill" "email" "type" "email" "placeholder" "ida@ikea.de" "pattern" "^[\\w\\-\\.]+@([\\w\\-]+\\.)+[\\w\\-]{2,}$" "error" "Bitte gib eine gültige E-Mail Adresse ein" "width" "sm:col-span-6") }}
-        {{ partial "exkursionen-selects.html" (dict "options" (slice "" "2. Stammstrecke" "Die Ewige Baustelle" "Fröttmanning" "Großlappen" "Noch eine imaginäre Exkursion" "Jaaaa")) }}
+        {{ partial "exkursionen-selects.html" (dict "options" (slice "" "U5 und Marienhof" "MSE - Münchner Stadtentwässerung" "Denkmalpflege trifft Stadtgeschichte - Exkursion mit BBI" "Überraschungsexkursion" "Stadt Exkursion mit Gabbo" "NS-Dokuzentrum und Stadtführung" "Exkursion Holzbau/Hochbau" "Ehemaligenexkursion - Das Ziel bleibt geheim!")) }}
 
         <div class="block sm:col-span-6"><a class="underline font-bold" href="/datenschutz" target="_blank">Die Datenschutzerklärung</a></div>
         {{ partial "anmeldung-toggle.html" (dict "id" "datenschutz" "label" "Ich habe die Datenschutzerklärung zur Kenntnis genommen und stimme dieser zu" "width" "sm:col-span-6") "required" true}}
