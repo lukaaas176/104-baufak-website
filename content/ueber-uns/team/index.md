@@ -11,6 +11,12 @@ description: Unser Team setzt sich aus aktiven Fachschaftlern, ehemaligen Fachsc
 {{<div class="carousel-item max-w-full">}}
 {{<figure src="hos.jpg">}}
 {{</div>}}
+{{<div class="carousel-item max-w-full">}}
+{{<figure src="Anmeldung_Team.jpg">}}
+{{</div>}}
+{{<div class="carousel-item max-w-full">}}
+{{<figure src="PR_Team.jpg">}}
+{{</div>}}
 {{</div>}}
 
 {{<easteregg image="dino.png">}}
@@ -41,7 +47,11 @@ Die Hauptorganisation einer BauFaK (Bauingenieur-Fachschaftenkonferenz) koordini
 {{</easteregg>}}
 
 {{<team right="true">}}
-{{<member image="platzhalter.png">}}
+{{<member image="Antonia.jpg">}}
+# Antonia Appel
+## Exkursionen
+Master Bauingineurwesen
+Berufstätig
 {{</member>}}
 {{<member image="platzhalter.png">}}
 {{</member>}}
@@ -101,7 +111,11 @@ Das Design-Team der BauFaK ist verantwortlich für die Gestaltung von Logos, Pla
 {{</team>}}
 
 {{<team right="true">}}
-{{<member image="platzhalter.png">}}
+{{<member image="Daniel.jpg">}}
+# Daniel Stadtmüller
+## Awareness
+Bachelor Umweltingenieurwesen
+3. Semester
 {{</member>}}
 {{<member image="platzhalter.png">}}
 {{</member>}}
@@ -183,12 +197,6 @@ Bachelor Baueingenieurwesen
 ## Essen und Verpflegung
 Bachelor Umweltingenieurwesen  
 7. Semester
-{{</member>}}
-{{<member image="Eric.jpg">}}
-# Eric Ferrara
-## Essen und Verpflegung
-Master Umweltingenieurwesen  
-3. Semester
 {{</member>}}
 {{<member image="Carla.jpg">}}
 # Carla Weber  
@@ -278,9 +286,15 @@ Die verantwortliche Person für Schilder und das Wohlbefinden der Teilnehmer sor
 {{</team>}}
 
 {{<team>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Daniel.jpg">}}
+# Daniel Stadtmüller
+## Anmeldung
+Bachelor Umweltingenieurwesen
+3. Semester
 {{</member>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Leni.jpg">}}
+# Leni Reiniger
+## Anmeldung
 {{</member>}}
 {{<span class="px-5">}}
 # Begrüßung und Anmeldung
