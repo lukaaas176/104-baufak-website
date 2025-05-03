@@ -301,9 +301,25 @@ Das Einkaufsteam der BauFaK ist für die Beschaffung aller benötigten Materiali
 
 # Maskottchen { class="text-center" }
 {{<team>}}
-{{<member image="platzhalter.png">}}
+{{<member image="ida.jpeg">}}
+# Ida
+## Maskottchen
+Bauingenieurwesen  
 {{</member>}}
-{{<member image="platzhalter.png">}}
+{{<member image="jimmy.jpeg">}}
+# Jimmy
+## Maskottchen
+Bauingenieurwesen  
+{{</member>}}
+{{<member image="orka.jpeg">}}
+# Orka
+## Maskottchen
+Bauingenieurwesen  
+{{</member>}}
+{{<member image="igor.jpeg">}}
+# Igor
+## Maskottchen
+Bauingenieurwesen  
 {{</member>}}
 {{</team>}}
 ### Seelische Unterstützung in harten Zeiten { class="text-sm text-center" }
