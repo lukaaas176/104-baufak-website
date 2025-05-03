@@ -54,6 +54,7 @@ Master Bauingineurwesen
 Berufstätig
 {{</member>}}
 {{<member image="platzhalter.png">}}
+# Hanna
 {{</member>}}
 {{<span class="px-5">}}
 # Exkursionen
@@ -101,8 +102,7 @@ Das Sponsoring-Team der BauFaK erstellt Strategien zur Akquise von Sponsoren und
 
 {{<team>}}
 {{<member image="platzhalter.png">}}
-{{</member>}}
-{{<member image="platzhalter.png">}}
+# Max
 {{</member>}}
 {{<span class="px-5">}}
 # Design
@@ -116,8 +116,6 @@ Das Design-Team der BauFaK ist verantwortlich für die Gestaltung von Logos, Pla
 ## Awareness
 Bachelor Umweltingenieurwesen
 3. Semester
-{{</member>}}
-{{<member image="platzhalter.png">}}
 {{</member>}}
 {{<span class="px-5">}}
 # Awareness
@@ -146,8 +144,10 @@ Das PR- und Foto-Team der BauFaK ist für die Öffentlichkeitsarbeit und Dokumen
 
 {{<team right="true">}}
 {{<member image="platzhalter.png">}}
+# Leonid Grützner
 {{</member>}}
 {{<member image="platzhalter.png">}}
+# Simon Hanssen
 {{</member>}}
 {{<span class="px-5">}}
 # Logistik
@@ -163,6 +163,7 @@ Bachelor Bauingenieurwesen
 7. Semester
 {{</member>}}
 {{<member image="platzhalter.png">}}
+# Christina
 {{</member>}}
 {{<span class="px-5">}}
 # Plenum
@@ -176,8 +177,6 @@ Das Plenums-Team der BauFaK organisiert und strukturiert die zentralen Sitzungen
 ## Reader
 Master Umweltingenieurwesen  
 3. Semester
-{{</member>}}
-{{<member image="platzhalter.png">}}
 {{</member>}}
 {{<span class="px-5">}}
 # Reader
@@ -212,7 +211,7 @@ Das Verpflegungsteam der BauFaK sorgt für die Planung, Zubereitung und Bereitst
 
 {{<team right="true">}}
 {{<member image="Lukas.jpg">}}
-# Lukas Santos
+# Lukas Frias Santos
 ## IT / Website / Anmeldung
 Bachelor Informatik  
 11. Semester
@@ -230,17 +229,6 @@ Das IT-, Website- und Anmeldeteam der BauFaK ist für die technische Infrastrukt
 {{</team>}}
 
 {{<team>}}
-{{<member image="platzhalter.png">}}
-{{</member>}}
-{{<member image="platzhalter.png">}}
-{{</member>}}
-{{<span class="px-5">}}
-# Unterkunft
-Das Unterkunftsteam der BauFaK organisiert und koordiniert die Unterbringung der Teilnehmer. Es sorgt dafür, dass jeder Teilnehmer eine passende Unterkunft erhält, plant die Zuteilung der Zimmer und kümmert sich um alle logistischen Details, um einen komfortablen Aufenthalt während der Veranstaltung zu gewährleisten.
-{{</span>}}
-{{</team>}}
-
-{{<team right="true">}}
 {{<member image="Hannes.jpg">}}
 # Hannes Geiger
 ## Praxisperspektiven
@@ -253,11 +241,11 @@ Das Team „Praxisperspektive“ der BauFaK ermöglicht den Teilnehmern Einblick
 {{</span>}}
 {{</team>}}
 
-{{<team>}}
+{{<team right="true">}}
 {{<member image="Chris.jpg">}}
 # Christian Leib 
 ## Veranstaltung
-Master Baueingenieurwesen
+Master Bauingenieurwesen
 5. Semester
 {{</member>}}
 {{<member image="Consti.jpg">}}
@@ -272,12 +260,15 @@ Das Team „Veranstaltung“ der BauFaK ist für die Planung, Organisation und D
 {{</span>}}
 {{</team>}}
 
-{{<team right="true">}}
+{{<team>}}
 {{<member image="Metin.jpg">}}
 # Metin Firat 
 ## Gute Fee und Schilder Fee
 Bachelor Bauingenieurwesen
 7. Semester
+{{</member>}}
+{{<member image="platzhalter.png">}}
+# Gabbo
 {{</member>}}
 {{<span class="px-5">}}
 # Gute Fee und Schilder Fee
@@ -285,7 +276,7 @@ Die verantwortliche Person für Schilder und das Wohlbefinden der Teilnehmer sor
 {{</span>}}
 {{</team>}}
 
-{{<team>}}
+{{<team right="true">}}
 {{<member image="Daniel.jpg">}}
 # Daniel Stadtmüller
 ## Anmeldung
@@ -302,10 +293,9 @@ Das Team „Begrüßung und Anmeldung“ der BauFaK ist für den Empfang und die
 {{</span>}}
 {{</team>}}
 
-{{<team right="true">}}
+{{<team>}}
 {{<member image="platzhalter.png">}}
-{{</member>}}
-{{<member image="platzhalter.png">}}
+# Jonas Schubert
 {{</member>}}
 {{<span class="px-5">}}
 # Einkauf
