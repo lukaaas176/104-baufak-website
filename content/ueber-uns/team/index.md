@@ -162,8 +162,11 @@ Das Logistik-Team der BauFaK plant und koordiniert die organisatorischen Abläuf
 Bachelor Bauingenieurwesen  
 7. Semester
 {{</member>}}
-{{<member image="platzhalter.png">}}
-# Christina
+{{<member image="Chrisi.jpg">}}
+# Christine Stamm-Girod
+## Plenum
+Master Bauingenieurwesen 
+6. Semester
 {{</member>}}
 {{<span class="px-5">}}
 # Plenum

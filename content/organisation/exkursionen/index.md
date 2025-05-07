@@ -40,7 +40,7 @@ Das Holzbaubüro Bauart wird uns eine oder zwei ihrer aktuellen Baustellen zeige
 {{< /alert >}}
 
 {{< alert title="SWM - Stadtwerke München" classes="my-10">}}
-Informationen folgen!
+Die Stadtwerke München geben uns einen Einblick in zwei ihrer aktuell spannendsten Projekte. Wir werden einen Einblick in den Neubau der Tram-Westtangente bekommen, wo Gleisbau und Ingenieurbau zusammen kommen. Außerdem werden wir dem Olympiagelände einen Besuch abstatten. Die Exkursion dorthin schließt die Olympiahalle und bei gutem Wetter das Zeltdach - bei schlechtem die Schwimmhalle mit ein. Hier steht die Instandhaltung und Bauhistorie im Vordergrund.
 {{< /alert >}}
 
 {{< alert title="Ehemaligenexkursion – Das Ziel bleibt geheim!" classes="my-10">}}
