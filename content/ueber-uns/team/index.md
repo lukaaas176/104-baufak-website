@@ -289,6 +289,8 @@ Bachelor Umweltingenieurwesen
 {{<member image="Leni.jpg">}}
 # Leni Reiniger
 ## Anmeldung
+Bachelor Bauingenieurwesen
+3. Semester
 {{</member>}}
 {{<span class="px-5">}}
 # Begrüßung und Anmeldung
