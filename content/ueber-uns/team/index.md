@@ -17,6 +17,9 @@ description: Unser Team setzt sich aus aktiven Fachschaftlern, ehemaligen Fachsc
 {{<div class="carousel-item max-w-full">}}
 {{<figure src="PR_Team.jpg">}}
 {{</div>}}
+{{<div class="carousel-item max-w-full">}}
+{{<figure src="IT_Team.jpg">}}
+{{</div>}}
 {{</div>}}
 
 {{<easteregg image="dino.png">}}
