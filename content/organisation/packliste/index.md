@@ -5,7 +5,7 @@ description: Wir haben euch eine Packliste zusammengestellt, damit ihr nichts wi
 
 
 {{< alert title="Mottoparty!!!" classes="my-10">}}
-Unser Motto für die Mottoparty: **"nur noch 2 Wochen - seit 2 Jahren" - Gründe für eine Bauverzögerung**
+Unser Motto für die Mottoparty: **"Nur noch 2 Wochen - seit 2 Jahren" - Gründe für eine Bauverzögerung**
 {{< /alert>}}
 
 {{<grid>}}
