@@ -321,7 +321,7 @@ Das Einkaufsteam der BauFaK ist für die Beschaffung aller benötigten Materiali
 
 {{<team right="true">}}
 {{<member image="Alexandru.jpg">}}
-# Alexandru Razvan
+# Alexandru-Razvan Cacovean
 ## AStA
 {{</member>}}
 {{<member image="Clara.jpg">}}
@@ -330,6 +330,10 @@ Das Einkaufsteam der BauFaK ist für die Beschaffung aller benötigten Materiali
 {{</member>}}
 {{<member image="Daniel_P.jpg">}}
 # Daniel Porter
+## AStA
+{{</member>}}
+{{<member image="platzhalter.png">}}
+# Konrad Gößmann
 ## AStA
 {{</member>}}
 {{<span class="px-5">}}
