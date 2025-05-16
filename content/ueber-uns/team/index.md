@@ -366,5 +366,10 @@ Bauingenieurwesen
 ## Dino
 Bauingenieurwesen  
 {{</member>}}
+{{<member image="Mauli.jpg">}}
+# Mauli
+## Maulwurf
+Bauingenieurwesen  
+{{</member>}}
 {{</team>}}
 ### Seelische Unterstützung in harten Zeiten { class="text-sm text-center" }
