@@ -53,7 +53,7 @@ Die Hauptorganisation einer BauFaK (Bauingenieur-Fachschaftenkonferenz) koordini
 {{<member image="Antonia.jpg">}}
 # Antonia Appel
 ## Exkursionen
-Master Bauingineurwesen
+Master Bauingineurwesen  
 Berufstätig
 {{</member>}}
 {{<member image="platzhalter.png">}}
@@ -104,8 +104,9 @@ Das Sponsoring-Team der BauFaK erstellt Strategien zur Akquise von Sponsoren und
 {{</team>}}
 
 {{<team>}}
-{{<member image="platzhalter.png">}}
-# Max
+{{<member image="Max.jpg">}}
+# Max Schmidt
+## Design
 {{</member>}}
 {{<span class="px-5">}}
 # Design
@@ -114,6 +115,10 @@ Das Design-Team der BauFaK ist verantwortlich für die Gestaltung von Logos, Pla
 {{</team>}}
 
 {{<team right="true">}}
+{{<member image="Thomas.jpg">}}
+# Thomas Dietrich
+## Awareness
+{{</member>}}
 {{<member image="Daniel.jpg">}}
 # Daniel Stadtmüller
 ## Awareness
@@ -251,13 +256,13 @@ Das Team „Praxisperspektive“ der BauFaK ermöglicht den Teilnehmern Einblick
 {{<member image="Chris.jpg">}}
 # Christian Leib 
 ## Veranstaltung
-Master Bauingenieurwesen
+Master Bauingenieurwesen  
 5. Semester
 {{</member>}}
 {{<member image="Consti.jpg">}}
 # Constantin Weber
 ## Veranstaltung
-Master Umweltingenieurwesen
+Master Umweltingenieurwesen  
 2. Semester
 {{</member>}}
 {{<span class="px-5">}}
@@ -273,8 +278,11 @@ Das Team „Veranstaltung“ der BauFaK ist für die Planung, Organisation und D
 Bachelor Bauingenieurwesen
 7. Semester
 {{</member>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Gabbo.jpg">}}
 # Gabbo
+## Gute Fee und Schilder Fee
+Master Bauingineurwesen  
+Berufstätig
 {{</member>}}
 {{<span class="px-5">}}
 # Gute Fee und Schilder Fee
@@ -302,12 +310,32 @@ Das Team „Begrüßung und Anmeldung“ der BauFaK ist für den Empfang und die
 {{</team>}}
 
 {{<team>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Jonas.jpg">}}
 # Jonas Schubert
 {{</member>}}
 {{<span class="px-5">}}
 # Einkauf
 Das Einkaufsteam der BauFaK ist für die Beschaffung aller benötigten Materialien und Ressourcen zuständig. Es erstellt Einkaufslisten, organisiert die Beschaffung von Lebensmitteln, Getränken und sonstigen benötigten Artikeln und sorgt dafür, dass alles rechtzeitig und in ausreichender Menge verfügbar ist.
+{{</span>}}
+{{</team>}}
+
+{{<team right="true">}}
+{{<member image="Alexandru.jpg">}}
+# Alexandru Razvan
+## AStA
+{{</member>}}
+{{<member image="Clara.jpg">}}
+# Clara Tiedemann
+## AStA
+{{</member>}}
+{{<member image="Daniel_P.jpg">}}
+# Daniel Porter
+## AStA
+{{</member>}}
+{{<span class="px-5">}}
+# Studentische Vertretung
+Die Studentische Vertretung der TU München bringt mit ihren drei Teams – Security, Sanitäter\*innen und Technik – jede Veranstaltung auf das nächste Level.
+Die Security sorgt dafür, dass bei jeder Party niemand aus der Reihe tanzt – außer auf der Tanzfläche natürlich! Die Sanitäter\*innen sind zur Stelle, wenn der Feierwahn doch mal zu wild wird und kümmern sich um alle kleinen und großen Wehwehchen. Und das Technik-Team zaubert mit Kabeln, Lichtern und Sound dafür, dass jede Veranstaltung zum Erlebnis wird. Zusammen machen sie jede Uni-Party sicher, gesund und unvergesslich!
 {{</span>}}
 {{</team>}}
 
