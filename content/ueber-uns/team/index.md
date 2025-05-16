@@ -338,8 +338,7 @@ Das Einkaufsteam der BauFaK ist für die Beschaffung aller benötigten Materiali
 {{</member>}}
 {{<span class="px-5">}}
 # Studentische Vertretung
-Die Studentische Vertretung der TU München bringt mit ihren drei Teams – Security, Sanitäter\*innen und Technik – jede Veranstaltung auf das nächste Level.
-Die Security sorgt dafür, dass bei jeder Party niemand aus der Reihe tanzt – außer auf der Tanzfläche natürlich! Die Sanitäter\*innen sind zur Stelle, wenn der Feierwahn doch mal zu wild wird und kümmern sich um alle kleinen und großen Wehwehchen. Und das Technik-Team zaubert mit Kabeln, Lichtern und Sound dafür, dass jede Veranstaltung zum Erlebnis wird. Zusammen machen sie jede Uni-Party sicher, gesund und unvergesslich!
+Auch bei der Bauingenieur-Fachschaften-Konferenz (BauFaK) an der TU München können wir auf die tatkräftige Unterstützung der studentischen Vertretung zählen. Ihre drei spezialisierten Teams – Security, Sanitäter\*innen und Veranstaltungstechnik – tragen entscheidend zum Gelingen der Veranstaltung bei.
 {{</span>}}
 {{</team>}}
 
