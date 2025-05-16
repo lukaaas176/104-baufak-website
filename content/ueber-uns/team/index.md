@@ -332,9 +332,11 @@ Das Einkaufsteam der BauFaK ist für die Beschaffung aller benötigten Materiali
 # Daniel Porter
 ## AStA
 {{</member>}}
-{{<member image="platzhalter.png">}}
+{{<member image="Konrad.jpg">}}
 # Konrad Gößmann
 ## AStA
+Bachelor Informatik  
+10. Semester
 {{</member>}}
 {{<span class="px-5">}}
 # Studentische Vertretung
