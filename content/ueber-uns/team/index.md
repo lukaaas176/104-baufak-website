@@ -151,15 +151,21 @@ Das PR- und Foto-Team der BauFaK ist für die Öffentlichkeitsarbeit und Dokumen
 {{</team>}}
 
 {{<team right="true">}}
-{{<member image="platzhalter.png">}}
-# Leonid Grützner
+{{<member image="Daniel.jpg">}}
+# Daniel Stadtmüller
+## Anmeldung
+Bachelor Umweltingenieurwesen
+3. Semester
 {{</member>}}
-{{<member image="platzhalter.png">}}
-# Simon Hanssen
+{{<member image="Leni.jpg">}}
+# Leni Reiniger
+## Anmeldung
+Bachelor Bauingenieurwesen
+3. Semester
 {{</member>}}
 {{<span class="px-5">}}
-# Logistik
-Das Logistik-Team der BauFaK plant und koordiniert die organisatorischen Abläufe bei Veranstaltungen. Es kümmert sich um den Transport von Materialien, die Einrichtung von Räumen und die reibungslose Durchführung vor Ort. Damit schafft es die Grundlage für den erfolgreichen Ablauf der BauFaK.
+# Begrüßung und Anmeldung
+Das Team „Begrüßung und Anmeldung“ der BauFaK ist für den Empfang und die Registrierung der Teilnehmer zuständig. Es sorgt für einen herzlichen Empfang, klärt alle organisatorischen Fragen und stellt sicher, dass sich alle Teilnehmer schnell zurechtfinden und ihren Platz finden.
 {{</span>}}
 {{</team>}}
 
@@ -291,21 +297,15 @@ Die verantwortliche Person für Schilder und das Wohlbefinden der Teilnehmer sor
 {{</team>}}
 
 {{<team right="true">}}
-{{<member image="Daniel.jpg">}}
-# Daniel Stadtmüller
-## Anmeldung
-Bachelor Umweltingenieurwesen
-3. Semester
+{{<member image="platzhalter.png">}}
+# Leonid Grützner
 {{</member>}}
-{{<member image="Leni.jpg">}}
-# Leni Reiniger
-## Anmeldung
-Bachelor Bauingenieurwesen
-3. Semester
+{{<member image="platzhalter.png">}}
+# Simon Hanssen
 {{</member>}}
 {{<span class="px-5">}}
-# Begrüßung und Anmeldung
-Das Team „Begrüßung und Anmeldung“ der BauFaK ist für den Empfang und die Registrierung der Teilnehmer zuständig. Es sorgt für einen herzlichen Empfang, klärt alle organisatorischen Fragen und stellt sicher, dass sich alle Teilnehmer schnell zurechtfinden und ihren Platz finden.
+# Logistik
+Das Logistik-Team der BauFaK plant und koordiniert die organisatorischen Abläufe bei Veranstaltungen. Es kümmert sich um den Transport von Materialien, die Einrichtung von Räumen und die reibungslose Durchführung vor Ort. Damit schafft es die Grundlage für den erfolgreichen Ablauf der BauFaK.
 {{</span>}}
 {{</team>}}
 
