@@ -7,5 +7,5 @@ description = 'Ihr findet hier den PreReader der 104. BauFak und später auch de
 
 {{<div class="flex flex-col md:flex-row flex-initial gap-20">}}
 {{<figure class="inline-flex flex-col items-center h-full w-96 py-6" src="PreReader_Bild.jpg">}}
-{{<figure src="/reader/PreReader.png" link="/reader/PreReader_104BauFaK_München.pdf" class="">}}
+{{<figure src="/reader/PreReader.png" link="/PreReader" class="">}}
 {{</div>}}
