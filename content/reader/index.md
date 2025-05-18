@@ -1,10 +1,11 @@
 +++
 title = 'Reader'
-description = 'Hier werden zu einem späteren Zeitpunkt der Pre- und Endreader der 104. BauFaK veröffentlicht.'
+description = 'Ihr findet hier den PreReader der 104. BauFak und später auch den Endreader'
 +++
 
-{{< alert title="PreReader" classes="my-2">}}
-Coming soon!
-{{< /alert>}}
 
-{{<figure class="inline-flex flex-col items-center w-full py-6" src="PreReader_Bild.jpg">}}
+
+{{<div class="flex flex-col md:flex-row flex-initial gap-20">}}
+{{<figure class="inline-flex flex-col items-center h-full w-96 py-6" src="PreReader_Bild.jpg">}}
+{{<figure src="/reader/PreReader.png" link="/reader/PreReader_104BauFaK_München.pdf" class="">}}
+{{</div>}}
