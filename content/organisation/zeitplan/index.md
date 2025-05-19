@@ -12,9 +12,17 @@ description: "Was wäre eine BauFak ohne Zeitplan für den Ablauf? Veröffentlic
 {{<span>}}
 Schreibt uns gerne unter **[baufakorga.fsbgu@ed.tum.de](mailto:baufakorga.fsbgu@ed.tum.de)** falls ihr Fragen oder Anmerkungen zu dem Zeitplan habt!
 
-Der genaue Raumplan mit Übersichtszeichnungen wird an dieser Stelle kurz vor der Veranstaltung veröffentlicht.
 {{</span>}}
 
+
 {{</div>}}
 
 {{</div>}}
+{{<hr class="my-10">}}{{</hr>}}
+&nbsp;
+# **Lage- und Raumplan**
+[> Link zur interaktiven Karte zur einfacheren orientierung auf der BauFaK **hier** <](https://104-muenchen.baufak.de/karte)
+
+{{<figure class="inline-flex flex-col items-center w-full py-6" src="Gesamtuebersicht.jpg">}}
+
+{{<figure class="inline-flex flex-col items-center w-full py-6" src="AK_Raeume.jpg">}}
