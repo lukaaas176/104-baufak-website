@@ -1,5 +1,5 @@
 ---
-title: 'Zeitplan'
+title: 'Zeit- und Lageplan'
 description: "Was wäre eine BauFak ohne Zeitplan für den Ablauf? Veröffentlicht, aber noch unter Vorbehalt von Änderungen."
 ---
 
@@ -19,9 +19,13 @@ Schreibt uns gerne unter **[baufakorga.fsbgu@ed.tum.de](mailto:baufakorga.fsbgu@
 
 {{</div>}}
 {{<hr class="my-10">}}{{</hr>}}
-&nbsp;
+
 # **Lage- und Raumplan**
-[> Link zur interaktiven Karte zur einfacheren orientierung auf der BauFaK **hier** <](https://104-muenchen.baufak.de/karte)
+&nbsp;
+
+{{<button link="https://104-muenchen.baufak.de/karte" label="Link zur interaktiven Karte" >}}
+
+{{<button link="/organisation/zeitplan/Raum und Lageplan BauFaK Final.pdf" label="Raum und Lageplan als PDF runterladen" >}}
 
 {{<figure class="inline-flex flex-col items-center w-full py-6" src="Gesamtuebersicht.jpg">}}
 

@@ -54,4 +54,4 @@ Wir laden euch herzlich ein zu einer besonderen Exkursion f√ºr alle Ehemaligen ‚
 {{< alert title="Die Exkursionsanmeldung ist geschlossen" classes="my-2">}}
 Die Exkursionsanmeldung ist geschlossen! Bei Fragen melde dich gerne unter **[baufak.exkursionen.fsbgu@ed.tum.de](mailto:baufak.exkursionen.fsbgu@ed.tum.de)**!
 {{< /alert>}}
-{{<figure class="inline-flex flex-col items-center w-full py-6" src="geschlossen.png">}}
+{{<figure class="inline-flex flex-col items-center w-full py-6" src="Exkursion_Anmeldung.png">}}
