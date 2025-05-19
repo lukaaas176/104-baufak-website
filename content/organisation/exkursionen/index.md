@@ -51,6 +51,7 @@ Wir laden euch herzlich ein zu einer besonderen Exkursion für alle Ehemaligen �
 
 # Anmeldung zu den Exkursionen
 
-Hier könnt ihr euch zu den Exkursionen anmelden. Bitte beachtet, dass ihr das nur als Teilnehmer an der 104. BauFaK machen könnt, ansonsten werden wir eure Anmeldung ignorieren müssen. Bitte meldet euch mit der gleichen E-Mail-Adresse wie bei der Anmeldung an.
-
-{{< exkursions-anmeldung >}}
+{{< alert title="Die Exkursionsanmeldung ist geschlossen" classes="my-2">}}
+Die Exkursionsanmeldung ist geschlossen! Bei Fragen melde dich gerne unter **[baufak104.fsbgu@ed.tum.de](mailto:baufak104.fsbgu@ed.tum.de)**!
+{{< /alert>}}
+{{<figure class="inline-flex flex-col items-center w-full py-6" src="geschlossen.png">}}

@@ -118,6 +118,8 @@ async function saveRegistration(data: ExkursionsRegistration, database: D1Databa
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
+    return new Response("Die Anmeldung ist geschlossen", { status: 400 });
+    /*
     let formData: {[k: string]: string | File} = await context.request.formData().then(Object.fromEntries);
     console.log(`Received exkursions data: ${JSON.stringify(formData)}`);
     let data: ExkursionsRegistration | Set<string> = await parseRegistration(formData);
@@ -135,5 +137,5 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         return new Response("Konnten die Anmeldemail nicht verschicken. Bitte probiere es später noch einmal!", { status: 400 });
     }
 
-    return Response.json(data);
+    return Response.json(data);*/
 };
