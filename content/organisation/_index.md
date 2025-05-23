@@ -2,7 +2,7 @@
 title = 'Organisation'
 +++
 
-{{<section-card title="Zeitplan" image="zeitplan.jpg" page="/organisation/zeitplan">}}
+{{<section-card title="Zeit- und Lageplan" image="zeitplan.jpg" page="/organisation/zeitplan">}}
 Ihr findet hier den aktuellen Zeitplan für die 104. BauFak in München sowohl zum Anschauen als auch zum Runterladen!
 {{</section-card>}}
 
