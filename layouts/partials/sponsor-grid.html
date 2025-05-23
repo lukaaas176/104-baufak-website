@@ -5,7 +5,7 @@
         {{- $sponsor := . -}}
         <a class="flex-none flex flex-col justify-center h-52 w-52" href="{{ $sponsor.Params.homepage }}">
         {{- with resources.Get .Params.image -}}
-            <img class="max-w-full max-h-full rounded-md shadow-md bg-white transition-transform hover:scale-105" height="{{ .Height }}" width="{{ .Width }}" src="{{ .RelPermalink }}" alt="{{ $sponsor.Title }}" title="{{ $sponsor.Title }}">
+            <img class="max-w-full w-auto max-h-full rounded-md shadow-md bg-white transition-transform object-scale-down hover:scale-105" height="{{ .Height }}" width="{{ .Width }}" src="{{ .RelPermalink }}" alt="{{ $sponsor.Title }}" title="{{ $sponsor.Title }}">
         {{- end -}}
         </a>
     {{- end -}}
