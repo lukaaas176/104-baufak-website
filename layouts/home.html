@@ -10,7 +10,7 @@
     <div class="text-sm">{{ .Site.Param "date" }}</div>
     <div class="text-5xl font-bold">{{ .Site.Title }}</div>
 
-    {{- range $i, $post := (where site.RegularPages "Type" "posts").Limit 2 -}}
+    {{- range $i, $post := (where site.RegularPages "Type" "posts").Limit 3 -}}
       {{- if $i -}}
         <div class="shrink-0 bg-neutral h-[1px] w-10/12 mx-auto"></div>
       {{- end -}}
